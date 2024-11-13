@@ -51,8 +51,6 @@ ggplot(swimming_event, aes(x = event, y = avg_a))+
   geom_point()
 ```
 
-```{r}
 
-```
 
 
