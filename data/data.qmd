@@ -8,5 +8,10 @@ olympics %>%
   group_by(sport) %>%
   summarize(n = n())%>%
   arrange(desc(n))
+
+ggplot(olympics, aes(x = sport))+
+  geom_bar()
 ```
+
+
 
