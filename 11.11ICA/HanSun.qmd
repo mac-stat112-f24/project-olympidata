@@ -64,4 +64,19 @@ rowing<- olympics %>%
 rowing
 ```
 
+```{r}
+ggplot(shooting, aes(x = fct_infreq(team)))+
+  
+  geom_bar()
+```
+
+
+```{r}
+ggplot(rowing, aes(x = fct_infreq(team)))+
+  geom_bar()
+```
+
+
+
+
 

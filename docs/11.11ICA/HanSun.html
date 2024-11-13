@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>write your project title here - Appendix A — A tibble: 2,486 × 15</title>
+<title>Project-Olymidata - Appendix A — A tibble: 2,486 × 15</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">write your project title here</a> 
+      <a href="../">Project-Olymidata</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -360,6 +360,21 @@ dbl  (5): id, age, height, weight, year
 10   108 Giusepp… M        29    187     97 Italy ITA   1988…  1988 Summer Seoul
 # ℹ 2,094 more rows
 # ℹ 3 more variables: sport &lt;chr&gt;, event &lt;chr&gt;, medal &lt;chr&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(shooting, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(team)))<span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  </span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="HanSun_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(rowing, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(team)))<span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="HanSun_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
@@ -776,72 +791,87 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-next">
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb19" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="in">```</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="in">```{r}</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb19-9"><a href="#cb19-9"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-10"><a href="#cb19-10"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb19-11"><a href="#cb19-11"></a>swimming <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
-<span id="cb19-12"><a href="#cb19-12"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Swimming"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb19-13"><a href="#cb19-13"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb19-14"><a href="#cb19-14"></a>swimming</span>
-<span id="cb19-15"><a href="#cb19-15"></a><span class="in">```</span></span>
-<span id="cb19-16"><a href="#cb19-16"></a></span>
-<span id="cb19-17"><a href="#cb19-17"></a></span>
-<span id="cb19-20"><a href="#cb19-20"></a><span class="in">```{r}</span></span>
-<span id="cb19-21"><a href="#cb19-21"></a><span class="fu">ggplot</span>(swimming, <span class="fu">aes</span>(<span class="at">x =</span> team))<span class="sc">+</span></span>
-<span id="cb19-22"><a href="#cb19-22"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb19-23"><a href="#cb19-23"></a><span class="in">```</span></span>
-<span id="cb19-24"><a href="#cb19-24"></a></span>
-<span id="cb19-27"><a href="#cb19-27"></a><span class="in">```{r}</span></span>
-<span id="cb19-28"><a href="#cb19-28"></a>swimming_year <span class="ot">&lt;-</span> swimming<span class="sc">%&gt;%</span></span>
-<span id="cb19-29"><a href="#cb19-29"></a>  <span class="fu">group_by</span>(year)<span class="sc">%&gt;%</span></span>
-<span id="cb19-30"><a href="#cb19-30"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb19-31"><a href="#cb19-31"></a>         <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb19-32"><a href="#cb19-32"></a>         <span class="at">avg_a =</span> <span class="fu">mean</span>(age))</span>
-<span id="cb19-33"><a href="#cb19-33"></a><span class="fu">ggplot</span>(swimming_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
-<span id="cb19-34"><a href="#cb19-34"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb19-35"><a href="#cb19-35"></a><span class="fu">ggplot</span>(swimming_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
-<span id="cb19-36"><a href="#cb19-36"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb19-37"><a href="#cb19-37"></a><span class="fu">ggplot</span>(swimming_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
-<span id="cb19-38"><a href="#cb19-38"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb19-39"><a href="#cb19-39"></a><span class="in">```</span></span>
-<span id="cb19-40"><a href="#cb19-40"></a></span>
-<span id="cb19-41"><a href="#cb19-41"></a></span>
-<span id="cb19-44"><a href="#cb19-44"></a><span class="in">```{r}</span></span>
-<span id="cb19-45"><a href="#cb19-45"></a>swimming_event <span class="ot">&lt;-</span> swimming <span class="sc">%&gt;%</span></span>
-<span id="cb19-46"><a href="#cb19-46"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
-<span id="cb19-47"><a href="#cb19-47"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb19-48"><a href="#cb19-48"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb19-49"><a href="#cb19-49"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
-<span id="cb19-50"><a href="#cb19-50"></a>            <span class="at">count =</span> <span class="fu">n</span>())<span class="sc">%&gt;%</span></span>
-<span id="cb19-51"><a href="#cb19-51"></a>  <span class="fu">slice_max</span>(count, <span class="at">n=</span><span class="dv">10</span>)</span>
-<span id="cb19-52"><a href="#cb19-52"></a><span class="fu">ggplot</span>(swimming, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
-<span id="cb19-53"><a href="#cb19-53"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb19-54"><a href="#cb19-54"></a><span class="fu">ggplot</span>(swimming_event, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
-<span id="cb19-55"><a href="#cb19-55"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb19-56"><a href="#cb19-56"></a><span class="fu">ggplot</span>(swimming_event, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
-<span id="cb19-57"><a href="#cb19-57"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb19-58"><a href="#cb19-58"></a><span class="fu">ggplot</span>(swimming_event, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
-<span id="cb19-59"><a href="#cb19-59"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb19-60"><a href="#cb19-60"></a><span class="in">```</span></span>
-<span id="cb19-61"><a href="#cb19-61"></a></span>
-<span id="cb19-62"><a href="#cb19-62"></a></span>
-<span id="cb19-65"><a href="#cb19-65"></a><span class="in">```{r}</span></span>
-<span id="cb19-66"><a href="#cb19-66"></a>shooting <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
-<span id="cb19-67"><a href="#cb19-67"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Shooting"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb19-68"><a href="#cb19-68"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb19-69"><a href="#cb19-69"></a>shooting</span>
-<span id="cb19-70"><a href="#cb19-70"></a></span>
-<span id="cb19-71"><a href="#cb19-71"></a>rowing<span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
-<span id="cb19-72"><a href="#cb19-72"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Rowing"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb19-73"><a href="#cb19-73"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb19-74"><a href="#cb19-74"></a>rowing</span>
-<span id="cb19-75"><a href="#cb19-75"></a><span class="in">```</span></span>
-<span id="cb19-76"><a href="#cb19-76"></a></span>
+<div class="sourceCode" id="cb21" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="in">```</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="in">```{r}</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb21-9"><a href="#cb21-9"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-10"><a href="#cb21-10"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb21-11"><a href="#cb21-11"></a>swimming <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
+<span id="cb21-12"><a href="#cb21-12"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Swimming"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb21-13"><a href="#cb21-13"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb21-14"><a href="#cb21-14"></a>swimming</span>
+<span id="cb21-15"><a href="#cb21-15"></a><span class="in">```</span></span>
+<span id="cb21-16"><a href="#cb21-16"></a></span>
+<span id="cb21-17"><a href="#cb21-17"></a></span>
+<span id="cb21-20"><a href="#cb21-20"></a><span class="in">```{r}</span></span>
+<span id="cb21-21"><a href="#cb21-21"></a><span class="fu">ggplot</span>(swimming, <span class="fu">aes</span>(<span class="at">x =</span> team))<span class="sc">+</span></span>
+<span id="cb21-22"><a href="#cb21-22"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb21-23"><a href="#cb21-23"></a><span class="in">```</span></span>
+<span id="cb21-24"><a href="#cb21-24"></a></span>
+<span id="cb21-27"><a href="#cb21-27"></a><span class="in">```{r}</span></span>
+<span id="cb21-28"><a href="#cb21-28"></a>swimming_year <span class="ot">&lt;-</span> swimming<span class="sc">%&gt;%</span></span>
+<span id="cb21-29"><a href="#cb21-29"></a>  <span class="fu">group_by</span>(year)<span class="sc">%&gt;%</span></span>
+<span id="cb21-30"><a href="#cb21-30"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
+<span id="cb21-31"><a href="#cb21-31"></a>         <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb21-32"><a href="#cb21-32"></a>         <span class="at">avg_a =</span> <span class="fu">mean</span>(age))</span>
+<span id="cb21-33"><a href="#cb21-33"></a><span class="fu">ggplot</span>(swimming_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
+<span id="cb21-34"><a href="#cb21-34"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb21-35"><a href="#cb21-35"></a><span class="fu">ggplot</span>(swimming_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
+<span id="cb21-36"><a href="#cb21-36"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb21-37"><a href="#cb21-37"></a><span class="fu">ggplot</span>(swimming_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
+<span id="cb21-38"><a href="#cb21-38"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb21-39"><a href="#cb21-39"></a><span class="in">```</span></span>
+<span id="cb21-40"><a href="#cb21-40"></a></span>
+<span id="cb21-41"><a href="#cb21-41"></a></span>
+<span id="cb21-44"><a href="#cb21-44"></a><span class="in">```{r}</span></span>
+<span id="cb21-45"><a href="#cb21-45"></a>swimming_event <span class="ot">&lt;-</span> swimming <span class="sc">%&gt;%</span></span>
+<span id="cb21-46"><a href="#cb21-46"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
+<span id="cb21-47"><a href="#cb21-47"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
+<span id="cb21-48"><a href="#cb21-48"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb21-49"><a href="#cb21-49"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
+<span id="cb21-50"><a href="#cb21-50"></a>            <span class="at">count =</span> <span class="fu">n</span>())<span class="sc">%&gt;%</span></span>
+<span id="cb21-51"><a href="#cb21-51"></a>  <span class="fu">slice_max</span>(count, <span class="at">n=</span><span class="dv">10</span>)</span>
+<span id="cb21-52"><a href="#cb21-52"></a><span class="fu">ggplot</span>(swimming, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
+<span id="cb21-53"><a href="#cb21-53"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb21-54"><a href="#cb21-54"></a><span class="fu">ggplot</span>(swimming_event, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
+<span id="cb21-55"><a href="#cb21-55"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb21-56"><a href="#cb21-56"></a><span class="fu">ggplot</span>(swimming_event, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
+<span id="cb21-57"><a href="#cb21-57"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb21-58"><a href="#cb21-58"></a><span class="fu">ggplot</span>(swimming_event, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
+<span id="cb21-59"><a href="#cb21-59"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb21-60"><a href="#cb21-60"></a><span class="in">```</span></span>
+<span id="cb21-61"><a href="#cb21-61"></a></span>
+<span id="cb21-62"><a href="#cb21-62"></a></span>
+<span id="cb21-65"><a href="#cb21-65"></a><span class="in">```{r}</span></span>
+<span id="cb21-66"><a href="#cb21-66"></a>shooting <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
+<span id="cb21-67"><a href="#cb21-67"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Shooting"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb21-68"><a href="#cb21-68"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb21-69"><a href="#cb21-69"></a>shooting</span>
+<span id="cb21-70"><a href="#cb21-70"></a></span>
+<span id="cb21-71"><a href="#cb21-71"></a>rowing<span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
+<span id="cb21-72"><a href="#cb21-72"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Rowing"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb21-73"><a href="#cb21-73"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb21-74"><a href="#cb21-74"></a>rowing</span>
+<span id="cb21-75"><a href="#cb21-75"></a><span class="in">```</span></span>
+<span id="cb21-76"><a href="#cb21-76"></a></span>
+<span id="cb21-79"><a href="#cb21-79"></a><span class="in">```{r}</span></span>
+<span id="cb21-80"><a href="#cb21-80"></a><span class="fu">ggplot</span>(shooting, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(team)))<span class="sc">+</span></span>
+<span id="cb21-81"><a href="#cb21-81"></a>  </span>
+<span id="cb21-82"><a href="#cb21-82"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb21-83"><a href="#cb21-83"></a><span class="in">```</span></span>
+<span id="cb21-84"><a href="#cb21-84"></a></span>
+<span id="cb21-85"><a href="#cb21-85"></a></span>
+<span id="cb21-88"><a href="#cb21-88"></a><span class="in">```{r}</span></span>
+<span id="cb21-89"><a href="#cb21-89"></a><span class="fu">ggplot</span>(rowing, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(team)))<span class="sc">+</span></span>
+<span id="cb21-90"><a href="#cb21-90"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb21-91"><a href="#cb21-91"></a><span class="in">```</span></span>
+<span id="cb21-92"><a href="#cb21-92"></a></span>
+<span id="cb21-93"><a href="#cb21-93"></a></span>
+<span id="cb21-94"><a href="#cb21-94"></a></span>
+<span id="cb21-95"><a href="#cb21-95"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

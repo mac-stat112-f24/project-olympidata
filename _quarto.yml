@@ -9,7 +9,7 @@ project:
   output-dir: docs
 
 book:
-  title: "write your project title here"
+  title: "Project-Olymidata"
   author: ["Avery Sheindlin", "Jack Fang", "Han Sun", "Khaleesi Chen"]
   date: today
   date-format: full

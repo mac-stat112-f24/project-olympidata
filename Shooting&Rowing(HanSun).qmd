@@ -1,0 +1,104 @@
+---
+title: "Shooting & Rowing"
+subtitle: "project olympidata"
+author: "Han Sun"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r include = FALSE}
+# OPTIONAL: Set a more color blind friendly palette 
+palette("Okabe-Ito")
+scale_colour_discrete <- function(...) scale_colour_manual(values = palette())
+scale_fill_discrete   <- function(...) scale_fill_manual(values = palette())
+
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  warning = FALSE,
+  message = FALSE,
+  fig.height = 2.75, 
+  fig.width = 4.25,
+  fig.env='figure',
+  fig.pos = 'h',
+  fig.align = 'center')
+```
+
+# Import Data
+```{r}
+olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
+```
+
+# Packages
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+
+# Generating Data
+## filter by sports
+```{r}
+shooting <- olympics %>%
+  filter(sport == "Shooting")%>%
+  drop_na()
+shooting
+
+rowing<- olympics %>%
+  filter(sport == "Rowing")%>%
+  drop_na()
+rowing
+```
+
+## divide by sex
+```{r}
+shooting_M <- shooting %>%
+  filter(sex == "M")
+shooting_F <- shooting %>%
+  filter(sex == "F")
+
+rowing_M <- rowing %>%
+  filter(sex == "M")
+rowing_F <- rowing %>%
+  filter(sex == "F")
+```
+
+# Primary Studies For Events
+```{r}
+shooting_eventM <- shooting_M %>%
+  group_by(event)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(shooting_M, aes(x = event))+
+  geom_bar()
+ggplot(shooting_eventM, aes(x = event, y = avg_h))+
+  geom_point()
+ggplot(shooting_eventM, aes(x = event, y = avg_w))+
+  geom_point()
+ggplot(shooting_eventM, aes(x = event, y = avg_a))+
+  geom_point()
+```
+
+```{r}
+shooting_eventF <- shooting_F %>%
+  group_by(event)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(shooting_F, aes(x = event))+
+  geom_bar()
+ggplot(shooting_eventF, aes(x = event, y = avg_h))+
+  geom_point()
+ggplot(shooting_eventF, aes(x = event, y = avg_w))+
+  geom_point()
+ggplot(shooting_eventF, aes(x = event, y = avg_a))+
+  geom_point()
+```
+
+From the plots, both average height, weight, and age varied a lot for the prized athletes for both gender. We should pay attention to how event will affect our outcomes, for example, if we are study about year, we have to get rid of the effects from event.
+
