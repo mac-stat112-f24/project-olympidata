@@ -1,9 +1,15 @@
 ```{r}
+olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
+```
+
+```{r}
 library(tidyverse)
+library(ggplot2)
+library(dplyr)
 swimming <- olympics %>%
   filter(sport == "Swimming")%>%
   drop_na()
-swiming
+swimming
 ```
 
 
@@ -18,11 +24,11 @@ swimming_year <- swimming%>%
   summarize(avg_h = mean(height),
          avg_w = mean(weight),
          avg_a = mean(age))
-ggplot(swimming, aes(x = year, y = avg_h))+
+ggplot(swimming_year, aes(x = year, y = avg_h))+
   geom_point()
-ggplot(swimming, aes(x = year, y = avg_w))+
+ggplot(swimming_year, aes(x = year, y = avg_w))+
   geom_point()
-ggplot(swimming, aes(x = year, y = avg_a))+
+ggplot(swimming_year, aes(x = year, y = avg_a))+
   geom_point()
 ```
 
