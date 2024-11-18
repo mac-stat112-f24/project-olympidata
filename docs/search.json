@@ -106,5 +106,16 @@
       "Appendices",
       "<span class='chapter-number'>D</span>  <span class='chapter-title'>Figure-Skating & Speed-Skating</span>"
     ]
+  },
+  {
+    "objectID": "Figure-Skating_Speed-Skating.html#characteristic-by-medal",
+    "href": "Figure-Skating_Speed-Skating.html#characteristic-by-medal",
+    "title": "Appendix D — Figure-Skating & Speed-Skating",
+    "section": "F.3 Characteristic by Medal",
+    "text": "F.3 Characteristic by Medal\n\nskate_medal &lt;- olympics |&gt;\n  filter(sport %in% c(\"Figure Skating\", \"Speed Skating\")) |&gt;\n  mutate(medal_won = ifelse(is.na(medal), \"No\", \"Yes\")) |&gt;\n  group_by(sport, medal_won) |&gt;\n  summarize(\n    avg_age = mean(age, na.rm = TRUE),\n    avg_height = mean(height, na.rm = TRUE),\n    avg_weight = mean(weight, na.rm = TRUE),\n    .groups = 'drop'\n  )\nskate_medal\n## # A tibble: 4 × 5\n##   sport          medal_won avg_age avg_height avg_weight\n##   &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;\n## 1 Figure Skating No           21.9       168.       59.4\n## 2 Figure Skating Yes          24.0       169.       60.2\n## 3 Speed Skating  No           24.2       174.       69.9\n## 4 Speed Skating  Yes          25.4       175.       71.3",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Figure-Skating & Speed-Skating</span>"
+    ]
   }
 ]

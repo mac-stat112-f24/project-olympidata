@@ -26,6 +26,7 @@ knitr::opts_chunk$set(
 ```
 
 # Data & Library
+
 ```{r}
 olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
 
@@ -33,8 +34,11 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 ```
+
 # EDA/Wrangling Data
+
 ## Filter by Sport
+
 ```{r}
 figure <- olympics %>%
   filter(sport == "Figure Skating")%>%
@@ -46,7 +50,9 @@ speed <- olympics %>%
   drop_na()
 speed
 ```
+
 ## Seperate by Sex
+
 ```{r}
 figure_M <- figure %>%
   filter(sex == "M")
@@ -59,7 +65,25 @@ speed_F <- speed %>%
   filter(sex == "F")
 ```
 
-# Examining Each Event
+## Characteristic by Medal
+```{r}
+skate_medal <- olympics |>
+  filter(sport %in% c("Figure Skating", "Speed Skating")) |>
+  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |>
+  group_by(sport, medal_won) |>
+  summarize(
+    avg_age = mean(age, na.rm = TRUE),
+    avg_height = mean(height, na.rm = TRUE),
+    avg_weight = mean(weight, na.rm = TRUE),
+    .groups = 'drop'
+  )
+skate_medal
+
+```
+
+
+# Examining Characteristics by Event
+
 ```{r}
 figure_eventM <- figure_M %>%
   group_by(event)%>%
@@ -76,6 +100,7 @@ ggplot(figure_eventM, aes(x = event, y = avg_w))+
 ggplot(figure_eventM, aes(x = event, y = avg_a))+
   geom_point()
 ```
+
 ```{r}
 figure_eventF <- figure_F %>%
   group_by(event)%>%
@@ -92,6 +117,7 @@ ggplot(figure_eventF, aes(x = event, y = avg_w))+
 ggplot(figure_eventF, aes(x = event, y = avg_a))+
   geom_point()
 ```
+
 ```{r}
 speed_eventM <- speed_M %>%
   group_by(event)%>%
@@ -108,6 +134,7 @@ ggplot(speed_eventM, aes(x = event, y = avg_w))+
 ggplot(speed_eventM, aes(x = event, y = avg_a))+
   geom_point()
 ```
+
 ```{r}
 speed_eventF <- speed_F %>%
   group_by(event)%>%
@@ -123,5 +150,22 @@ ggplot(speed_eventF, aes(x = event, y = avg_w))+
   geom_point()
 ggplot(speed_eventF, aes(x = event, y = avg_a))+
   geom_point()
+```
+
+# Examining Chracteristics by Medal Win
+
+```{r}
+skate_medal |>
+  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
+  ggplot(aes(x = sport, y = value, fill = medal_won)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~attribute, scales = "free_y") +
+  labs(
+    title = "Characteristics of Medal Winners vs Non-Medalists",
+    x = "Sport",
+    y = "Average Value",
+    fill = "Medal Won"
+  ) +
+  theme_minimal()
 ```
 
