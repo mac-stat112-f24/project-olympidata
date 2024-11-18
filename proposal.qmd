@@ -1,6 +1,6 @@
 # Proposal {.unnumbered}
 
-title: (in progress)
+title: Olympidata
 
 Team members: Avery Sheindlin, Jack Fang, Han Sun，Khaleesi Chen
 
