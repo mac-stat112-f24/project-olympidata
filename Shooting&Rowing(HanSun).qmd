@@ -35,6 +35,9 @@ library(plotly)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
+library(tidymodels)
+library(glmnet)
+library(tidyr)
 ```
 
 
@@ -224,6 +227,9 @@ ggplot(rowing_yearF, aes(x = year, y = avg_a))+
 
 For rowing, especially for male, both average weight, height, and age have a increasing by year, for female, the trend is not that obvious but still exist. It might be a good point to have more studies.
 
+
+
+# Fitting models
 
 
 
