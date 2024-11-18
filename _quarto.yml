@@ -9,7 +9,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Project-Olympidata"
+  title: "Olympidata"
   author: ["Avery Sheindlin", "Jack Fang", "Han Sun", "Khaleesi Chen"]
   date: today
   date-format: full
@@ -24,6 +24,7 @@ book:
   - sketch.qmd
   - 11.11ICA/HanSun.qmd
   - skiing.qmd
+  - Figure-Skating_Speed-Skating.qmd
 
 
 format:
