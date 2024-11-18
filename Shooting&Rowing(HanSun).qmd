@@ -9,7 +9,6 @@ output:
 ---
 
 ```{r include = FALSE}
-# OPTIONAL: Set a more color blind friendly palette 
 palette("Okabe-Ito")
 scale_colour_discrete <- function(...) scale_colour_manual(values = palette())
 scale_fill_discrete   <- function(...) scale_fill_manual(values = palette())
@@ -32,6 +31,7 @@ olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/t
 
 # Packages
 ```{r}
+library(plotly)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
@@ -66,6 +66,8 @@ rowing_F <- rowing %>%
 ```
 
 # Primary Studies For Events
+## Shooting
+### male
 ```{r}
 shooting_eventM <- shooting_M %>%
   group_by(event)%>%
@@ -82,7 +84,7 @@ ggplot(shooting_eventM, aes(x = event, y = avg_w))+
 ggplot(shooting_eventM, aes(x = event, y = avg_a))+
   geom_point()
 ```
-
+### female
 ```{r}
 shooting_eventF <- shooting_F %>%
   group_by(event)%>%
@@ -100,5 +102,131 @@ ggplot(shooting_eventF, aes(x = event, y = avg_a))+
   geom_point()
 ```
 
-From the plots, both average height, weight, and age varied a lot for the prized athletes for both gender. We should pay attention to how event will affect our outcomes, for example, if we are study about year, we have to get rid of the effects from event.
+For shooting, from the plots, both average height, weight, and age varied a lot for the prized athletes for both gender. We should pay attention to how event will affect our outcomes, for example, if we are study about year, we have to get rid of the effects from event. 
+
+## Rowing
+### male
+```{r}
+rowing_eventM <- rowing_M %>%
+  group_by(event)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(rowing_M, aes(x = event))+
+  geom_bar()
+ggplot(rowing_eventM, aes(x = event, y = avg_h))+
+  geom_point()
+ggplot(rowing_eventM, aes(x = event, y = avg_w))+
+  geom_point()
+ggplot(rowing_eventM, aes(x = event, y = avg_a))+
+  geom_point()
+```
+
+### female
+```{r}
+rowing_eventF <- rowing_F %>%
+  group_by(event)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(rowing_F, aes(x = event))+
+  geom_bar()
+ggplot(rowing_eventF, aes(x = event, y = avg_h))+
+  geom_point()
+ggplot(rowing_eventF, aes(x = event, y = avg_w))+
+  geom_point()
+ggplot(rowing_eventF, aes(x = event, y = avg_a))+
+  geom_point()
+```
+
+For rowing, from the plot, both average height and weight varied a lot for the prized athletes for both gender, while the average age is in a much smaller range, we should pay more attention on the effect from event for average height and weight.
+
+
+# Primary Studies For Year
+## shooting
+### male
+```{r}
+shooting_yearM <- shooting_M %>%
+  group_by(year)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(shooting_M, aes(x = year))+
+  geom_bar()
+ggplot(shooting_yearM, aes(x = year, y = avg_h))+
+  geom_point()
+ggplot(shooting_yearM, aes(x = year, y = avg_w))+
+  geom_point()
+ggplot(shooting_yearM, aes(x = year, y = avg_a))+
+  geom_point()
+```
+
+### female
+```{r}
+shooting_yearF <- shooting_F %>%
+  group_by(year)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(shooting_F, aes(x = year))+
+  geom_bar()
+ggplot(shooting_yearF, aes(x = year, y = avg_h))+
+  geom_point()
+ggplot(shooting_yearF, aes(x = year, y = avg_w))+
+  geom_point()
+ggplot(shooting_yearF, aes(x = year, y = avg_a))+
+  geom_point()
+```
+
+For shooting, most data points are in a small range. In very early years, some data was very different. However, there are few data points in early years, so the effect from year isn't very obvious for avg_h, avg_w and avg_a.
+
+
+## Rowing
+### male
+```{r}
+rowing_yearM <- rowing_M %>%
+  group_by(year)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(rowing_M, aes(x = year))+
+  geom_bar()
+ggplot(rowing_yearM, aes(x = year, y = avg_h))+
+  geom_point()
+ggplot(rowing_yearM, aes(x = year, y = avg_w))+
+  geom_point()
+ggplot(rowing_yearM, aes(x = year, y = avg_a))+
+  geom_point()
+```
+
+### female
+```{r}
+rowing_yearF <- rowing_F %>%
+  group_by(year)%>%
+  summarize(avg_h = mean(height),
+            avg_w = mean(weight),
+            avg_a = mean(age),
+            count = n())
+ggplot(rowing_F, aes(x = year))+
+  geom_bar()
+ggplot(rowing_yearF, aes(x = year, y = avg_h))+
+  geom_point()
+ggplot(rowing_yearF, aes(x = year, y = avg_w))+
+  geom_point()
+ggplot(rowing_yearF, aes(x = year, y = avg_a))+
+  geom_point()
+```
+
+For rowing, especially for male, both average weight, height, and age have a increasing by year, for female, the trend is not that obvious but still exist. It might be a good point to have more studies.
+
+
+
+
+
+
 
