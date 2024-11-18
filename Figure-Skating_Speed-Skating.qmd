@@ -158,12 +158,12 @@ ggplot(speed_eventF, aes(x = event, y = avg_a))+
 skate_medal |>
   pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
   ggplot(aes(x = sport, y = value, fill = medal_won)) +
-  geom_bar(stat = "identity", position = "dodge") +
+  geom_boxplot() +
   facet_wrap(~attribute, scales = "free_y") +
   labs(
     title = "Characteristics of Medal Winners vs Non-Medalists",
     x = "Sport",
-    y = "Average Value",
+    y = "Value",
     fill = "Medal Won"
   ) +
   theme_minimal()

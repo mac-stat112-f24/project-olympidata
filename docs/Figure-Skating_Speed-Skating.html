@@ -533,12 +533,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>skate_medal <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
 <span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">labs</span>(</span>
 <span id="cb21-7"><a href="#cb21-7"></a>    <span class="at">title =</span> <span class="st">"Characteristics of Medal Winners vs Non-Medalists"</span>,</span>
 <span id="cb21-8"><a href="#cb21-8"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="at">y =</span> <span class="st">"Value"</span>,</span>
 <span id="cb21-10"><a href="#cb21-10"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
 <span id="cb21-11"><a href="#cb21-11"></a>  ) <span class="sc">+</span></span>
 <span id="cb21-12"><a href="#cb21-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1330,12 +1330,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-176"><a href="#cb22-176"></a>skate_medal <span class="sc">|&gt;</span></span>
 <span id="cb22-177"><a href="#cb22-177"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb22-178"><a href="#cb22-178"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
-<span id="cb22-179"><a href="#cb22-179"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb22-179"><a href="#cb22-179"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb22-180"><a href="#cb22-180"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
 <span id="cb22-181"><a href="#cb22-181"></a>  <span class="fu">labs</span>(</span>
 <span id="cb22-182"><a href="#cb22-182"></a>    <span class="at">title =</span> <span class="st">"Characteristics of Medal Winners vs Non-Medalists"</span>,</span>
 <span id="cb22-183"><a href="#cb22-183"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb22-184"><a href="#cb22-184"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb22-184"><a href="#cb22-184"></a>    <span class="at">y =</span> <span class="st">"Value"</span>,</span>
 <span id="cb22-185"><a href="#cb22-185"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
 <span id="cb22-186"><a href="#cb22-186"></a>  ) <span class="sc">+</span></span>
 <span id="cb22-187"><a href="#cb22-187"></a>  <span class="fu">theme_minimal</span>()</span>
