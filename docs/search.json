@@ -128,7 +128,7 @@
     "href": "Figure-Skating_Speed-Skating.html",
     "title": "Appendix D — Figure-Skating & Speed-Skating",
     "section": "",
-    "text": "E Data & Library\nolympics &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')\n\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)",
+    "text": "E Data & Library\nolympics &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')\n\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(gt)",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>D</span>  <span class='chapter-title'>Figure-Skating & Speed-Skating</span>"
