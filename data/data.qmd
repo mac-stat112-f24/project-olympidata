@@ -15,7 +15,5 @@ ggplot(olympics, aes(x = sport))+
 
 
 ```{r}
-library(tidyr)
-group_by()
 ```
 
