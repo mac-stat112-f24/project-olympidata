@@ -33,6 +33,7 @@ olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/t
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
+library(gt)
 ```
 
 # EDA/Wrangling Data
@@ -157,15 +158,41 @@ ggplot(speed_eventF, aes(x = event, y = avg_a))+
 ```{r}
 skate_medal |>
   pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
-  ggplot(aes(x = sport, y = value, fill = medal_won)) +
-  geom_boxplot() +
-  facet_wrap(~attribute, scales = "free_y") +
+  group_by(sport, medal_won, attribute) |>
+  summarise(total_value = sum(value), .groups = "drop") |>
+  arrange(attribute, sport, medal_won) |>
+  gt() |>
+  tab_header(
+    title = "Summary of Characteristics by Sport and Medal Status",
+    subtitle = "Total values of attributes grouped by sport and medal won"
+  ) |>
+  cols_label(
+    sport = "Sport",
+    medal_won = "Medal Won",
+    attribute = "Attribute",
+    total_value = "Total Value"
+  ) |>
+  fmt_number(
+    columns = total_value,
+    decimals = 2
+  ) |>
+  tab_options(
+    table.font.size = "small"
+  )
+
+skate_medal |>
+  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
+  ggplot(aes(y = sport, x = value, fill = medal_won)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~attribute, scales = "free_x") +
   labs(
     title = "Characteristics of Medal Winners vs Non-Medalists",
-    x = "Sport",
-    y = "Value",
+    x = "Average Value",
+    y = "Sport",
     fill = "Medal Won"
   ) +
   theme_minimal()
+
+
 ```
 
