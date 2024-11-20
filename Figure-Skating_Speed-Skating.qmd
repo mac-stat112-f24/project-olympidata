@@ -183,7 +183,7 @@ skate_medal |>
 skate_medal |>
   pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
   ggplot(aes(y = sport, x = value, fill = medal_won)) +
-  geom_bar(stat = "identity", position = "dodge") +
+  geom_bar(stat = "identity", position = "dodge", width = 0.5) +
   facet_wrap(~attribute, scales = "free_x") +
   labs(
     title = "Characteristics of Medal Winners vs Non-Medalists",
