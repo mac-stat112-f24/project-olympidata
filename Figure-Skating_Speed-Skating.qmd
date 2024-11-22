@@ -1,5 +1,5 @@
 ---
-title: "Figure-Skating & Speed-Skating"
+title: "Figure Skating & Speed Skating"
 subtitle: "project olympidata"
 author: "Avery Sheindlin"
 output: 
