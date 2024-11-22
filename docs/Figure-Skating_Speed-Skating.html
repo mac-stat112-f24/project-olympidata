@@ -261,7 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="edawrangling-data" class="level1" data-number="F">
@@ -532,16 +533,584 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>skate_medal <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">labs</span>(</span>
-<span id="cb21-7"><a href="#cb21-7"></a>    <span class="at">title =</span> <span class="st">"Characteristics of Medal Winners vs Non-Medalists"</span>,</span>
-<span id="cb21-8"><a href="#cb21-8"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb21-10"><a href="#cb21-10"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
-<span id="cb21-11"><a href="#cb21-11"></a>  ) <span class="sc">+</span></span>
-<span id="cb21-12"><a href="#cb21-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">group_by</span>(sport, medal_won, attribute) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">summarise</span>(<span class="at">total_value =</span> <span class="fu">sum</span>(value), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">arrange</span>(attribute, sport, medal_won) <span class="sc">|&gt;</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-7"><a href="#cb21-7"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb21-8"><a href="#cb21-8"></a>    <span class="at">title =</span> <span class="st">"Summary of Characteristics by Sport and Medal Status"</span>,</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="at">subtitle =</span> <span class="st">"Total values of attributes grouped by sport and medal won"</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb21-12"><a href="#cb21-12"></a>    <span class="at">sport =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13"></a>    <span class="at">medal_won =</span> <span class="st">"Medal Won"</span>,</span>
+<span id="cb21-14"><a href="#cb21-14"></a>    <span class="at">attribute =</span> <span class="st">"Attribute"</span>,</span>
+<span id="cb21-15"><a href="#cb21-15"></a>    <span class="at">total_value =</span> <span class="st">"Total Value"</span></span>
+<span id="cb21-16"><a href="#cb21-16"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb21-17"><a href="#cb21-17"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb21-18"><a href="#cb21-18"></a>    <span class="at">columns =</span> total_value,</span>
+<span id="cb21-19"><a href="#cb21-19"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
+<span id="cb21-20"><a href="#cb21-20"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb21-21"><a href="#cb21-21"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb21-22"><a href="#cb21-22"></a>    <span class="at">table.font.size =</span> <span class="st">"small"</span></span>
+<span id="cb21-23"><a href="#cb21-23"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="qnxctssriu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qnxctssriu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qnxctssriu thead, #qnxctssriu tbody, #qnxctssriu tfoot, #qnxctssriu tr, #qnxctssriu td, #qnxctssriu th {
+  border-style: none;
+}
+
+#qnxctssriu p {
+  margin: 0;
+  padding: 0;
+}
+
+#qnxctssriu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qnxctssriu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qnxctssriu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qnxctssriu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qnxctssriu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qnxctssriu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qnxctssriu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qnxctssriu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qnxctssriu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qnxctssriu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qnxctssriu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qnxctssriu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qnxctssriu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qnxctssriu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qnxctssriu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qnxctssriu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qnxctssriu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qnxctssriu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qnxctssriu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qnxctssriu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qnxctssriu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qnxctssriu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qnxctssriu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qnxctssriu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qnxctssriu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qnxctssriu .gt_left {
+  text-align: left;
+}
+
+#qnxctssriu .gt_center {
+  text-align: center;
+}
+
+#qnxctssriu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qnxctssriu .gt_font_normal {
+  font-weight: normal;
+}
+
+#qnxctssriu .gt_font_bold {
+  font-weight: bold;
+}
+
+#qnxctssriu .gt_font_italic {
+  font-style: italic;
+}
+
+#qnxctssriu .gt_super {
+  font-size: 65%;
+}
+
+#qnxctssriu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qnxctssriu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qnxctssriu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qnxctssriu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qnxctssriu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qnxctssriu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qnxctssriu .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qnxctssriu .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qnxctssriu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="4" class="gt_heading gt_title gt_font_normal">Summary of Characteristics by Sport and Medal Status</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Total values of attributes grouped by sport and medal won</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="sport" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Sport</th>
+<th id="medal_won" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Medal Won</th>
+<th id="attribute" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Attribute</th>
+<th id="total_value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="sport">Figure Skating</td>
+<td class="gt_row gt_left" headers="medal_won">No</td>
+<td class="gt_row gt_left" headers="attribute">avg_age</td>
+<td class="gt_row gt_right" headers="total_value">21.87</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="sport">Figure Skating</td>
+<td class="gt_row gt_left" headers="medal_won">Yes</td>
+<td class="gt_row gt_left" headers="attribute">avg_age</td>
+<td class="gt_row gt_right" headers="total_value">24.02</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="sport">Speed Skating</td>
+<td class="gt_row gt_left" headers="medal_won">No</td>
+<td class="gt_row gt_left" headers="attribute">avg_age</td>
+<td class="gt_row gt_right" headers="total_value">24.18</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="sport">Speed Skating</td>
+<td class="gt_row gt_left" headers="medal_won">Yes</td>
+<td class="gt_row gt_left" headers="attribute">avg_age</td>
+<td class="gt_row gt_right" headers="total_value">25.37</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="sport">Figure Skating</td>
+<td class="gt_row gt_left" headers="medal_won">No</td>
+<td class="gt_row gt_left" headers="attribute">avg_height</td>
+<td class="gt_row gt_right" headers="total_value">168.14</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="sport">Figure Skating</td>
+<td class="gt_row gt_left" headers="medal_won">Yes</td>
+<td class="gt_row gt_left" headers="attribute">avg_height</td>
+<td class="gt_row gt_right" headers="total_value">168.51</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="sport">Speed Skating</td>
+<td class="gt_row gt_left" headers="medal_won">No</td>
+<td class="gt_row gt_left" headers="attribute">avg_height</td>
+<td class="gt_row gt_right" headers="total_value">173.94</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="sport">Speed Skating</td>
+<td class="gt_row gt_left" headers="medal_won">Yes</td>
+<td class="gt_row gt_left" headers="attribute">avg_height</td>
+<td class="gt_row gt_right" headers="total_value">175.18</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="sport">Figure Skating</td>
+<td class="gt_row gt_left" headers="medal_won">No</td>
+<td class="gt_row gt_left" headers="attribute">avg_weight</td>
+<td class="gt_row gt_right" headers="total_value">59.41</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="sport">Figure Skating</td>
+<td class="gt_row gt_left" headers="medal_won">Yes</td>
+<td class="gt_row gt_left" headers="attribute">avg_weight</td>
+<td class="gt_row gt_right" headers="total_value">60.24</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="sport">Speed Skating</td>
+<td class="gt_row gt_left" headers="medal_won">No</td>
+<td class="gt_row gt_left" headers="attribute">avg_weight</td>
+<td class="gt_row gt_right" headers="total_value">69.87</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="sport">Speed Skating</td>
+<td class="gt_row gt_left" headers="medal_won">Yes</td>
+<td class="gt_row gt_left" headers="attribute">avg_weight</td>
+<td class="gt_row gt_right" headers="total_value">71.26</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2"></a>skate_medal <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> sport, <span class="at">x =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>  <span class="fu">labs</span>(</span>
+<span id="cb22-8"><a href="#cb22-8"></a>    <span class="at">title =</span> <span class="st">"Characteristics of Medal Winners vs Non-Medalists"</span>,</span>
+<span id="cb22-9"><a href="#cb22-9"></a>    <span class="at">x =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb22-10"><a href="#cb22-10"></a>    <span class="at">y =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb22-11"><a href="#cb22-11"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
+<span id="cb22-12"><a href="#cb22-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb22-13"><a href="#cb22-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1170,176 +1739,203 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-next">
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">---</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="an">title:</span><span class="co"> "Figure-Skating &amp; Speed-Skating"</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="an">subtitle:</span><span class="co"> "project olympidata"</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a><span class="an">author:</span><span class="co"> "Avery Sheindlin"</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="an">output:</span><span class="co"> </span></span>
-<span id="cb22-6"><a href="#cb22-6"></a><span class="co">  html_document:</span></span>
-<span id="cb22-7"><a href="#cb22-7"></a><span class="co">    toc: true</span></span>
-<span id="cb22-8"><a href="#cb22-8"></a><span class="co">    toc_float: true</span></span>
-<span id="cb22-9"><a href="#cb22-9"></a><span class="co">---</span></span>
-<span id="cb22-10"><a href="#cb22-10"></a></span>
-<span id="cb22-11"><a href="#cb22-11"></a><span class="in">```{r include = FALSE}</span></span>
-<span id="cb22-12"><a href="#cb22-12"></a><span class="in"># OPTIONAL: Set a more color blind friendly palette </span></span>
-<span id="cb22-13"><a href="#cb22-13"></a><span class="in">palette("Okabe-Ito")</span></span>
-<span id="cb22-14"><a href="#cb22-14"></a><span class="in">scale_colour_discrete &lt;- function(...) scale_colour_manual(values = palette())</span></span>
-<span id="cb22-15"><a href="#cb22-15"></a><span class="in">scale_fill_discrete   &lt;- function(...) scale_fill_manual(values = palette())</span></span>
-<span id="cb22-16"><a href="#cb22-16"></a></span>
-<span id="cb22-17"><a href="#cb22-17"></a><span class="in">knitr::opts_chunk$set(</span></span>
-<span id="cb22-18"><a href="#cb22-18"></a><span class="in">  collapse = TRUE, </span></span>
-<span id="cb22-19"><a href="#cb22-19"></a><span class="in">  warning = FALSE,</span></span>
-<span id="cb22-20"><a href="#cb22-20"></a><span class="in">  message = FALSE,</span></span>
-<span id="cb22-21"><a href="#cb22-21"></a><span class="in">  fig.height = 2.75, </span></span>
-<span id="cb22-22"><a href="#cb22-22"></a><span class="in">  fig.width = 4.25,</span></span>
-<span id="cb22-23"><a href="#cb22-23"></a><span class="in">  fig.env='figure',</span></span>
-<span id="cb22-24"><a href="#cb22-24"></a><span class="in">  fig.pos = 'h',</span></span>
-<span id="cb22-25"><a href="#cb22-25"></a><span class="in">  fig.align = 'center')</span></span>
-<span id="cb22-26"><a href="#cb22-26"></a><span class="in">```</span></span>
-<span id="cb22-27"><a href="#cb22-27"></a></span>
-<span id="cb22-28"><a href="#cb22-28"></a><span class="fu"># Data &amp; Library</span></span>
-<span id="cb22-29"><a href="#cb22-29"></a></span>
-<span id="cb22-32"><a href="#cb22-32"></a><span class="in">```{r}</span></span>
-<span id="cb22-33"><a href="#cb22-33"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span>
-<span id="cb22-34"><a href="#cb22-34"></a></span>
-<span id="cb22-35"><a href="#cb22-35"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb22-36"><a href="#cb22-36"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb22-37"><a href="#cb22-37"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb22-38"><a href="#cb22-38"></a><span class="in">```</span></span>
-<span id="cb22-39"><a href="#cb22-39"></a></span>
-<span id="cb22-40"><a href="#cb22-40"></a><span class="fu"># EDA/Wrangling Data</span></span>
-<span id="cb22-41"><a href="#cb22-41"></a></span>
-<span id="cb22-42"><a href="#cb22-42"></a><span class="fu">## Filter by Sport</span></span>
-<span id="cb22-43"><a href="#cb22-43"></a></span>
-<span id="cb22-46"><a href="#cb22-46"></a><span class="in">```{r}</span></span>
-<span id="cb22-47"><a href="#cb22-47"></a>figure <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
-<span id="cb22-48"><a href="#cb22-48"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Figure Skating"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb22-49"><a href="#cb22-49"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb22-50"><a href="#cb22-50"></a>figure</span>
-<span id="cb22-51"><a href="#cb22-51"></a></span>
-<span id="cb22-52"><a href="#cb22-52"></a>speed <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
-<span id="cb22-53"><a href="#cb22-53"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Speed Skating"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb22-54"><a href="#cb22-54"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb22-55"><a href="#cb22-55"></a>speed</span>
-<span id="cb22-56"><a href="#cb22-56"></a><span class="in">```</span></span>
-<span id="cb22-57"><a href="#cb22-57"></a></span>
-<span id="cb22-58"><a href="#cb22-58"></a><span class="fu">## Seperate by Sex</span></span>
-<span id="cb22-59"><a href="#cb22-59"></a></span>
-<span id="cb22-62"><a href="#cb22-62"></a><span class="in">```{r}</span></span>
-<span id="cb22-63"><a href="#cb22-63"></a>figure_M <span class="ot">&lt;-</span> figure <span class="sc">%&gt;%</span></span>
-<span id="cb22-64"><a href="#cb22-64"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"M"</span>)</span>
-<span id="cb22-65"><a href="#cb22-65"></a>figure_F <span class="ot">&lt;-</span> figure <span class="sc">%&gt;%</span></span>
-<span id="cb22-66"><a href="#cb22-66"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"F"</span>)</span>
-<span id="cb22-67"><a href="#cb22-67"></a></span>
-<span id="cb22-68"><a href="#cb22-68"></a>speed_M <span class="ot">&lt;-</span> speed <span class="sc">%&gt;%</span></span>
-<span id="cb22-69"><a href="#cb22-69"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"M"</span>)</span>
-<span id="cb22-70"><a href="#cb22-70"></a>speed_F <span class="ot">&lt;-</span> speed <span class="sc">%&gt;%</span></span>
-<span id="cb22-71"><a href="#cb22-71"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"F"</span>)</span>
-<span id="cb22-72"><a href="#cb22-72"></a><span class="in">```</span></span>
-<span id="cb22-73"><a href="#cb22-73"></a></span>
-<span id="cb22-74"><a href="#cb22-74"></a><span class="fu">## Characteristic by Medal</span></span>
-<span id="cb22-77"><a href="#cb22-77"></a><span class="in">```{r}</span></span>
-<span id="cb22-78"><a href="#cb22-78"></a>skate_medal <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb22-79"><a href="#cb22-79"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Figure Skating"</span>, <span class="st">"Speed Skating"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb22-80"><a href="#cb22-80"></a>  <span class="fu">mutate</span>(<span class="at">medal_won =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(medal), <span class="st">"No"</span>, <span class="st">"Yes"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb22-81"><a href="#cb22-81"></a>  <span class="fu">group_by</span>(sport, medal_won) <span class="sc">|&gt;</span></span>
-<span id="cb22-82"><a href="#cb22-82"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb22-83"><a href="#cb22-83"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb22-84"><a href="#cb22-84"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb22-85"><a href="#cb22-85"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb22-86"><a href="#cb22-86"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb22-87"><a href="#cb22-87"></a>  )</span>
-<span id="cb22-88"><a href="#cb22-88"></a>skate_medal</span>
-<span id="cb22-89"><a href="#cb22-89"></a></span>
-<span id="cb22-90"><a href="#cb22-90"></a><span class="in">```</span></span>
-<span id="cb22-91"><a href="#cb22-91"></a></span>
-<span id="cb22-92"><a href="#cb22-92"></a></span>
-<span id="cb22-93"><a href="#cb22-93"></a><span class="fu"># Examining Characteristics by Event</span></span>
-<span id="cb22-94"><a href="#cb22-94"></a></span>
-<span id="cb22-97"><a href="#cb22-97"></a><span class="in">```{r}</span></span>
-<span id="cb22-98"><a href="#cb22-98"></a>figure_eventM <span class="ot">&lt;-</span> figure_M <span class="sc">%&gt;%</span></span>
-<span id="cb22-99"><a href="#cb22-99"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
-<span id="cb22-100"><a href="#cb22-100"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb22-101"><a href="#cb22-101"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb22-102"><a href="#cb22-102"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
-<span id="cb22-103"><a href="#cb22-103"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb22-104"><a href="#cb22-104"></a><span class="fu">ggplot</span>(figure_M, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
-<span id="cb22-105"><a href="#cb22-105"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb22-106"><a href="#cb22-106"></a><span class="fu">ggplot</span>(figure_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
-<span id="cb22-107"><a href="#cb22-107"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-108"><a href="#cb22-108"></a><span class="fu">ggplot</span>(figure_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
-<span id="cb22-109"><a href="#cb22-109"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-110"><a href="#cb22-110"></a><span class="fu">ggplot</span>(figure_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
-<span id="cb22-111"><a href="#cb22-111"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-112"><a href="#cb22-112"></a><span class="in">```</span></span>
-<span id="cb22-113"><a href="#cb22-113"></a></span>
-<span id="cb22-116"><a href="#cb22-116"></a><span class="in">```{r}</span></span>
-<span id="cb22-117"><a href="#cb22-117"></a>figure_eventF <span class="ot">&lt;-</span> figure_F <span class="sc">%&gt;%</span></span>
-<span id="cb22-118"><a href="#cb22-118"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
-<span id="cb22-119"><a href="#cb22-119"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb22-120"><a href="#cb22-120"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb22-121"><a href="#cb22-121"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
-<span id="cb22-122"><a href="#cb22-122"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb22-123"><a href="#cb22-123"></a><span class="fu">ggplot</span>(figure_F, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
-<span id="cb22-124"><a href="#cb22-124"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb22-125"><a href="#cb22-125"></a><span class="fu">ggplot</span>(figure_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
-<span id="cb22-126"><a href="#cb22-126"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-127"><a href="#cb22-127"></a><span class="fu">ggplot</span>(figure_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
-<span id="cb22-128"><a href="#cb22-128"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-129"><a href="#cb22-129"></a><span class="fu">ggplot</span>(figure_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
-<span id="cb22-130"><a href="#cb22-130"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-131"><a href="#cb22-131"></a><span class="in">```</span></span>
-<span id="cb22-132"><a href="#cb22-132"></a></span>
-<span id="cb22-135"><a href="#cb22-135"></a><span class="in">```{r}</span></span>
-<span id="cb22-136"><a href="#cb22-136"></a>speed_eventM <span class="ot">&lt;-</span> speed_M <span class="sc">%&gt;%</span></span>
-<span id="cb22-137"><a href="#cb22-137"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
-<span id="cb22-138"><a href="#cb22-138"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb22-139"><a href="#cb22-139"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb22-140"><a href="#cb22-140"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
-<span id="cb22-141"><a href="#cb22-141"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb22-142"><a href="#cb22-142"></a><span class="fu">ggplot</span>(speed_M, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
-<span id="cb22-143"><a href="#cb22-143"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb22-144"><a href="#cb22-144"></a><span class="fu">ggplot</span>(speed_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
-<span id="cb22-145"><a href="#cb22-145"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-146"><a href="#cb22-146"></a><span class="fu">ggplot</span>(speed_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
-<span id="cb22-147"><a href="#cb22-147"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-148"><a href="#cb22-148"></a><span class="fu">ggplot</span>(speed_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
-<span id="cb22-149"><a href="#cb22-149"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-150"><a href="#cb22-150"></a><span class="in">```</span></span>
-<span id="cb22-151"><a href="#cb22-151"></a></span>
-<span id="cb22-154"><a href="#cb22-154"></a><span class="in">```{r}</span></span>
-<span id="cb22-155"><a href="#cb22-155"></a>speed_eventF <span class="ot">&lt;-</span> speed_F <span class="sc">%&gt;%</span></span>
-<span id="cb22-156"><a href="#cb22-156"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
-<span id="cb22-157"><a href="#cb22-157"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb22-158"><a href="#cb22-158"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
-<span id="cb22-159"><a href="#cb22-159"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
-<span id="cb22-160"><a href="#cb22-160"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb22-161"><a href="#cb22-161"></a><span class="fu">ggplot</span>(speed_F, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
-<span id="cb22-162"><a href="#cb22-162"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb22-163"><a href="#cb22-163"></a><span class="fu">ggplot</span>(speed_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
-<span id="cb22-164"><a href="#cb22-164"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-165"><a href="#cb22-165"></a><span class="fu">ggplot</span>(speed_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
-<span id="cb22-166"><a href="#cb22-166"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-167"><a href="#cb22-167"></a><span class="fu">ggplot</span>(speed_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
-<span id="cb22-168"><a href="#cb22-168"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb22-169"><a href="#cb22-169"></a><span class="in">```</span></span>
-<span id="cb22-170"><a href="#cb22-170"></a></span>
-<span id="cb22-171"><a href="#cb22-171"></a><span class="fu"># Examining Chracteristics by Medal Win</span></span>
-<span id="cb22-172"><a href="#cb22-172"></a></span>
-<span id="cb22-175"><a href="#cb22-175"></a><span class="in">```{r}</span></span>
-<span id="cb22-176"><a href="#cb22-176"></a>skate_medal <span class="sc">|&gt;</span></span>
-<span id="cb22-177"><a href="#cb22-177"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb22-178"><a href="#cb22-178"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
-<span id="cb22-179"><a href="#cb22-179"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb22-180"><a href="#cb22-180"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb22-181"><a href="#cb22-181"></a>  <span class="fu">labs</span>(</span>
-<span id="cb22-182"><a href="#cb22-182"></a>    <span class="at">title =</span> <span class="st">"Characteristics of Medal Winners vs Non-Medalists"</span>,</span>
-<span id="cb22-183"><a href="#cb22-183"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb22-184"><a href="#cb22-184"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb22-185"><a href="#cb22-185"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
-<span id="cb22-186"><a href="#cb22-186"></a>  ) <span class="sc">+</span></span>
-<span id="cb22-187"><a href="#cb22-187"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb22-188"><a href="#cb22-188"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="an">title:</span><span class="co"> "Figure-Skating &amp; Speed-Skating"</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="an">subtitle:</span><span class="co"> "project olympidata"</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="an">author:</span><span class="co"> "Avery Sheindlin"</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="co">  html_document:</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="co">    toc: true</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="co">    toc_float: true</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="co">---</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a></span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="in">```{r include = FALSE}</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="in"># OPTIONAL: Set a more color blind friendly palette </span></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="in">palette("Okabe-Ito")</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a><span class="in">scale_colour_discrete &lt;- function(...) scale_colour_manual(values = palette())</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a><span class="in">scale_fill_discrete   &lt;- function(...) scale_fill_manual(values = palette())</span></span>
+<span id="cb23-16"><a href="#cb23-16"></a></span>
+<span id="cb23-17"><a href="#cb23-17"></a><span class="in">knitr::opts_chunk$set(</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a><span class="in">  collapse = TRUE, </span></span>
+<span id="cb23-19"><a href="#cb23-19"></a><span class="in">  warning = FALSE,</span></span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="in">  message = FALSE,</span></span>
+<span id="cb23-21"><a href="#cb23-21"></a><span class="in">  fig.height = 2.75, </span></span>
+<span id="cb23-22"><a href="#cb23-22"></a><span class="in">  fig.width = 4.25,</span></span>
+<span id="cb23-23"><a href="#cb23-23"></a><span class="in">  fig.env='figure',</span></span>
+<span id="cb23-24"><a href="#cb23-24"></a><span class="in">  fig.pos = 'h',</span></span>
+<span id="cb23-25"><a href="#cb23-25"></a><span class="in">  fig.align = 'center')</span></span>
+<span id="cb23-26"><a href="#cb23-26"></a><span class="in">```</span></span>
+<span id="cb23-27"><a href="#cb23-27"></a></span>
+<span id="cb23-28"><a href="#cb23-28"></a><span class="fu"># Data &amp; Library</span></span>
+<span id="cb23-29"><a href="#cb23-29"></a></span>
+<span id="cb23-32"><a href="#cb23-32"></a><span class="in">```{r}</span></span>
+<span id="cb23-33"><a href="#cb23-33"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span>
+<span id="cb23-34"><a href="#cb23-34"></a></span>
+<span id="cb23-35"><a href="#cb23-35"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb23-36"><a href="#cb23-36"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-37"><a href="#cb23-37"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-38"><a href="#cb23-38"></a><span class="fu">library</span>(gt)</span>
+<span id="cb23-39"><a href="#cb23-39"></a><span class="in">```</span></span>
+<span id="cb23-40"><a href="#cb23-40"></a></span>
+<span id="cb23-41"><a href="#cb23-41"></a><span class="fu"># EDA/Wrangling Data</span></span>
+<span id="cb23-42"><a href="#cb23-42"></a></span>
+<span id="cb23-43"><a href="#cb23-43"></a><span class="fu">## Filter by Sport</span></span>
+<span id="cb23-44"><a href="#cb23-44"></a></span>
+<span id="cb23-47"><a href="#cb23-47"></a><span class="in">```{r}</span></span>
+<span id="cb23-48"><a href="#cb23-48"></a>figure <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
+<span id="cb23-49"><a href="#cb23-49"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Figure Skating"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb23-50"><a href="#cb23-50"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb23-51"><a href="#cb23-51"></a>figure</span>
+<span id="cb23-52"><a href="#cb23-52"></a></span>
+<span id="cb23-53"><a href="#cb23-53"></a>speed <span class="ot">&lt;-</span> olympics <span class="sc">%&gt;%</span></span>
+<span id="cb23-54"><a href="#cb23-54"></a>  <span class="fu">filter</span>(sport <span class="sc">==</span> <span class="st">"Speed Skating"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb23-55"><a href="#cb23-55"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb23-56"><a href="#cb23-56"></a>speed</span>
+<span id="cb23-57"><a href="#cb23-57"></a><span class="in">```</span></span>
+<span id="cb23-58"><a href="#cb23-58"></a></span>
+<span id="cb23-59"><a href="#cb23-59"></a><span class="fu">## Seperate by Sex</span></span>
+<span id="cb23-60"><a href="#cb23-60"></a></span>
+<span id="cb23-63"><a href="#cb23-63"></a><span class="in">```{r}</span></span>
+<span id="cb23-64"><a href="#cb23-64"></a>figure_M <span class="ot">&lt;-</span> figure <span class="sc">%&gt;%</span></span>
+<span id="cb23-65"><a href="#cb23-65"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"M"</span>)</span>
+<span id="cb23-66"><a href="#cb23-66"></a>figure_F <span class="ot">&lt;-</span> figure <span class="sc">%&gt;%</span></span>
+<span id="cb23-67"><a href="#cb23-67"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"F"</span>)</span>
+<span id="cb23-68"><a href="#cb23-68"></a></span>
+<span id="cb23-69"><a href="#cb23-69"></a>speed_M <span class="ot">&lt;-</span> speed <span class="sc">%&gt;%</span></span>
+<span id="cb23-70"><a href="#cb23-70"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"M"</span>)</span>
+<span id="cb23-71"><a href="#cb23-71"></a>speed_F <span class="ot">&lt;-</span> speed <span class="sc">%&gt;%</span></span>
+<span id="cb23-72"><a href="#cb23-72"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"F"</span>)</span>
+<span id="cb23-73"><a href="#cb23-73"></a><span class="in">```</span></span>
+<span id="cb23-74"><a href="#cb23-74"></a></span>
+<span id="cb23-75"><a href="#cb23-75"></a><span class="fu">## Characteristic by Medal</span></span>
+<span id="cb23-78"><a href="#cb23-78"></a><span class="in">```{r}</span></span>
+<span id="cb23-79"><a href="#cb23-79"></a>skate_medal <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb23-80"><a href="#cb23-80"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Figure Skating"</span>, <span class="st">"Speed Skating"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb23-81"><a href="#cb23-81"></a>  <span class="fu">mutate</span>(<span class="at">medal_won =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(medal), <span class="st">"No"</span>, <span class="st">"Yes"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb23-82"><a href="#cb23-82"></a>  <span class="fu">group_by</span>(sport, medal_won) <span class="sc">|&gt;</span></span>
+<span id="cb23-83"><a href="#cb23-83"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb23-84"><a href="#cb23-84"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-85"><a href="#cb23-85"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-86"><a href="#cb23-86"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-87"><a href="#cb23-87"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb23-88"><a href="#cb23-88"></a>  )</span>
+<span id="cb23-89"><a href="#cb23-89"></a>skate_medal</span>
+<span id="cb23-90"><a href="#cb23-90"></a></span>
+<span id="cb23-91"><a href="#cb23-91"></a><span class="in">```</span></span>
+<span id="cb23-92"><a href="#cb23-92"></a></span>
+<span id="cb23-93"><a href="#cb23-93"></a></span>
+<span id="cb23-94"><a href="#cb23-94"></a><span class="fu"># Examining Characteristics by Event</span></span>
+<span id="cb23-95"><a href="#cb23-95"></a></span>
+<span id="cb23-98"><a href="#cb23-98"></a><span class="in">```{r}</span></span>
+<span id="cb23-99"><a href="#cb23-99"></a>figure_eventM <span class="ot">&lt;-</span> figure_M <span class="sc">%&gt;%</span></span>
+<span id="cb23-100"><a href="#cb23-100"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
+<span id="cb23-101"><a href="#cb23-101"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
+<span id="cb23-102"><a href="#cb23-102"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb23-103"><a href="#cb23-103"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
+<span id="cb23-104"><a href="#cb23-104"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb23-105"><a href="#cb23-105"></a><span class="fu">ggplot</span>(figure_M, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
+<span id="cb23-106"><a href="#cb23-106"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb23-107"><a href="#cb23-107"></a><span class="fu">ggplot</span>(figure_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
+<span id="cb23-108"><a href="#cb23-108"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-109"><a href="#cb23-109"></a><span class="fu">ggplot</span>(figure_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
+<span id="cb23-110"><a href="#cb23-110"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-111"><a href="#cb23-111"></a><span class="fu">ggplot</span>(figure_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
+<span id="cb23-112"><a href="#cb23-112"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-113"><a href="#cb23-113"></a><span class="in">```</span></span>
+<span id="cb23-114"><a href="#cb23-114"></a></span>
+<span id="cb23-117"><a href="#cb23-117"></a><span class="in">```{r}</span></span>
+<span id="cb23-118"><a href="#cb23-118"></a>figure_eventF <span class="ot">&lt;-</span> figure_F <span class="sc">%&gt;%</span></span>
+<span id="cb23-119"><a href="#cb23-119"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
+<span id="cb23-120"><a href="#cb23-120"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
+<span id="cb23-121"><a href="#cb23-121"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb23-122"><a href="#cb23-122"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
+<span id="cb23-123"><a href="#cb23-123"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb23-124"><a href="#cb23-124"></a><span class="fu">ggplot</span>(figure_F, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
+<span id="cb23-125"><a href="#cb23-125"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb23-126"><a href="#cb23-126"></a><span class="fu">ggplot</span>(figure_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
+<span id="cb23-127"><a href="#cb23-127"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-128"><a href="#cb23-128"></a><span class="fu">ggplot</span>(figure_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
+<span id="cb23-129"><a href="#cb23-129"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-130"><a href="#cb23-130"></a><span class="fu">ggplot</span>(figure_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
+<span id="cb23-131"><a href="#cb23-131"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-132"><a href="#cb23-132"></a><span class="in">```</span></span>
+<span id="cb23-133"><a href="#cb23-133"></a></span>
+<span id="cb23-136"><a href="#cb23-136"></a><span class="in">```{r}</span></span>
+<span id="cb23-137"><a href="#cb23-137"></a>speed_eventM <span class="ot">&lt;-</span> speed_M <span class="sc">%&gt;%</span></span>
+<span id="cb23-138"><a href="#cb23-138"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
+<span id="cb23-139"><a href="#cb23-139"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
+<span id="cb23-140"><a href="#cb23-140"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb23-141"><a href="#cb23-141"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
+<span id="cb23-142"><a href="#cb23-142"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb23-143"><a href="#cb23-143"></a><span class="fu">ggplot</span>(speed_M, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
+<span id="cb23-144"><a href="#cb23-144"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb23-145"><a href="#cb23-145"></a><span class="fu">ggplot</span>(speed_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
+<span id="cb23-146"><a href="#cb23-146"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-147"><a href="#cb23-147"></a><span class="fu">ggplot</span>(speed_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
+<span id="cb23-148"><a href="#cb23-148"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-149"><a href="#cb23-149"></a><span class="fu">ggplot</span>(speed_eventM, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
+<span id="cb23-150"><a href="#cb23-150"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-151"><a href="#cb23-151"></a><span class="in">```</span></span>
+<span id="cb23-152"><a href="#cb23-152"></a></span>
+<span id="cb23-155"><a href="#cb23-155"></a><span class="in">```{r}</span></span>
+<span id="cb23-156"><a href="#cb23-156"></a>speed_eventF <span class="ot">&lt;-</span> speed_F <span class="sc">%&gt;%</span></span>
+<span id="cb23-157"><a href="#cb23-157"></a>  <span class="fu">group_by</span>(event)<span class="sc">%&gt;%</span></span>
+<span id="cb23-158"><a href="#cb23-158"></a>  <span class="fu">summarize</span>(<span class="at">avg_h =</span> <span class="fu">mean</span>(height),</span>
+<span id="cb23-159"><a href="#cb23-159"></a>            <span class="at">avg_w =</span> <span class="fu">mean</span>(weight),</span>
+<span id="cb23-160"><a href="#cb23-160"></a>            <span class="at">avg_a =</span> <span class="fu">mean</span>(age),</span>
+<span id="cb23-161"><a href="#cb23-161"></a>            <span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb23-162"><a href="#cb23-162"></a><span class="fu">ggplot</span>(speed_F, <span class="fu">aes</span>(<span class="at">x =</span> event))<span class="sc">+</span></span>
+<span id="cb23-163"><a href="#cb23-163"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb23-164"><a href="#cb23-164"></a><span class="fu">ggplot</span>(speed_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_h))<span class="sc">+</span></span>
+<span id="cb23-165"><a href="#cb23-165"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-166"><a href="#cb23-166"></a><span class="fu">ggplot</span>(speed_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_w))<span class="sc">+</span></span>
+<span id="cb23-167"><a href="#cb23-167"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-168"><a href="#cb23-168"></a><span class="fu">ggplot</span>(speed_eventF, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> avg_a))<span class="sc">+</span></span>
+<span id="cb23-169"><a href="#cb23-169"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-170"><a href="#cb23-170"></a><span class="in">```</span></span>
+<span id="cb23-171"><a href="#cb23-171"></a></span>
+<span id="cb23-172"><a href="#cb23-172"></a><span class="fu"># Examining Chracteristics by Medal Win</span></span>
+<span id="cb23-173"><a href="#cb23-173"></a></span>
+<span id="cb23-176"><a href="#cb23-176"></a><span class="in">```{r}</span></span>
+<span id="cb23-177"><a href="#cb23-177"></a>skate_medal <span class="sc">|&gt;</span></span>
+<span id="cb23-178"><a href="#cb23-178"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-179"><a href="#cb23-179"></a>  <span class="fu">group_by</span>(sport, medal_won, attribute) <span class="sc">|&gt;</span></span>
+<span id="cb23-180"><a href="#cb23-180"></a>  <span class="fu">summarise</span>(<span class="at">total_value =</span> <span class="fu">sum</span>(value), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-181"><a href="#cb23-181"></a>  <span class="fu">arrange</span>(attribute, sport, medal_won) <span class="sc">|&gt;</span></span>
+<span id="cb23-182"><a href="#cb23-182"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb23-183"><a href="#cb23-183"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb23-184"><a href="#cb23-184"></a>    <span class="at">title =</span> <span class="st">"Summary of Characteristics by Sport and Medal Status"</span>,</span>
+<span id="cb23-185"><a href="#cb23-185"></a>    <span class="at">subtitle =</span> <span class="st">"Total values of attributes grouped by sport and medal won"</span></span>
+<span id="cb23-186"><a href="#cb23-186"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb23-187"><a href="#cb23-187"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb23-188"><a href="#cb23-188"></a>    <span class="at">sport =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb23-189"><a href="#cb23-189"></a>    <span class="at">medal_won =</span> <span class="st">"Medal Won"</span>,</span>
+<span id="cb23-190"><a href="#cb23-190"></a>    <span class="at">attribute =</span> <span class="st">"Attribute"</span>,</span>
+<span id="cb23-191"><a href="#cb23-191"></a>    <span class="at">total_value =</span> <span class="st">"Total Value"</span></span>
+<span id="cb23-192"><a href="#cb23-192"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb23-193"><a href="#cb23-193"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb23-194"><a href="#cb23-194"></a>    <span class="at">columns =</span> total_value,</span>
+<span id="cb23-195"><a href="#cb23-195"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
+<span id="cb23-196"><a href="#cb23-196"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb23-197"><a href="#cb23-197"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb23-198"><a href="#cb23-198"></a>    <span class="at">table.font.size =</span> <span class="st">"small"</span></span>
+<span id="cb23-199"><a href="#cb23-199"></a>  )</span>
+<span id="cb23-200"><a href="#cb23-200"></a></span>
+<span id="cb23-201"><a href="#cb23-201"></a>skate_medal <span class="sc">|&gt;</span></span>
+<span id="cb23-202"><a href="#cb23-202"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-203"><a href="#cb23-203"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> sport, <span class="at">x =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
+<span id="cb23-204"><a href="#cb23-204"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb23-205"><a href="#cb23-205"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb23-206"><a href="#cb23-206"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-207"><a href="#cb23-207"></a>    <span class="at">title =</span> <span class="st">"Characteristics of Medal Winners vs Non-Medalists"</span>,</span>
+<span id="cb23-208"><a href="#cb23-208"></a>    <span class="at">x =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb23-209"><a href="#cb23-209"></a>    <span class="at">y =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb23-210"><a href="#cb23-210"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
+<span id="cb23-211"><a href="#cb23-211"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-212"><a href="#cb23-212"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb23-213"><a href="#cb23-213"></a></span>
+<span id="cb23-214"><a href="#cb23-214"></a></span>
+<span id="cb23-215"><a href="#cb23-215"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

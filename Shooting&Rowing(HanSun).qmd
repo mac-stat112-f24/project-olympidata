@@ -35,6 +35,9 @@ library(plotly)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
+library(tidymodels)
+library(glmnet)
+library(tidyr)
 ```
 
 
@@ -226,6 +229,53 @@ For rowing, especially for male, both average weight, height, and age have a inc
 
 
 
+# Fitting models
+## shooting
+### male
+#### height
+```{r}
+shooting_M<- shooting_M %>%
+  mutate(event = str_replace(event, "Shooting Men's", ""))%>%
+  mutate(event = str_replace_all(event, " ", ""))%>%
+  mutate(event = str_replace(event, ",", ""))%>%
+  mutate(event = str_wrap(event, width = 6))
+ggplot(shooting_M, aes(x = year, y = height))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(shooting_M, aes(x = year, y = weight))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(shooting_M, aes(x = year, y = age))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+```
+For every event individually, year doesn't have much effect. The relation showed in previous part might caused by that some events only hold in specific duration, so we might only need a boxplot for events.
+
+
+```{r}
+ggplot(shooting_M, aes(x = event, y = height))+
+  geom_boxplot()
+ggplot(shooting_M, aes(x = event, y = weight))+
+  geom_boxplot()
+ggplot(shooting_M, aes(x = event, y = age))+
+  geom_boxplot()
+```
+
+From the boxplot, most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg; most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30.
+
+### female
+ 
+```{r}
+ggplot(shooting_F, aes(x = year, y = height))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+```
 
 
 
