@@ -2,13 +2,15 @@
 
 ------------------------------------------------------------------------
 
-## **Title**
+## **Chasing Medals**
 
-**Analysis of Olympidata**
+**Analysis of Olympic Data**
 
 ------------------------------------------------------------------------
 
 ## **1. Introduction**
+
+The Olympics is one of the greatest global sporting events, celebrating athleticism and showcasing incredible human feats. However, at its core, the Olympics is truly a competition, with audiences worldwide closely following medal counts and rooting for gold. What variables, such as country or weight, influence success in the Olympics? In this report, we analyze the factors that correlate with earning medals in eight different sports: Football, Swimming, Shooting, Rowing, Alpine Skiing, Cross-Country Skiing, Speed Skating, and Figure Skating.
 
 ------------------------------------------------------------------------
 
@@ -68,5 +70,3 @@
 3.  **For Further Analysis**: Integrate data on training, funding, and external conditions to refine predictive models for success.
 
 ------------------------------------------------------------------------
-
-
