@@ -234,7 +234,6 @@ For rowing, especially for male, both average weight, height, and age have a inc
 # Fitting models
 ## shooting
 ### male
-#### height
 ```{r}
 shooting_M<- shooting_M %>%
   mutate(event = str_replace(event, "Shooting Men's", ""))%>%
