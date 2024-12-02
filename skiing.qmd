@@ -24,6 +24,7 @@ olympics %>%
 ```
 
 # Top Countries by Participation
+
 ```{r}
 top_countries <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing")) |>
@@ -32,6 +33,7 @@ top_countries <- olympics |>
   arrange(desc(participation))
 top_countries
 ```
+
 ```{r}
 top_countries |>
   slice_max(participation, n = 10) |>
@@ -48,6 +50,7 @@ top_countries |>
 ```
 
 # Trends in Athlete Characteristics
+
 ```{r}
 athlete_trends <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing")) |>
@@ -76,6 +79,7 @@ athlete_trends |>
 ```
 
 # Participation Over Years
+
 ```{r}
 yearly_trends <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing")) |>
@@ -98,8 +102,11 @@ yearly_trends |>
 
 
 ```
+
 # Analysis
+
 ## Correlation Between Medal Wins and Physical Attributes
+
 ```{r}
 medal_correlation <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing")) |>
@@ -128,7 +135,9 @@ medal_correlation |>
   theme_minimal()
 
 ```
+
 ##Trends Between Cross Country and Alpine Skiing
+
 ```{r}
 skiing_comparison <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing")) |>
@@ -158,4 +167,3 @@ skiing_comparison |>
 
 
 ```
-

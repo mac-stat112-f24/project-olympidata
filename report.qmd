@@ -43,6 +43,11 @@ The Olympics is one of the greatest global sporting events, celebrating athletic
 ```{r}
 olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
 
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
 # Count number of participants in each sport
 sport_distribution <- olympics |>
   group_by(sport) |>
