@@ -1,72 +1,72 @@
 # Report {.unnumbered}
 
----
+------------------------------------------------------------------------
 
-## **Title**
-**Analysis of Olympidata**
+## **Chasing Medals**
 
----
+**Analysis of Olympic Data**
+
+------------------------------------------------------------------------
 
 ## **1. Introduction**
 
+The Olympics is one of the greatest global sporting events, celebrating athleticism and showcasing incredible human feats. However, at its core, the Olympics is truly a competition, with audiences worldwide closely following medal counts and rooting for gold. What variables, such as country or weight, influence success in the Olympics? In this report, we analyze the factors that correlate with earning medals in eight different sports: Football, Swimming, Shooting, Rowing, Alpine Skiing, Cross-Country Skiing, Speed Skating, and Figure Skating.
 
----
+------------------------------------------------------------------------
 
 ## **2. Methodology**
+
 ### **2.1 Data Cleaning and Preparation**
-- Removed missing values in key attributes such as age, height, weight, and medals.
-- Filtered data
-- Created new variables:
-  - `medal_won`: Indicates if an athlete won a medal (Yes/No).
-  - `repeat_participation`: Captures repeated appearances by athletes.
+
+-   Removed missing values in key attributes such as age, height, weight, and medals.
+-   Filtered data
+-   Created new variables:
+    -   `medal_won`: Indicates if an athlete won a medal (Yes/No).
+    -   `repeat_participation`: Captures repeated appearances by athletes.
 
 ### **2.2 Analysis Approach**
-- **Physical Attributes**: Compared average age, height, and weight of medalists vs non-medalists.
-- **Experience**: Evaluated the role of age and repeated participation in medal success.
-- **Country Dominance**: Analyzed which countries are top performers in each sport.
-- **Sport Comparisons**: Highlighted differences and similarities between sports
 
----
+-   **Physical Attributes**: Compared average age, height, and weight of medalists vs non-medalists.
+-   **Experience**: Evaluated the role of age and repeated participation in medal success.
+-   **Country Dominance**: Analyzed which countries are top performers in each sport.
+-   **Sport Comparisons**: Highlighted differences and similarities between sports
+
+------------------------------------------------------------------------
 
 ## **3. Results**
+
 ### **3.1 Medal Performance by Physical Attributes**
-- **Findings**:
 
-  
-- **Visualization**:
-  
+-   **Findings**:
 
----
+-   **Visualization**:
+
+------------------------------------------------------------------------
 
 ### **3.2 Impact of Experience**
-- **Findings**:
- 
-  
-- **Visualization**:
- 
 
----
+-   **Findings**:
+
+-   **Visualization**:
+
+------------------------------------------------------------------------
 
 ## **4. Discussion**
-- **Implications**:
 
-  
-- **Limitations**:
+-   **Implications**:
 
+-   **Limitations**:
 
----
+------------------------------------------------------------------------
 
 ## **5. Conclusion**
 
-
----
+------------------------------------------------------------------------
 
 ## **6. Recommendations**
-1. **For Athletes**: Tailor training regimens based on the physical and experiential needs of each sport.
-2. **For Countries**: Invest in infrastructure and coaching programs to support elite-level performance.
-3. **For Further Analysis**: Integrate data on training, funding, and external conditions to refine predictive models for success.
 
----
+1.  **For Athletes**: Tailor training regimens based on the physical and experiential needs of each sport.
+2.  **For Countries**: Invest in infrastructure and coaching programs to support elite-level performance.
+3.  **For Further Analysis**: Integrate data on training, funding, and external conditions to refine predictive models for success.
 
-
-Would you like me to help draft specific sections or generate sample visualizations for inclusion in this report?
+------------------------------------------------------------------------

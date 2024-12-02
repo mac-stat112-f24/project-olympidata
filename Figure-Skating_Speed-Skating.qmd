@@ -1,5 +1,5 @@
 ---
-title: "Figure-Skating & Speed-Skating"
+title: "Figure Skating & Speed Skating"
 subtitle: "project olympidata"
 author: "Avery Sheindlin"
 output: 
@@ -81,6 +81,28 @@ skate_medal <- olympics |>
 skate_medal
 
 ```
+
+## Seperating by Country Participation
+
+```{r}
+speed_participatory <- olympics |>
+  filter(sport %in% c("Speed Skating")) |>
+  group_by(noc, sport) |>
+  summarize(participation = n(), .groups = 'drop') |>
+  arrange(desc(participation))
+speed_participatory
+```
+
+```{r}
+figure_participatory <- olympics |>
+  filter(sport %in% c("Figure Skating")) |>
+  group_by(noc, sport) |>
+  summarize(participation = n(), .groups = 'drop') |>
+  arrange(desc(participation))
+figure_participatory
+```
+
+
 
 
 # Examining Characteristics by Event
@@ -195,4 +217,36 @@ skate_medal |>
 
 
 ```
+
+
+# Top Participating Skating Countries
+```{r}
+speed_participatory |>
+  slice_max(participation, n = 10) |>
+  ggplot(aes(x = reorder(noc, participation), y = participation, fill = sport)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Countries by Participation in Skating",
+    x = "Country",
+    y = "Number of Athletes",
+    fill = "Sport"
+  ) +
+  theme_minimal()
+```
+```{r}
+figure_participatory |>
+  slice_max(participation, n = 10) |>
+  ggplot(aes(x = reorder(noc, participation), y = participation, fill = sport)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Countries by Participation in Skating",
+    x = "Country",
+    y = "Number of Athletes",
+    fill = "Sport"
+  ) +
+  theme_minimal()
+```
+
 

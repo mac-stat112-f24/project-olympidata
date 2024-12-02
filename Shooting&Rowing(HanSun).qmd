@@ -271,11 +271,123 @@ From the boxplot, most male shooting athletes are around 170-180cm despite their
 ### female
  
 ```{r}
+shooting_F<- shooting_F %>%
+  mutate(event = str_replace(event, "Shooting Women's", ""))%>%
+  mutate(event = str_replace_all(event, " ", ""))%>%
+  mutate(event = str_replace(event, ",", ""))%>%
+  mutate(event = str_wrap(event, width = 6))
 ggplot(shooting_F, aes(x = year, y = height))+
   geom_point()+
   geom_smooth(method = "lm")+
   facet_wrap(~ event)
+
+ggplot(shooting_F, aes(x = year, y = weight))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(shooting_F, aes(x = year, y = age))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
 ```
+
+The linear regression also doesn't show strong relation between weight, age and year for female. However, the weight for event Trap and Skeet increase by year, and Double Trap decreases.
+
+
+```{r}
+ggplot(shooting_F, aes(x = event, y = height))+
+  geom_boxplot()
+ggplot(shooting_F, aes(x = event, y = weight))+
+  geom_boxplot()
+ggplot(shooting_F, aes(x = event, y = age))+
+  geom_boxplot()
+```
+
+From the boxplot, for almost all event, the best height is in a range covered around 160-170cm, while Trap and Skeet have slightly higher range at about 165-173cm. 
+
+The weight varied by event a lot, Air Pistol 10 meters have a range around 60-70kg; Air Rifle 10 meters have a range around 50-55kg; Double Trap have a range around 65-83kg, and its mean value extremely at about 83kg; Skeet have a range around 60-83kg, also have a extrem mean value at about 80kg; Small-Bore Rifle Three Positions 50 meters have a range around 52kg-62kg; Sporting Pistol 25 meters have a range around 55-65kg; and Trap have a range around 63-85kg.
+
+Most events have the best age at a range in 25-35, while Air Pistol 10 meters, Air Rifle 10 meters and Small-Bore Rifle Three Positions 50 meters have younger age almost all under 30. 
+
+There are too few data points for Shooting Mixed Sheet and Shooting Mixed Small-Bore Rifle Three Positions,50 metres to have solid conclusion.
+
+
+## Rowing
+### male
+```{r}
+rowing_M<- rowing_M %>%
+  mutate(event = str_replace(event, "Rowing Men's", ""))%>%
+  mutate(event = str_replace_all(event, " ", ""))%>%
+  mutate(event = str_replace(event, ",", ""))%>%
+  mutate(event = str_wrap(event, width = 6))
+ggplot(rowing_M, aes(x = year, y = height))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(rowing_M, aes(x = year, y = weight))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(rowing_M, aes(x = year, y = age))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+```
+
+Both height and weight increase by year for almost all events in male rowing while Lightweight Double Sculls and Lightweight Coxless Fours only hold after 2000 that doesn't show clear relation yet.
+
+```{r}
+ggplot(rowing_M, aes(x = event, y = height))+
+  geom_boxplot()
+ggplot(rowing_M, aes(x = event, y = weight))+
+  geom_boxplot()
+ggplot(rowing_M, aes(x = event, y = age))+
+  geom_boxplot()
+```
+
+Event have few effects to both weight, height and age for male's rowing events, the best age is around 25-35; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.
+
+
+### female
+```{r}
+rowing_F<- rowing_F %>%
+  mutate(event = str_replace(event, "RowingWomen's", ""))%>%
+  mutate(event = str_replace_all(event, " ", ""))%>%
+  mutate(event = str_replace(event, ",", ""))%>%
+  mutate(event = str_wrap(event, width = 6))
+ggplot(rowing_F, aes(x = year, y = height))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(rowing_F, aes(x = year, y = weight))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+
+ggplot(rowing_F, aes(x = year, y = age))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~ event)
+```
+
+The data points distributed evenly in large ranges by year, so the linear regression doesn't show obvious relation between both height, weight and age.
+
+```{r}
+ggplot(rowing_F, aes(x = event, y = height))+
+  geom_boxplot()
+ggplot(rowing_F, aes(x = event, y = weight))+
+  geom_boxplot()
+ggplot(rowing_F, aes(x = event, y = age))+
+  geom_boxplot()
+```
+
+For all events, height, weight and age are roughly in same range. The height is among 175-185cm; weight is among 70-80kg, where Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg; age is among 25-30.
+
+
 
 
 
