@@ -1,23 +1,21 @@
 ---
-title: "Football-Swimming_Jack Fang"
+title: "Football & Swimming"
 editor: visual
 ---
 
-
 #Import Data
+
 ```{r}
 olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
 ```
 
-
 #Package
+
 ```{r}
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
 ```
-
-
 
 ```{r}
 Football <- olympics %>%
@@ -30,7 +28,6 @@ Swimming<- olympics %>%
   drop_na()
 Swimming
 ```
-
 
 #Separate by sex
 
@@ -96,7 +93,6 @@ ggplot(Physical_Summary, aes(x = Medalist, y = Avg_Age, fill = Sport)) +
 
 ```
 
-
 #Evaluate the role of age and repeated participation in medal success
 
 ```{r}
@@ -124,7 +120,6 @@ Participation_Summary <- Filtered_Experience %>%
 Participation_Summary
 
 ```
-
 
 #Analyze which countries are top performers
 
@@ -166,7 +161,6 @@ ggplot(Top_Countries, aes(x = reorder(noc, -Total_Medals), y = Total_Medals, fil
 
 ```
 
-
 #Highlight differences and similarities between Swimming and Football
 
 ```{r}
@@ -191,5 +185,3 @@ ggplot(Comparison_Summary, aes(x = Sport)) +
   theme_minimal()
 
 ```
-
-

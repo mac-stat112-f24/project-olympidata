@@ -8,6 +8,8 @@ output:
     toc_float: true
 ---
 
+# Shooting & Rowing
+
 ```{r include = FALSE}
 palette("Okabe-Ito")
 scale_colour_discrete <- function(...) scale_colour_manual(values = palette())
