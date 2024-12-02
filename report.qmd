@@ -35,19 +35,384 @@ The Olympics is one of the greatest global sporting events, celebrating athletic
 
 ## **3. Results**
 
-### **3.1 Medal Performance by Physical Attributes**
+### **3.1 Dataset overview**
 
--   **Findings**:
+-   **Findings**:Top 10 sports, more participants in summer than winter.
 
 -   **Visualization**:
+```{r}
+olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
+
+# Count number of participants in each sport
+sport_distribution <- olympics |>
+  group_by(sport) |>
+  summarise(participants = n(), .groups = 'drop') |>
+  arrange(desc(participants))
+sport_distribution
+
+# Plot distribution of top 10 sports
+sport_distribution |>
+  slice_max(participants, n = 10) |>
+  ggplot(aes(x = reorder(sport, participants), y = participants)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Sports by Number of Participants",
+    x = "Sport",
+    y = "Number of Participants"
+  ) +
+  theme_minimal()
+```
+```{r}
+# Count number of participants per year
+participation_trends <- olympics |>
+  group_by(year) |>
+  summarise(participants = n(), .groups = 'drop')
+participation_trends
+
+# Plot participation over time
+participation_trends |>
+  ggplot(aes(x = year, y = participants)) +
+  geom_line(color = "darkorange", size = 1) +
+  geom_point(color = "darkred") +
+  labs(
+    title = "Participation Trends Over Time",
+    x = "Year",
+    y = "Number of Participants"
+  ) +
+  theme_minimal()
+
+```
 
 ------------------------------------------------------------------------
 
-### **3.2 Impact of Experience**
+### **3.2 Impact of Sex**
+
+-   **Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in football and rowing.
+
+-   **Visualization**:
+## Winter
+```{r}
+athlete_trends <- olympics |>
+  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |>
+  group_by(sport, sex) |>
+  summarize(
+    avg_age = mean(age, na.rm = TRUE),
+    avg_height = mean(height, na.rm = TRUE),
+    avg_weight = mean(weight, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+athlete_trends |>
+  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
+  ggplot(aes(x = sport, y = value, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~attribute, scales = "free_y") +
+  labs(
+    title = "Trends in Athlete Characteristics by Winter Sport and Sex",
+    x = "Sport",
+    y = "Average Value",
+    fill = "Sex"
+  ) +
+  theme_minimal()
+```
+## Summer
+```{r}
+athlete_trends <- olympics |>
+  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
+  group_by(sport, sex) |>
+  summarize(
+    avg_age = mean(age, na.rm = TRUE),
+    avg_height = mean(height, na.rm = TRUE),
+    avg_weight = mean(weight, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+
+athlete_trends |>
+  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |>
+  ggplot(aes(x = sport, y = value, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~attribute, scales = "free_y") +
+  labs(
+    title = "Trends in Athlete Characteristics by Winter Sport and Sex",
+    x = "Sport",
+    y = "Average Value",
+    fill = "Sex"
+  ) +
+  theme_minimal()
+```
+
+------------------------------------------------------------------------
+### **3.3 Participation Over Years**
+
+-   **Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in footb
+
+-   **Visualization**:
+```{r}
+yearly_trends <- olympics |>
+  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |>
+  group_by(sport, year) |>
+  summarize(participation = n(), .groups = 'drop') |>
+  arrange(year)
+
+yearly_trends |>
+  ggplot(aes(x = year, y = participation, color = sport, group = sport)) +
+  geom_line(size = 1) +
+  geom_point() +
+  labs(
+    title = "Participation Over the Years in Winter Sports",
+    x = "Year",
+    y = "Number of Athletes",
+    color = "Sport"
+  ) +
+  theme_minimal()
+```
+```{r}
+yearly_trends <- olympics |>
+  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
+  group_by(sport, year) |>
+  summarize(participation = n(), .groups = 'drop') |>
+  arrange(year)
+yearly_trends
+
+yearly_trends |>
+  ggplot(aes(x = year, y = participation, color = sport, group = sport)) +
+  geom_line(size = 1) +
+  geom_point() +
+  labs(
+    title = "Participation Over the Years in Summer Sports",
+    x = "Year",
+    y = "Number of Athletes",
+    color = "Sport"
+  ) +
+  theme_minimal()
+```
+
+------------------------------------------------------------------------
+### **3.4 Correlation Between Medal Wins and Physical Attributes**
 
 -   **Findings**:
 
 -   **Visualization**:
+```{r}
+# Pivot the data for visualization
+medal_data_long <- olympics |>
+  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |>
+  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |>
+  select(sport, medal_won, age, height, weight) |>
+  pivot_longer(cols = c(age, height, weight), names_to = "attribute", values_to = "value")
+
+# Combined violin and box plot
+medal_data_long |>
+  ggplot(aes(x = medal_won, y = value, fill = medal_won)) +
+  geom_violin(alpha = 0.7, trim = FALSE) +  # Violin plot for distribution
+  geom_boxplot(width = 0.2, alpha = 0.9, outlier.shape = NA) +  
+  facet_wrap(~sport + attribute, scales = "free_y") +  
+  labs(
+    title = "Comparison of Physical Attributes by Medal Status on Winter Sport",
+    x = "Medal Won",
+    y = "Value",
+    fill = "Medal Won"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")  
+
+
+```
+```{r}
+# Pivot the data for visualization
+medal_data_long <- olympics |>
+  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
+  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |>
+  select(sport, medal_won, age, height, weight) |>
+  pivot_longer(cols = c(age, height, weight), names_to = "attribute", values_to = "value")
+
+# Combined violin and box plot
+medal_data_long |>
+  ggplot(aes(x = medal_won, y = value, fill = medal_won)) +
+  geom_violin(alpha = 0.7, trim = FALSE) +  # Violin plot for distribution
+  geom_boxplot(width = 0.2, alpha = 0.9, outlier.shape = NA) +  
+  facet_wrap(~sport + attribute, scales = "free_y") + 
+  labs(
+    title = "Comparison of Physical Attributes by Medal Status on Summer Sport",
+    x = "Medal Won",
+    y = "Value",
+    fill = "Medal Won"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+
+```
+
+------------------------------------------------------------------------
+### **3.5 Top countries **
+
+-   **Findings**:
+
+-   **Visualization**:
+```{r}
+# Calculate total participation for top 10 countries
+top_10_countries <- olympics |>
+  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |>
+  group_by(noc) |>
+  summarize(total_participation = n(), .groups = 'drop') |>
+  arrange(desc(total_participation)) |>
+  slice_max(total_participation, n = 10)
+
+# Filter data for the top 10 countries
+top_countries_all_sports <- olympics |>
+  filter(
+    sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating"),
+    noc %in% top_10_countries$noc
+  ) |>
+  group_by(noc, sport) |>
+  summarize(participation = n(), .groups = 'drop')
+
+# Plot participation across all four sports for the top 10 countries
+top_countries_all_sports |>
+  ggplot(aes(x = reorder(noc, -participation), y = participation, fill = sport)) +
+  geom_bar(stat = "identity", position = "stack") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Countries by Participation in Winter Sports",
+    x = "Country (NOC)",
+    y = "Number of Athletes",
+    fill = "Sport"
+  ) +
+  theme_minimal()
+
+```
+```{r}
+# Calculate total participation for top 10 countries
+top_10_countries <- olympics |>
+  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
+  group_by(noc) |>
+  summarize(total_participation = n(), .groups = 'drop') |>
+  arrange(desc(total_participation)) |>
+  slice_max(total_participation, n = 10)
+
+# Filter data for the top 10 countries
+top_countries_all_sports <- olympics |>
+  filter(
+    sport %in% c("Shooting", "Rowing","Swimming","Football"),
+    noc %in% top_10_countries$noc
+  ) |>
+  group_by(noc, sport) |>
+  summarize(participation = n(), .groups = 'drop')
+
+# Plot participation across all four sports for the top 10 countries
+top_countries_all_sports |>
+  ggplot(aes(x = reorder(noc, -participation), y = participation, fill = sport)) +
+  geom_bar(stat = "identity", position = "stack") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Countries by Participation in Summer Sports",
+    x = "Country (NOC)",
+    y = "Number of Athletes",
+    fill = "Sport"
+  ) +
+  theme_minimal()
+
+```
+
+```{r}
+# Filter data for medal-winning athletes
+medal_data <- olympics |>
+  filter(!is.na(medal)) |>
+  group_by(noc, medal) |>
+  summarize(medals = n(), .groups = 'drop')
+
+# Identify the top 10 countries by total medals
+top_10_medal_countries <- medal_data |>
+  group_by(noc) |>
+  summarize(total_medals = sum(medals), .groups = 'drop') |>
+  arrange(desc(total_medals)) |>
+  slice_max(total_medals, n = 10)
+
+# Filter medal data for the top 10 countries
+medal_data_top10 <- medal_data |>
+  filter(noc %in% top_10_medal_countries$noc)
+
+# Add total medals for sorting
+medal_data_top10 <- medal_data_top10 |>
+  group_by(noc) |>
+  mutate(total_medals = sum(medals)) |>
+  ungroup()
+
+# Create a stacked bar chart for medal distribution
+medal_data_top10 |>
+  ggplot(aes(x = reorder(noc, -total_medals), y = medals, fill = medal)) +
+  geom_bar(stat = "identity", position = "stack") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Countries by Medals Won",
+    x = "Country (NOC)",
+    y = "Number of Medals",
+    fill = "Medal Type"
+  ) +
+  theme_minimal()
+
+```
+------------------------------------------------------------------------
+### **3.6 Medals vs Participant **
+
+-   **Findings**:
+
+-   **Visualization**:
+
+```{r}
+# Summarize data for participants and medals per country
+participants_vs_medals <- olympics |>
+  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
+  group_by(noc, sport) |>
+  summarize(
+    total_participants = n(),
+    total_medals = sum(!is.na(medal)),  # Count non-NA medals
+    .groups = 'drop'
+  )
+
+
+participants_vs_medals |>
+  ggplot(aes(x = total_participants, y = total_medals, color = sport)) +
+  geom_point(size = 3, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +  # Add trend lines
+  labs(
+    title = "Do More Participants Per Country Equal More Medals?",
+    subtitle = "Analysis Summer Sport",
+    x = "Total Participants",
+    y = "Total Medals",
+    color = "Sport"
+  ) +
+  theme_minimal()
+
+```
+```{r}
+participants_vs_medals <- olympics |>
+  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |>
+  group_by(noc, sport) |>
+  summarize(
+    total_participants = n(),
+    total_medals = sum(!is.na(medal)),  # Count non-NA medals
+    .groups = 'drop'
+  )
+
+
+participants_vs_medals |>
+  ggplot(aes(x = total_participants, y = total_medals, color = sport)) +
+  geom_point(size = 3, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +  # Add trend lines
+  labs(
+    title = "Do More Participants Per Country Equal More Medals?",
+    subtitle = "Winter Sport",
+    x = "Total Participants",
+    y = "Total Medals",
+    color = "Sport"
+  ) +
+  theme_minimal()
+
+```
 
 ------------------------------------------------------------------------
 
@@ -55,7 +420,7 @@ The Olympics is one of the greatest global sporting events, celebrating athletic
 
 -   **Implications**:
 
--   **Limitations**:
+-   **Limitations**:Due to time, the summer sport and winter sport is not a strong representation since we only have four each. 
 
 ------------------------------------------------------------------------
 
