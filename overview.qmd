@@ -47,6 +47,7 @@ sport_distribution |>
   theme_minimal()
 
 ```
+
 ```{r}
 # Summary of demographics
 demographics <- olympics |>
@@ -125,4 +126,3 @@ gender_country_top10 |>
 
 
 ```
-
