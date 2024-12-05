@@ -349,7 +349,7 @@ ggplot(rowing_M, aes(x = event, y = age))+
   geom_boxplot()
 ```
 
-Event have few effects to both weight, height and age for male's rowing events, the best age is around 25-35; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.
+Event have few effects to both weight, height and age for male's rowing events, the best age is around 23-28; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.
 
 
 ### female
@@ -388,6 +388,24 @@ ggplot(rowing_F, aes(x = event, y = age))+
 
 For all events, height, weight and age are roughly in same range. The height is among 175-185cm; weight is among 70-80kg, where Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg; age is among 25-30.
 
+
+# Conclusion
+
+Shooting:
+Most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg. For female shooting athletes, for almost all event, the best height is in a range covered around 160-170cm, while Trap and Skeet have slightly higher range at about 165-173cm. The weight varied by event a lot, Air Pistol 10 meters have a range around 60-70kg; Air Rifle 10 meters have a range around 50-55kg; Double Trap have a range around 65-83kg, and its mean value extremely at about 83kg; Skeet have a range around 60-83kg, also have an extreme mean value at about 80kg; Small-Bore Rifle Three Positions 50 meters have a range around 52kg-62kg; Sporting Pistol 25 meters have a range around 55-65kg; and Trap have a range around 63-85kg.
+
+
+For male shooting athletes, most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30. 
+For female shooting athletes, most events have the best age at a range in 25-35, while Air Pistol 10 meters, Air Rifle 10 meters and Small-Bore Rifle Three Positions 50 meters have younger age almost all under 30. It seems that for both gender, experience is important, while the events including running still require younger athletes that have better body condition.
+
+(There are too few data points for Shooting Mixed Sheet and Shooting Mixed Small-Bore Rifle Three Positions, 50 meters to have solid conclusion in female shooting events.)
+
+
+
+Rowing:
+For male rowing athletes, despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg. Lightweight Double Sculls and Lightweight Coxless Fours have few data points to have solid conclusion. For female rowing athletes, for all events despite of Lightweight Double Sculls, the height is among 175-185cm; weight is among 70-80kg. Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg. Moreover, for all events in Rowing, weight and height are increasing very slightly but continually, which might cause by the restrictions to the weight to rowing athletes, there exist a upper bound for them and they are reaching that limitation closer.
+
+For male rowing athletes, the best age is around 23-28; and for female, this range is larger which is 23-30. Rowing has strong requirements to the body conditions of the athletes that younger age is important.
 
 
 
