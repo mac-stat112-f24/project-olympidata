@@ -43,6 +43,11 @@ The Olympics is one of the greatest global sporting events, celebrating athletic
 ```{r}
 olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
 
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
 # Count number of participants in each sport
 sport_distribution <- olympics |>
   group_by(sport) |>
@@ -416,15 +421,23 @@ participants_vs_medals |>
 
 ------------------------------------------------------------------------
 
-## **4. Discussion**
+## **4. Analysis**
 
--   **Implications**:
+-   **Findings**: The more participants a country has the more medals they will likely win. Different sports require different characteristics for success. The average height of football players who won medals was around 173 cm, the average weight was around 76 kg, and they were on average 23 years old. The average height of rowers who won medals was around 180 cm, the average weight was around 78 kg, and they were on average around 25 years old. The average height of shooting athletes who won medals was around 175 cm, the average weight was around 76 kg, and on average around 36 years old. The average height of swimmers who won medals was around 179 cm, the average weight was around 72 kg, and on average around 22 years old. The average height of alpine skiers who won medals was around 170 cm, the average weight was around 68 kg, and on average around 24 years old. The average height of cross country skiers who won medals was around 175 cm, the average weight was around 63 kg, and on average around 28 years old. The average height of figure skaters who won medals was around 167 cm, the average weight was around 59 kg, and on average around 23 years old. The average height of speed skaters who won medals was around 178 cm, the average weight was around 72 kg, and on average around 25 years old. 
 
 -   **Limitations**:Due to time, the summer sport and winter sport is not a strong representation since we only have four each. 
 
 ------------------------------------------------------------------------
 
 ## **5. Conclusion**
+Summer:
+The analysis of summer sports highlights swimming as the sport with the highest number of participants and a consistent upward trend in participation over time. Countries like the USA dominate summer sports both in terms of athlete participation and medals won. While sports like rowing and shooting show steady but moderate growth, football participation is more regionally concentrated, reflecting its varied popularity worldwide.
+
+Winter:
+Winter sports participation demonstrates a more diverse pattern, with Alpine Skiing and Cross-Country Skiing being prominent. Nations like Norway, Canada, and the USA excel, can be caused by their geographic advantages. Medal success in winter sports shows a loose correlation with participation. While the participation trends indicate a steady increase in global representation, although the growth remains slower compared to summer sports.
+
+Overall: 
+Both summer and winter sports reflect a growing trend in global participation. While summer sports demonstrate higher participation overall, winter sports exhibit technical specialization and geographic concentration. Medal success is partially tied to participation rates, as factors like investment, infrastructure, and athlete development programs significantly influence outcomes. 
 
 ------------------------------------------------------------------------
 
