@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -83,13 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -98,7 +92,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -114,12 +107,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./proposal.html">Appendices</a></li><li class="breadcrumb-item"><a href="./skiing.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cross Country Skiing &amp; Alpine Skiing</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./proposal.html">Appendices</a></li><li class="breadcrumb-item"><a href="./skiing.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cross Country Skiing &amp; Alpine Skiing</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -129,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Olympidata</a> 
@@ -212,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -232,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./proposal.html">Appendices</a></li><li class="breadcrumb-item"><a href="./skiing.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Cross Country Skiing &amp; Alpine Skiing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Appendix C — Cross Country Skiing &amp; Alpine Skiing</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -247,9 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -267,26 +258,35 @@ dbl  (5): id, age, height, weight, year
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'forcats' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">library</span>(tidyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">library</span>(tidyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>olympics <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">group_by</span>(sport) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())<span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>olympics <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(sport) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())<span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 66 × 2
    sport                    n
@@ -307,12 +307,12 @@ dbl  (5): id, age, height, weight, year
 <section id="top-countries-by-participation" class="level1" data-number="D">
 <h1 data-number="D"><span class="header-section-number">D</span> Top Countries by Participation</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>top_countries <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">group_by</span>(noc, sport) <span class="sc">|&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(participation))</span>
-<span id="cb8-6"><a href="#cb8-6"></a>top_countries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>top_countries <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">group_by</span>(noc, sport) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(participation))</span>
+<span id="cb11-6"><a href="#cb11-6"></a>top_countries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 182 × 3
    noc   sport                participation
@@ -331,40 +331,36 @@ dbl  (5): id, age, height, weight, year
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>top_countries <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">slice_max</span>(participation, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(noc, participation), <span class="at">y =</span> participation, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-7"><a href="#cb10-7"></a>    <span class="at">title =</span> <span class="st">"Top 10 Countries by Participation in Skiing Sports"</span>,</span>
-<span id="cb10-8"><a href="#cb10-8"></a>    <span class="at">x =</span> <span class="st">"Country (NOC)"</span>,</span>
-<span id="cb10-9"><a href="#cb10-9"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
-<span id="cb10-10"><a href="#cb10-10"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>top_countries <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">slice_max</span>(participation, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(noc, participation), <span class="at">y =</span> participation, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="at">title =</span> <span class="st">"Top 10 Countries by Participation in Skiing Sports"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="at">x =</span> <span class="st">"Country (NOC)"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="skiing_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="skiing_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 <section id="trends-in-athlete-characteristics" class="level1" data-number="E">
 <h1 data-number="E"><span class="header-section-number">E</span> Trends in Athlete Characteristics</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>athlete_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">group_by</span>(sport, sex) <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb11-5"><a href="#cb11-5"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb11-6"><a href="#cb11-6"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb11-7"><a href="#cb11-7"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb11-8"><a href="#cb11-8"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb11-9"><a href="#cb11-9"></a>  )</span>
-<span id="cb11-10"><a href="#cb11-10"></a>athlete_trends</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>athlete_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">group_by</span>(sport, sex) <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-8"><a href="#cb14-8"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a>  )</span>
+<span id="cb14-10"><a href="#cb14-10"></a>athlete_trends</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 5
   sport                sex   avg_age avg_height avg_weight
@@ -374,36 +370,32 @@ dbl  (5): id, age, height, weight, year
 3 Cross Country Skiing F        25.7       167.       57.5
 4 Cross Country Skiing M        26.2       178.       71.7</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>athlete_trends <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-7"><a href="#cb13-7"></a>    <span class="at">title =</span> <span class="st">"Trends in Athlete Characteristics by Sport and Sex"</span>,</span>
-<span id="cb13-8"><a href="#cb13-8"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb13-9"><a href="#cb13-9"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb13-10"><a href="#cb13-10"></a>    <span class="at">fill =</span> <span class="st">"Sex"</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-12"><a href="#cb13-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>athlete_trends <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="at">title =</span> <span class="st">"Trends in Athlete Characteristics by Sport and Sex"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb16-10"><a href="#cb16-10"></a>    <span class="at">fill =</span> <span class="st">"Sex"</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="skiing_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="skiing_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 <section id="participation-over-years" class="level1" data-number="F">
 <h1 data-number="F"><span class="header-section-number">F</span> Participation Over Years</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>yearly_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">group_by</span>(sport, year) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">arrange</span>(year)</span>
-<span id="cb14-6"><a href="#cb14-6"></a>yearly_trends</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>yearly_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">group_by</span>(sport, year) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">arrange</span>(year)</span>
+<span id="cb17-6"><a href="#cb17-6"></a>yearly_trends</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 41 × 3
    sport                 year participation
@@ -420,27 +412,23 @@ dbl  (5): id, age, height, weight, year
 10 Alpine Skiing         1956           403
 # ℹ 31 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>yearly_trends <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> participation, <span class="at">color =</span> sport, <span class="at">group =</span> sport)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-6"><a href="#cb16-6"></a>    <span class="at">title =</span> <span class="st">"Participation Over the Years in Skiing Sports"</span>,</span>
-<span id="cb16-7"><a href="#cb16-7"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9"></a>    <span class="at">color =</span> <span class="st">"Sport"</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-11"><a href="#cb16-11"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>yearly_trends <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> participation, <span class="at">color =</span> sport, <span class="at">group =</span> sport)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-6"><a href="#cb19-6"></a>    <span class="at">title =</span> <span class="st">"Participation Over the Years in Skiing Sports"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
+<span id="cb19-9"><a href="#cb19-9"></a>    <span class="at">color =</span> <span class="st">"Sport"</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="skiing_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="skiing_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -449,17 +437,17 @@ dbl  (5): id, age, height, weight, year
 <section id="correlation-between-medal-wins-and-physical-attributes" class="level2" data-number="G.1">
 <h2 data-number="G.1" class="anchored" data-anchor-id="correlation-between-medal-wins-and-physical-attributes"><span class="header-section-number">G.1</span> Correlation Between Medal Wins and Physical Attributes</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>medal_correlation <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">mutate</span>(<span class="at">medal_won =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(medal), <span class="st">"No"</span>, <span class="st">"Yes"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">group_by</span>(sport, medal_won) <span class="sc">|&gt;</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb18-6"><a href="#cb18-6"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb18-7"><a href="#cb18-7"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb18-8"><a href="#cb18-8"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb18-9"><a href="#cb18-9"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>  )</span>
-<span id="cb18-11"><a href="#cb18-11"></a>medal_correlation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>medal_correlation <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">mutate</span>(<span class="at">medal_won =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(medal), <span class="st">"No"</span>, <span class="st">"Yes"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">group_by</span>(sport, medal_won) <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb21-6"><a href="#cb21-6"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb21-8"><a href="#cb21-8"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>  )</span>
+<span id="cb21-11"><a href="#cb21-11"></a>medal_correlation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 5
   sport                medal_won avg_age avg_height avg_weight
@@ -469,40 +457,36 @@ dbl  (5): id, age, height, weight, year
 3 Cross Country Skiing No           25.9       173.       65.9
 4 Cross Country Skiing Yes          27.6       173.       65.8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Visualize the trends</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>medal_correlation <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a>  <span class="fu">labs</span>(</span>
-<span id="cb20-8"><a href="#cb20-8"></a>    <span class="at">title =</span> <span class="st">"Physical Attributes of Medal Winners vs Non-Medalists"</span>,</span>
-<span id="cb20-9"><a href="#cb20-9"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb20-10"><a href="#cb20-10"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb20-11"><a href="#cb20-11"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
-<span id="cb20-12"><a href="#cb20-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb20-13"><a href="#cb20-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Visualize the trends</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>medal_correlation <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="at">title =</span> <span class="st">"Physical Attributes of Medal Winners vs Non-Medalists"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb23-11"><a href="#cb23-11"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="skiing_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="skiing_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>##Trends Between Cross Country and Alpine Skiing</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>skiing_comparison <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">group_by</span>(sport) <span class="sc">|&gt;</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb21-5"><a href="#cb21-5"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb21-6"><a href="#cb21-6"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb21-7"><a href="#cb21-7"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb21-8"><a href="#cb21-8"></a>    <span class="at">total_medals =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(medal)),</span>
-<span id="cb21-9"><a href="#cb21-9"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb21-10"><a href="#cb21-10"></a>  )</span>
-<span id="cb21-11"><a href="#cb21-11"></a>skiing_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>skiing_comparison <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">group_by</span>(sport) <span class="sc">|&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-8"><a href="#cb24-8"></a>    <span class="at">total_medals =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(medal)),</span>
+<span id="cb24-9"><a href="#cb24-9"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>  )</span>
+<span id="cb24-11"><a href="#cb24-11"></a>skiing_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   sport                avg_age avg_height avg_weight total_medals
@@ -510,25 +494,21 @@ dbl  (5): id, age, height, weight, year
 1 Alpine Skiing           23.2       173.       72.1          428
 2 Cross Country Skiing    26.0       173.       65.9          776</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Visualize Skiing Comparison</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>skiing_comparison <span class="sc">|&gt;</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight, total_medals), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-8"><a href="#cb23-8"></a>    <span class="at">title =</span> <span class="st">"Comparison of Cross Country vs Alpine Skiing"</span>,</span>
-<span id="cb23-9"><a href="#cb23-9"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb23-11"><a href="#cb23-11"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
-<span id="cb23-12"><a href="#cb23-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Visualize Skiing Comparison</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>skiing_comparison <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight, total_medals), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="fu">labs</span>(</span>
+<span id="cb26-8"><a href="#cb26-8"></a>    <span class="at">title =</span> <span class="st">"Comparison of Cross Country vs Alpine Skiing"</span>,</span>
+<span id="cb26-9"><a href="#cb26-9"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb26-10"><a href="#cb26-10"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb26-11"><a href="#cb26-11"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="skiing_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="skiing_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
@@ -580,33 +560,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -675,15 +628,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -813,27 +764,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -843,17 +777,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -865,130 +790,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1032,7 +834,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1058,32 +859,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1145,189 +920,188 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Shooting-Rowing-HanSun.html" class="pagination-link" aria-label="Shooting &amp; Rowing">
+      <a href="./Shooting-Rowing-HanSun.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Shooting &amp; Rowing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Figure-Skating_Speed-Skating.html" class="pagination-link" aria-label="Figure Skating &amp; Speed Skating">
+      <a href="./Figure-Skating_Speed-Skating.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Figure Skating &amp; Speed Skating</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb24" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">---</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="an">title:</span><span class="co"> "Cross Country Skiing &amp; Alpine Skiing"</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co">---</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a></span>
-<span id="cb24-8"><a href="#cb24-8"></a><span class="in">```{r}</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span>
-<span id="cb24-10"><a href="#cb24-10"></a><span class="in">```</span></span>
-<span id="cb24-11"><a href="#cb24-11"></a></span>
-<span id="cb24-14"><a href="#cb24-14"></a><span class="in">```{r}</span></span>
-<span id="cb24-15"><a href="#cb24-15"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb24-16"><a href="#cb24-16"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb24-17"><a href="#cb24-17"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb24-18"><a href="#cb24-18"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb24-19"><a href="#cb24-19"></a></span>
-<span id="cb24-20"><a href="#cb24-20"></a><span class="in">```</span></span>
-<span id="cb24-21"><a href="#cb24-21"></a></span>
-<span id="cb24-24"><a href="#cb24-24"></a><span class="in">```{r}</span></span>
-<span id="cb24-25"><a href="#cb24-25"></a>olympics <span class="sc">%&gt;%</span></span>
-<span id="cb24-26"><a href="#cb24-26"></a>  <span class="fu">group_by</span>(sport) <span class="sc">%&gt;%</span></span>
-<span id="cb24-27"><a href="#cb24-27"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())<span class="sc">%&gt;%</span></span>
-<span id="cb24-28"><a href="#cb24-28"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
-<span id="cb24-29"><a href="#cb24-29"></a></span>
-<span id="cb24-30"><a href="#cb24-30"></a><span class="in">```</span></span>
-<span id="cb24-31"><a href="#cb24-31"></a></span>
-<span id="cb24-32"><a href="#cb24-32"></a><span class="fu"># Top Countries by Participation</span></span>
-<span id="cb24-33"><a href="#cb24-33"></a></span>
-<span id="cb24-36"><a href="#cb24-36"></a><span class="in">```{r}</span></span>
-<span id="cb24-37"><a href="#cb24-37"></a>top_countries <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb24-38"><a href="#cb24-38"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb24-39"><a href="#cb24-39"></a>  <span class="fu">group_by</span>(noc, sport) <span class="sc">|&gt;</span></span>
-<span id="cb24-40"><a href="#cb24-40"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-41"><a href="#cb24-41"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(participation))</span>
-<span id="cb24-42"><a href="#cb24-42"></a>top_countries</span>
-<span id="cb24-43"><a href="#cb24-43"></a><span class="in">```</span></span>
-<span id="cb24-44"><a href="#cb24-44"></a></span>
-<span id="cb24-47"><a href="#cb24-47"></a><span class="in">```{r}</span></span>
-<span id="cb24-48"><a href="#cb24-48"></a>top_countries <span class="sc">|&gt;</span></span>
-<span id="cb24-49"><a href="#cb24-49"></a>  <span class="fu">slice_max</span>(participation, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-50"><a href="#cb24-50"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(noc, participation), <span class="at">y =</span> participation, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
-<span id="cb24-51"><a href="#cb24-51"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb24-52"><a href="#cb24-52"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb24-53"><a href="#cb24-53"></a>  <span class="fu">labs</span>(</span>
-<span id="cb24-54"><a href="#cb24-54"></a>    <span class="at">title =</span> <span class="st">"Top 10 Countries by Participation in Skiing Sports"</span>,</span>
-<span id="cb24-55"><a href="#cb24-55"></a>    <span class="at">x =</span> <span class="st">"Country (NOC)"</span>,</span>
-<span id="cb24-56"><a href="#cb24-56"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
-<span id="cb24-57"><a href="#cb24-57"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
-<span id="cb24-58"><a href="#cb24-58"></a>  ) <span class="sc">+</span></span>
-<span id="cb24-59"><a href="#cb24-59"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb24-60"><a href="#cb24-60"></a><span class="in">```</span></span>
-<span id="cb24-61"><a href="#cb24-61"></a></span>
-<span id="cb24-62"><a href="#cb24-62"></a><span class="fu"># Trends in Athlete Characteristics</span></span>
-<span id="cb24-63"><a href="#cb24-63"></a></span>
-<span id="cb24-66"><a href="#cb24-66"></a><span class="in">```{r}</span></span>
-<span id="cb24-67"><a href="#cb24-67"></a>athlete_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb24-68"><a href="#cb24-68"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb24-69"><a href="#cb24-69"></a>  <span class="fu">group_by</span>(sport, sex) <span class="sc">|&gt;</span></span>
-<span id="cb24-70"><a href="#cb24-70"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb24-71"><a href="#cb24-71"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-72"><a href="#cb24-72"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-73"><a href="#cb24-73"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-74"><a href="#cb24-74"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb24-75"><a href="#cb24-75"></a>  )</span>
-<span id="cb24-76"><a href="#cb24-76"></a>athlete_trends</span>
-<span id="cb24-77"><a href="#cb24-77"></a></span>
-<span id="cb24-78"><a href="#cb24-78"></a>athlete_trends <span class="sc">|&gt;</span></span>
-<span id="cb24-79"><a href="#cb24-79"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-80"><a href="#cb24-80"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb24-81"><a href="#cb24-81"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb24-82"><a href="#cb24-82"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb24-83"><a href="#cb24-83"></a>  <span class="fu">labs</span>(</span>
-<span id="cb24-84"><a href="#cb24-84"></a>    <span class="at">title =</span> <span class="st">"Trends in Athlete Characteristics by Sport and Sex"</span>,</span>
-<span id="cb24-85"><a href="#cb24-85"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb24-86"><a href="#cb24-86"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb24-87"><a href="#cb24-87"></a>    <span class="at">fill =</span> <span class="st">"Sex"</span></span>
-<span id="cb24-88"><a href="#cb24-88"></a>  ) <span class="sc">+</span></span>
-<span id="cb24-89"><a href="#cb24-89"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb24-90"><a href="#cb24-90"></a></span>
-<span id="cb24-91"><a href="#cb24-91"></a><span class="in">```</span></span>
-<span id="cb24-92"><a href="#cb24-92"></a></span>
-<span id="cb24-93"><a href="#cb24-93"></a><span class="fu"># Participation Over Years</span></span>
-<span id="cb24-94"><a href="#cb24-94"></a></span>
-<span id="cb24-97"><a href="#cb24-97"></a><span class="in">```{r}</span></span>
-<span id="cb24-98"><a href="#cb24-98"></a>yearly_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb24-99"><a href="#cb24-99"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb24-100"><a href="#cb24-100"></a>  <span class="fu">group_by</span>(sport, year) <span class="sc">|&gt;</span></span>
-<span id="cb24-101"><a href="#cb24-101"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-102"><a href="#cb24-102"></a>  <span class="fu">arrange</span>(year)</span>
-<span id="cb24-103"><a href="#cb24-103"></a>yearly_trends</span>
-<span id="cb24-104"><a href="#cb24-104"></a></span>
-<span id="cb24-105"><a href="#cb24-105"></a>yearly_trends <span class="sc">|&gt;</span></span>
-<span id="cb24-106"><a href="#cb24-106"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> participation, <span class="at">color =</span> sport, <span class="at">group =</span> sport)) <span class="sc">+</span></span>
-<span id="cb24-107"><a href="#cb24-107"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb24-108"><a href="#cb24-108"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb24-109"><a href="#cb24-109"></a>  <span class="fu">labs</span>(</span>
-<span id="cb24-110"><a href="#cb24-110"></a>    <span class="at">title =</span> <span class="st">"Participation Over the Years in Skiing Sports"</span>,</span>
-<span id="cb24-111"><a href="#cb24-111"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb24-112"><a href="#cb24-112"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
-<span id="cb24-113"><a href="#cb24-113"></a>    <span class="at">color =</span> <span class="st">"Sport"</span></span>
-<span id="cb24-114"><a href="#cb24-114"></a>  ) <span class="sc">+</span></span>
-<span id="cb24-115"><a href="#cb24-115"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb24-116"><a href="#cb24-116"></a></span>
-<span id="cb24-117"><a href="#cb24-117"></a></span>
-<span id="cb24-118"><a href="#cb24-118"></a><span class="in">```</span></span>
-<span id="cb24-119"><a href="#cb24-119"></a></span>
-<span id="cb24-120"><a href="#cb24-120"></a><span class="fu"># Analysis</span></span>
-<span id="cb24-121"><a href="#cb24-121"></a></span>
-<span id="cb24-122"><a href="#cb24-122"></a><span class="fu">## Correlation Between Medal Wins and Physical Attributes</span></span>
-<span id="cb24-123"><a href="#cb24-123"></a></span>
-<span id="cb24-126"><a href="#cb24-126"></a><span class="in">```{r}</span></span>
-<span id="cb24-127"><a href="#cb24-127"></a>medal_correlation <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb24-128"><a href="#cb24-128"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb24-129"><a href="#cb24-129"></a>  <span class="fu">mutate</span>(<span class="at">medal_won =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(medal), <span class="st">"No"</span>, <span class="st">"Yes"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb24-130"><a href="#cb24-130"></a>  <span class="fu">group_by</span>(sport, medal_won) <span class="sc">|&gt;</span></span>
-<span id="cb24-131"><a href="#cb24-131"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb24-132"><a href="#cb24-132"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-133"><a href="#cb24-133"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-134"><a href="#cb24-134"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-135"><a href="#cb24-135"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb24-136"><a href="#cb24-136"></a>  )</span>
-<span id="cb24-137"><a href="#cb24-137"></a>medal_correlation</span>
-<span id="cb24-138"><a href="#cb24-138"></a></span>
-<span id="cb24-139"><a href="#cb24-139"></a><span class="co"># Visualize the trends</span></span>
-<span id="cb24-140"><a href="#cb24-140"></a>medal_correlation <span class="sc">|&gt;</span></span>
-<span id="cb24-141"><a href="#cb24-141"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-142"><a href="#cb24-142"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
-<span id="cb24-143"><a href="#cb24-143"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb24-144"><a href="#cb24-144"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb24-145"><a href="#cb24-145"></a>  <span class="fu">labs</span>(</span>
-<span id="cb24-146"><a href="#cb24-146"></a>    <span class="at">title =</span> <span class="st">"Physical Attributes of Medal Winners vs Non-Medalists"</span>,</span>
-<span id="cb24-147"><a href="#cb24-147"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb24-148"><a href="#cb24-148"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb24-149"><a href="#cb24-149"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
-<span id="cb24-150"><a href="#cb24-150"></a>  ) <span class="sc">+</span></span>
-<span id="cb24-151"><a href="#cb24-151"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb24-152"><a href="#cb24-152"></a></span>
-<span id="cb24-153"><a href="#cb24-153"></a><span class="in">```</span></span>
-<span id="cb24-154"><a href="#cb24-154"></a></span>
-<span id="cb24-155"><a href="#cb24-155"></a>##Trends Between Cross Country and Alpine Skiing</span>
-<span id="cb24-156"><a href="#cb24-156"></a></span>
-<span id="cb24-159"><a href="#cb24-159"></a><span class="in">```{r}</span></span>
-<span id="cb24-160"><a href="#cb24-160"></a>skiing_comparison <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
-<span id="cb24-161"><a href="#cb24-161"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb24-162"><a href="#cb24-162"></a>  <span class="fu">group_by</span>(sport) <span class="sc">|&gt;</span></span>
-<span id="cb24-163"><a href="#cb24-163"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb24-164"><a href="#cb24-164"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-165"><a href="#cb24-165"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-166"><a href="#cb24-166"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-167"><a href="#cb24-167"></a>    <span class="at">total_medals =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(medal)),</span>
-<span id="cb24-168"><a href="#cb24-168"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb24-169"><a href="#cb24-169"></a>  )</span>
-<span id="cb24-170"><a href="#cb24-170"></a>skiing_comparison</span>
-<span id="cb24-171"><a href="#cb24-171"></a></span>
-<span id="cb24-172"><a href="#cb24-172"></a><span class="co"># Visualize Skiing Comparison</span></span>
-<span id="cb24-173"><a href="#cb24-173"></a>skiing_comparison <span class="sc">|&gt;</span></span>
-<span id="cb24-174"><a href="#cb24-174"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight, total_medals), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-175"><a href="#cb24-175"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
-<span id="cb24-176"><a href="#cb24-176"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb24-177"><a href="#cb24-177"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb24-178"><a href="#cb24-178"></a>  <span class="fu">labs</span>(</span>
-<span id="cb24-179"><a href="#cb24-179"></a>    <span class="at">title =</span> <span class="st">"Comparison of Cross Country vs Alpine Skiing"</span>,</span>
-<span id="cb24-180"><a href="#cb24-180"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
-<span id="cb24-181"><a href="#cb24-181"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
-<span id="cb24-182"><a href="#cb24-182"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
-<span id="cb24-183"><a href="#cb24-183"></a>  ) <span class="sc">+</span></span>
-<span id="cb24-184"><a href="#cb24-184"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb24-185"><a href="#cb24-185"></a></span>
-<span id="cb24-186"><a href="#cb24-186"></a></span>
-<span id="cb24-187"><a href="#cb24-187"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb27" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">---</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="an">title:</span><span class="co"> "Cross Country Skiing &amp; Alpine Skiing"</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="co">---</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a></span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="in">```{r}</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>olympics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv'</span>)</span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="in">```</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a></span>
+<span id="cb27-14"><a href="#cb27-14"></a><span class="in">```{r}</span></span>
+<span id="cb27-15"><a href="#cb27-15"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb27-16"><a href="#cb27-16"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb27-17"><a href="#cb27-17"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-18"><a href="#cb27-18"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb27-19"><a href="#cb27-19"></a></span>
+<span id="cb27-20"><a href="#cb27-20"></a><span class="in">```</span></span>
+<span id="cb27-21"><a href="#cb27-21"></a></span>
+<span id="cb27-24"><a href="#cb27-24"></a><span class="in">```{r}</span></span>
+<span id="cb27-25"><a href="#cb27-25"></a>olympics <span class="sc">%&gt;%</span></span>
+<span id="cb27-26"><a href="#cb27-26"></a>  <span class="fu">group_by</span>(sport) <span class="sc">%&gt;%</span></span>
+<span id="cb27-27"><a href="#cb27-27"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())<span class="sc">%&gt;%</span></span>
+<span id="cb27-28"><a href="#cb27-28"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
+<span id="cb27-29"><a href="#cb27-29"></a></span>
+<span id="cb27-30"><a href="#cb27-30"></a><span class="in">```</span></span>
+<span id="cb27-31"><a href="#cb27-31"></a></span>
+<span id="cb27-32"><a href="#cb27-32"></a><span class="fu"># Top Countries by Participation</span></span>
+<span id="cb27-33"><a href="#cb27-33"></a></span>
+<span id="cb27-36"><a href="#cb27-36"></a><span class="in">```{r}</span></span>
+<span id="cb27-37"><a href="#cb27-37"></a>top_countries <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb27-38"><a href="#cb27-38"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-39"><a href="#cb27-39"></a>  <span class="fu">group_by</span>(noc, sport) <span class="sc">|&gt;</span></span>
+<span id="cb27-40"><a href="#cb27-40"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-41"><a href="#cb27-41"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(participation))</span>
+<span id="cb27-42"><a href="#cb27-42"></a>top_countries</span>
+<span id="cb27-43"><a href="#cb27-43"></a><span class="in">```</span></span>
+<span id="cb27-44"><a href="#cb27-44"></a></span>
+<span id="cb27-47"><a href="#cb27-47"></a><span class="in">```{r}</span></span>
+<span id="cb27-48"><a href="#cb27-48"></a>top_countries <span class="sc">|&gt;</span></span>
+<span id="cb27-49"><a href="#cb27-49"></a>  <span class="fu">slice_max</span>(participation, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-50"><a href="#cb27-50"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(noc, participation), <span class="at">y =</span> participation, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
+<span id="cb27-51"><a href="#cb27-51"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb27-52"><a href="#cb27-52"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb27-53"><a href="#cb27-53"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-54"><a href="#cb27-54"></a>    <span class="at">title =</span> <span class="st">"Top 10 Countries by Participation in Skiing Sports"</span>,</span>
+<span id="cb27-55"><a href="#cb27-55"></a>    <span class="at">x =</span> <span class="st">"Country (NOC)"</span>,</span>
+<span id="cb27-56"><a href="#cb27-56"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
+<span id="cb27-57"><a href="#cb27-57"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
+<span id="cb27-58"><a href="#cb27-58"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-59"><a href="#cb27-59"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb27-60"><a href="#cb27-60"></a><span class="in">```</span></span>
+<span id="cb27-61"><a href="#cb27-61"></a></span>
+<span id="cb27-62"><a href="#cb27-62"></a><span class="fu"># Trends in Athlete Characteristics</span></span>
+<span id="cb27-63"><a href="#cb27-63"></a></span>
+<span id="cb27-66"><a href="#cb27-66"></a><span class="in">```{r}</span></span>
+<span id="cb27-67"><a href="#cb27-67"></a>athlete_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb27-68"><a href="#cb27-68"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-69"><a href="#cb27-69"></a>  <span class="fu">group_by</span>(sport, sex) <span class="sc">|&gt;</span></span>
+<span id="cb27-70"><a href="#cb27-70"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb27-71"><a href="#cb27-71"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-72"><a href="#cb27-72"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-73"><a href="#cb27-73"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-74"><a href="#cb27-74"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb27-75"><a href="#cb27-75"></a>  )</span>
+<span id="cb27-76"><a href="#cb27-76"></a>athlete_trends</span>
+<span id="cb27-77"><a href="#cb27-77"></a></span>
+<span id="cb27-78"><a href="#cb27-78"></a>athlete_trends <span class="sc">|&gt;</span></span>
+<span id="cb27-79"><a href="#cb27-79"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-80"><a href="#cb27-80"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb27-81"><a href="#cb27-81"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb27-82"><a href="#cb27-82"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb27-83"><a href="#cb27-83"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-84"><a href="#cb27-84"></a>    <span class="at">title =</span> <span class="st">"Trends in Athlete Characteristics by Sport and Sex"</span>,</span>
+<span id="cb27-85"><a href="#cb27-85"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb27-86"><a href="#cb27-86"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb27-87"><a href="#cb27-87"></a>    <span class="at">fill =</span> <span class="st">"Sex"</span></span>
+<span id="cb27-88"><a href="#cb27-88"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-89"><a href="#cb27-89"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb27-90"><a href="#cb27-90"></a></span>
+<span id="cb27-91"><a href="#cb27-91"></a><span class="in">```</span></span>
+<span id="cb27-92"><a href="#cb27-92"></a></span>
+<span id="cb27-93"><a href="#cb27-93"></a><span class="fu"># Participation Over Years</span></span>
+<span id="cb27-94"><a href="#cb27-94"></a></span>
+<span id="cb27-97"><a href="#cb27-97"></a><span class="in">```{r}</span></span>
+<span id="cb27-98"><a href="#cb27-98"></a>yearly_trends <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb27-99"><a href="#cb27-99"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-100"><a href="#cb27-100"></a>  <span class="fu">group_by</span>(sport, year) <span class="sc">|&gt;</span></span>
+<span id="cb27-101"><a href="#cb27-101"></a>  <span class="fu">summarize</span>(<span class="at">participation =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-102"><a href="#cb27-102"></a>  <span class="fu">arrange</span>(year)</span>
+<span id="cb27-103"><a href="#cb27-103"></a>yearly_trends</span>
+<span id="cb27-104"><a href="#cb27-104"></a></span>
+<span id="cb27-105"><a href="#cb27-105"></a>yearly_trends <span class="sc">|&gt;</span></span>
+<span id="cb27-106"><a href="#cb27-106"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> participation, <span class="at">color =</span> sport, <span class="at">group =</span> sport)) <span class="sc">+</span></span>
+<span id="cb27-107"><a href="#cb27-107"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb27-108"><a href="#cb27-108"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb27-109"><a href="#cb27-109"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-110"><a href="#cb27-110"></a>    <span class="at">title =</span> <span class="st">"Participation Over the Years in Skiing Sports"</span>,</span>
+<span id="cb27-111"><a href="#cb27-111"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb27-112"><a href="#cb27-112"></a>    <span class="at">y =</span> <span class="st">"Number of Athletes"</span>,</span>
+<span id="cb27-113"><a href="#cb27-113"></a>    <span class="at">color =</span> <span class="st">"Sport"</span></span>
+<span id="cb27-114"><a href="#cb27-114"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-115"><a href="#cb27-115"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb27-116"><a href="#cb27-116"></a></span>
+<span id="cb27-117"><a href="#cb27-117"></a></span>
+<span id="cb27-118"><a href="#cb27-118"></a><span class="in">```</span></span>
+<span id="cb27-119"><a href="#cb27-119"></a></span>
+<span id="cb27-120"><a href="#cb27-120"></a><span class="fu"># Analysis</span></span>
+<span id="cb27-121"><a href="#cb27-121"></a></span>
+<span id="cb27-122"><a href="#cb27-122"></a><span class="fu">## Correlation Between Medal Wins and Physical Attributes</span></span>
+<span id="cb27-123"><a href="#cb27-123"></a></span>
+<span id="cb27-126"><a href="#cb27-126"></a><span class="in">```{r}</span></span>
+<span id="cb27-127"><a href="#cb27-127"></a>medal_correlation <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb27-128"><a href="#cb27-128"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-129"><a href="#cb27-129"></a>  <span class="fu">mutate</span>(<span class="at">medal_won =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(medal), <span class="st">"No"</span>, <span class="st">"Yes"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-130"><a href="#cb27-130"></a>  <span class="fu">group_by</span>(sport, medal_won) <span class="sc">|&gt;</span></span>
+<span id="cb27-131"><a href="#cb27-131"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb27-132"><a href="#cb27-132"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-133"><a href="#cb27-133"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-134"><a href="#cb27-134"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-135"><a href="#cb27-135"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb27-136"><a href="#cb27-136"></a>  )</span>
+<span id="cb27-137"><a href="#cb27-137"></a>medal_correlation</span>
+<span id="cb27-138"><a href="#cb27-138"></a></span>
+<span id="cb27-139"><a href="#cb27-139"></a><span class="co"># Visualize the trends</span></span>
+<span id="cb27-140"><a href="#cb27-140"></a>medal_correlation <span class="sc">|&gt;</span></span>
+<span id="cb27-141"><a href="#cb27-141"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-142"><a href="#cb27-142"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> medal_won)) <span class="sc">+</span></span>
+<span id="cb27-143"><a href="#cb27-143"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb27-144"><a href="#cb27-144"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb27-145"><a href="#cb27-145"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-146"><a href="#cb27-146"></a>    <span class="at">title =</span> <span class="st">"Physical Attributes of Medal Winners vs Non-Medalists"</span>,</span>
+<span id="cb27-147"><a href="#cb27-147"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb27-148"><a href="#cb27-148"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb27-149"><a href="#cb27-149"></a>    <span class="at">fill =</span> <span class="st">"Medal Won"</span></span>
+<span id="cb27-150"><a href="#cb27-150"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-151"><a href="#cb27-151"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb27-152"><a href="#cb27-152"></a></span>
+<span id="cb27-153"><a href="#cb27-153"></a><span class="in">```</span></span>
+<span id="cb27-154"><a href="#cb27-154"></a></span>
+<span id="cb27-155"><a href="#cb27-155"></a>##Trends Between Cross Country and Alpine Skiing</span>
+<span id="cb27-156"><a href="#cb27-156"></a></span>
+<span id="cb27-159"><a href="#cb27-159"></a><span class="in">```{r}</span></span>
+<span id="cb27-160"><a href="#cb27-160"></a>skiing_comparison <span class="ot">&lt;-</span> olympics <span class="sc">|&gt;</span></span>
+<span id="cb27-161"><a href="#cb27-161"></a>  <span class="fu">filter</span>(sport <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cross Country Skiing"</span>, <span class="st">"Alpine Skiing"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-162"><a href="#cb27-162"></a>  <span class="fu">group_by</span>(sport) <span class="sc">|&gt;</span></span>
+<span id="cb27-163"><a href="#cb27-163"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb27-164"><a href="#cb27-164"></a>    <span class="at">avg_age =</span> <span class="fu">mean</span>(age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-165"><a href="#cb27-165"></a>    <span class="at">avg_height =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-166"><a href="#cb27-166"></a>    <span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-167"><a href="#cb27-167"></a>    <span class="at">total_medals =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(medal)),</span>
+<span id="cb27-168"><a href="#cb27-168"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb27-169"><a href="#cb27-169"></a>  )</span>
+<span id="cb27-170"><a href="#cb27-170"></a>skiing_comparison</span>
+<span id="cb27-171"><a href="#cb27-171"></a></span>
+<span id="cb27-172"><a href="#cb27-172"></a><span class="co"># Visualize Skiing Comparison</span></span>
+<span id="cb27-173"><a href="#cb27-173"></a>skiing_comparison <span class="sc">|&gt;</span></span>
+<span id="cb27-174"><a href="#cb27-174"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(avg_age, avg_height, avg_weight, total_medals), <span class="at">names_to =</span> <span class="st">"attribute"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-175"><a href="#cb27-175"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sport, <span class="at">y =</span> value, <span class="at">fill =</span> sport)) <span class="sc">+</span></span>
+<span id="cb27-176"><a href="#cb27-176"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb27-177"><a href="#cb27-177"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>attribute, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb27-178"><a href="#cb27-178"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-179"><a href="#cb27-179"></a>    <span class="at">title =</span> <span class="st">"Comparison of Cross Country vs Alpine Skiing"</span>,</span>
+<span id="cb27-180"><a href="#cb27-180"></a>    <span class="at">x =</span> <span class="st">"Sport"</span>,</span>
+<span id="cb27-181"><a href="#cb27-181"></a>    <span class="at">y =</span> <span class="st">"Average Value"</span>,</span>
+<span id="cb27-182"><a href="#cb27-182"></a>    <span class="at">fill =</span> <span class="st">"Sport"</span></span>
+<span id="cb27-183"><a href="#cb27-183"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-184"><a href="#cb27-184"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb27-185"><a href="#cb27-185"></a></span>
+<span id="cb27-186"><a href="#cb27-186"></a></span>
+<span id="cb27-187"><a href="#cb27-187"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
 
 
 
