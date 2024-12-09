@@ -40,7 +40,7 @@ The Olympics is one of the greatest global sporting events, celebrating athletic
 -   **Findings**:Top 10 sports, more participants in summer than winter.
 
 -   **Visualization**:
-```{r}
+```{r echo=FALSE}
 olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
 
 library(tidyverse)
@@ -68,7 +68,7 @@ sport_distribution |>
   ) +
   theme_minimal()
 ```
-```{r}
+```{r echo=FALSE}
 # Count number of participants per year
 participation_trends <- olympics |>
   group_by(year) |>
@@ -98,7 +98,7 @@ participation_trends |>
 -   **Visualization**
 
 ## Winter
-```{r}
+```{r echo=FALSE}
 athlete_trends <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |>
   group_by(sport, sex) |>
@@ -123,7 +123,7 @@ athlete_trends |>
   theme_minimal()
 ```
 ## Summer
-```{r}
+```{r echo=FALSE}
 athlete_trends <- olympics |>
   filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
   group_by(sport, sex) |>
@@ -154,7 +154,7 @@ athlete_trends |>
 -   **Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in footb
 
 -   **Visualization**:
-```{r}
+```{r echo=FALSE}
 yearly_trends <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |>
   group_by(sport, year) |>
@@ -174,7 +174,7 @@ yearly_trends |>
   theme_minimal()
 ```
 
-```{r}
+```{r echo=FALSE}
 yearly_trends <- olympics |>
   filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
   group_by(sport, year) |>
@@ -201,7 +201,7 @@ yearly_trends |>
 -   **Findings**:
 
 -   **Visualization**:
-```{r}
+```{r echo=FALSE}
 # Pivot the data for visualization
 medal_data_long <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |>
@@ -226,7 +226,7 @@ medal_data_long |>
 
 
 ```
-```{r}
+```{r echo=FALSE}
 # Pivot the data for visualization
 medal_data_long <- olympics |>
   filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
@@ -258,7 +258,7 @@ medal_data_long |>
 -   **Findings**:
 
 -   **Visualization**:
-```{r}
+```{r echo=FALSE}
 # Calculate total participation for top 10 countries
 top_10_countries <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |>
@@ -290,7 +290,7 @@ top_countries_all_sports |>
   theme_minimal()
 
 ```
-```{r}
+```{r echo=FALSE}
 # Calculate total participation for top 10 countries
 top_10_countries <- olympics |>
   filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
@@ -323,7 +323,7 @@ top_countries_all_sports |>
 
 ```
 
-```{r}
+```{r echo=FALSE}
 # Filter data for medal-winning athletes
 medal_data <- olympics |>
   filter(!is.na(medal)) |>
@@ -368,7 +368,7 @@ medal_data_top10 |>
 
 -   **Visualization**:
 
-```{r}
+```{r echo=FALSE}
 # Summarize data for participants and medals per country
 participants_vs_medals <- olympics |>
   filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
@@ -394,7 +394,7 @@ participants_vs_medals |>
   theme_minimal()
 
 ```
-```{r}
+```{r echo=FALSE}
 participants_vs_medals <- olympics |>
   filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |>
   group_by(noc, sport) |>
