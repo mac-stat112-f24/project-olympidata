@@ -89,13 +89,14 @@ participation_trends |>
 
 ```
 
-------------------------------------------------------------------------
+
 
 ### **3.2 Impact of Sex**
 
 -   **Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in football and rowing.
 
--   **Visualization**:
+-   **Visualization**
+
 ## Winter
 ```{r}
 athlete_trends <- olympics |>
@@ -148,7 +149,6 @@ athlete_trends |>
   theme_minimal()
 ```
 
-------------------------------------------------------------------------
 ### **3.3 Participation Over Years**
 
 -   **Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in footb
@@ -173,6 +173,7 @@ yearly_trends |>
   ) +
   theme_minimal()
 ```
+
 ```{r}
 yearly_trends <- olympics |>
   filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |>
@@ -194,7 +195,7 @@ yearly_trends |>
   theme_minimal()
 ```
 
-------------------------------------------------------------------------
+
 ### **3.4 Correlation Between Medal Wins and Physical Attributes**
 
 -   **Findings**:
@@ -251,7 +252,7 @@ medal_data_long |>
 
 ```
 
-------------------------------------------------------------------------
+
 ### **3.5 Top countries **
 
 -   **Findings**:
@@ -360,7 +361,7 @@ medal_data_top10 |>
   theme_minimal()
 
 ```
-------------------------------------------------------------------------
+
 ### **3.6 Medals vs Participant **
 
 -   **Findings**:
