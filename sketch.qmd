@@ -1,1 +1,5 @@
-# Sketch {.unnumbered}
+# Sketch
+
+# ![](figures/Pg%201.jpg) {.unnumbered}
+
+![](figures/Pg.%202.jpg)
