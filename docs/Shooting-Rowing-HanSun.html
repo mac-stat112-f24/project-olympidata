@@ -260,6 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#female-5" id="toc-female-5" class="nav-link" data-scroll-target="#female-5"><span class="header-section-number">I.2.2</span> female</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">J</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -776,8 +777,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="I.1" class="anchored" data-anchor-id="shooting-2"><span class="header-section-number">I.1</span> shooting</h2>
 <section id="male-4" class="level3" data-number="I.1.1">
 <h3 data-number="I.1.1" class="anchored" data-anchor-id="male-4"><span class="header-section-number">I.1.1</span> male</h3>
-<section id="height" class="level4" data-number="I.1.1.1">
-<h4 data-number="I.1.1.1" class="anchored" data-anchor-id="height"><span class="header-section-number">I.1.1.1</span> height</h4>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>shooting_M<span class="ot">&lt;-</span> shooting_M <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Shooting Men's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
@@ -851,7 +850,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>From the boxplot, most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg; most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30.</p>
-</section>
 </section>
 <section id="female-4" class="level3" data-number="I.1.2">
 <h3 data-number="I.1.2" class="anchored" data-anchor-id="female-4"><span class="header-section-number">I.1.2</span> female</h3>
@@ -1009,7 +1007,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Event have few effects to both weight, height and age for male’s rowing events, the best age is around 25-35; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.</p>
+<p>Event have few effects to both weight, height and age for male’s rowing events, the best age is around 23-28; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.</p>
 </section>
 <section id="female-5" class="level3" data-number="I.2.2">
 <h3 data-number="I.2.2" class="anchored" data-anchor-id="female-5"><span class="header-section-number">I.2.2</span> female</h3>
@@ -1086,12 +1084,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>For all events, height, weight and age are roughly in same range. The height is among 175-185cm; weight is among 70-80kg, where Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg; age is among 25-30.</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level1" data-number="J">
+<h1 data-number="J"><span class="header-section-number">J</span> Conclusion</h1>
+<p>Shooting: Most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg. For female shooting athletes, for almost all event, the best height is in a range covered around 160-170cm, while Trap and Skeet have slightly higher range at about 165-173cm. The weight varied by event a lot, Air Pistol 10 meters have a range around 60-70kg; Air Rifle 10 meters have a range around 50-55kg; Double Trap have a range around 65-83kg, and its mean value extremely at about 83kg; Skeet have a range around 60-83kg, also have an extreme mean value at about 80kg; Small-Bore Rifle Three Positions 50 meters have a range around 52kg-62kg; Sporting Pistol 25 meters have a range around 55-65kg; and Trap have a range around 63-85kg.</p>
+<p>For male shooting athletes, most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30. For female shooting athletes, most events have the best age at a range in 25-35, while Air Pistol 10 meters, Air Rifle 10 meters and Small-Bore Rifle Three Positions 50 meters have younger age almost all under 30. It seems that for both gender, experience is important, while the events including running still require younger athletes that have better body condition.</p>
+<p>(There are too few data points for Shooting Mixed Sheet and Shooting Mixed Small-Bore Rifle Three Positions, 50 meters to have solid conclusion in female shooting events.)</p>
+<p>Rowing: For male rowing athletes, despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg. Lightweight Double Sculls and Lightweight Coxless Fours have few data points to have solid conclusion. For female rowing athletes, for all events despite of Lightweight Double Sculls, the height is among 175-185cm; weight is among 70-80kg. Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg. Moreover, for all events in Rowing, weight and height are increasing very slightly but continually, which might cause by the restrictions to the weight to rowing athletes, there exist a upper bound for them and they are reaching that limitation closer.</p>
+<p>For male rowing athletes, the best age is around 23-28; and for female, this range is larger which is 23-30. Rowing has strong requirements to the body conditions of the athletes that younger age is important.</p>
 
 
 <!-- -->
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1742,165 +1748,182 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb61-258"><a href="#cb61-258"></a><span class="fu"># Fitting models</span></span>
 <span id="cb61-259"><a href="#cb61-259"></a><span class="fu">## shooting</span></span>
 <span id="cb61-260"><a href="#cb61-260"></a><span class="fu">### male</span></span>
-<span id="cb61-261"><a href="#cb61-261"></a><span class="fu">#### height</span></span>
-<span id="cb61-264"><a href="#cb61-264"></a><span class="in">```{r}</span></span>
-<span id="cb61-265"><a href="#cb61-265"></a>shooting_M<span class="ot">&lt;-</span> shooting_M <span class="sc">%&gt;%</span></span>
-<span id="cb61-266"><a href="#cb61-266"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Shooting Men's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-267"><a href="#cb61-267"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-268"><a href="#cb61-268"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-269"><a href="#cb61-269"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
-<span id="cb61-270"><a href="#cb61-270"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-271"><a href="#cb61-271"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-272"><a href="#cb61-272"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-273"><a href="#cb61-273"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-274"><a href="#cb61-274"></a></span>
-<span id="cb61-275"><a href="#cb61-275"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-276"><a href="#cb61-276"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-277"><a href="#cb61-277"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-278"><a href="#cb61-278"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-279"><a href="#cb61-279"></a></span>
-<span id="cb61-280"><a href="#cb61-280"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-281"><a href="#cb61-281"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-282"><a href="#cb61-282"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-283"><a href="#cb61-283"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-284"><a href="#cb61-284"></a><span class="in">```</span></span>
-<span id="cb61-285"><a href="#cb61-285"></a>For every event individually, year doesn't have much effect. The relation showed in previous part might caused by that some events only hold in specific duration, so we might only need a boxplot for events.</span>
+<span id="cb61-263"><a href="#cb61-263"></a><span class="in">```{r}</span></span>
+<span id="cb61-264"><a href="#cb61-264"></a>shooting_M<span class="ot">&lt;-</span> shooting_M <span class="sc">%&gt;%</span></span>
+<span id="cb61-265"><a href="#cb61-265"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Shooting Men's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-266"><a href="#cb61-266"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-267"><a href="#cb61-267"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-268"><a href="#cb61-268"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
+<span id="cb61-269"><a href="#cb61-269"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-270"><a href="#cb61-270"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-271"><a href="#cb61-271"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-272"><a href="#cb61-272"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-273"><a href="#cb61-273"></a></span>
+<span id="cb61-274"><a href="#cb61-274"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-275"><a href="#cb61-275"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-276"><a href="#cb61-276"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-277"><a href="#cb61-277"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-278"><a href="#cb61-278"></a></span>
+<span id="cb61-279"><a href="#cb61-279"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-280"><a href="#cb61-280"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-281"><a href="#cb61-281"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-282"><a href="#cb61-282"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-283"><a href="#cb61-283"></a><span class="in">```</span></span>
+<span id="cb61-284"><a href="#cb61-284"></a>For every event individually, year doesn't have much effect. The relation showed in previous part might caused by that some events only hold in specific duration, so we might only need a boxplot for events.</span>
+<span id="cb61-285"><a href="#cb61-285"></a></span>
 <span id="cb61-286"><a href="#cb61-286"></a></span>
-<span id="cb61-287"><a href="#cb61-287"></a></span>
-<span id="cb61-290"><a href="#cb61-290"></a><span class="in">```{r}</span></span>
-<span id="cb61-291"><a href="#cb61-291"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-292"><a href="#cb61-292"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-293"><a href="#cb61-293"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-294"><a href="#cb61-294"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-295"><a href="#cb61-295"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-296"><a href="#cb61-296"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-297"><a href="#cb61-297"></a><span class="in">```</span></span>
-<span id="cb61-298"><a href="#cb61-298"></a></span>
-<span id="cb61-299"><a href="#cb61-299"></a>From the boxplot, most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg; most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30.</span>
-<span id="cb61-300"><a href="#cb61-300"></a></span>
-<span id="cb61-301"><a href="#cb61-301"></a><span class="fu">### female</span></span>
-<span id="cb61-302"><a href="#cb61-302"></a> </span>
-<span id="cb61-305"><a href="#cb61-305"></a><span class="in">```{r}</span></span>
-<span id="cb61-306"><a href="#cb61-306"></a>shooting_F<span class="ot">&lt;-</span> shooting_F <span class="sc">%&gt;%</span></span>
-<span id="cb61-307"><a href="#cb61-307"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Shooting Women's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-308"><a href="#cb61-308"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-309"><a href="#cb61-309"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-310"><a href="#cb61-310"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
-<span id="cb61-311"><a href="#cb61-311"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-312"><a href="#cb61-312"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-313"><a href="#cb61-313"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-314"><a href="#cb61-314"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-315"><a href="#cb61-315"></a></span>
-<span id="cb61-316"><a href="#cb61-316"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-317"><a href="#cb61-317"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-318"><a href="#cb61-318"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-319"><a href="#cb61-319"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-320"><a href="#cb61-320"></a></span>
-<span id="cb61-321"><a href="#cb61-321"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-322"><a href="#cb61-322"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-323"><a href="#cb61-323"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-324"><a href="#cb61-324"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-325"><a href="#cb61-325"></a><span class="in">```</span></span>
-<span id="cb61-326"><a href="#cb61-326"></a></span>
-<span id="cb61-327"><a href="#cb61-327"></a>The linear regression also doesn't show strong relation between weight, age and year for female. However, the weight for event Trap and Skeet increase by year, and Double Trap decreases.</span>
+<span id="cb61-289"><a href="#cb61-289"></a><span class="in">```{r}</span></span>
+<span id="cb61-290"><a href="#cb61-290"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-291"><a href="#cb61-291"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-292"><a href="#cb61-292"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-293"><a href="#cb61-293"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-294"><a href="#cb61-294"></a><span class="fu">ggplot</span>(shooting_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-295"><a href="#cb61-295"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-296"><a href="#cb61-296"></a><span class="in">```</span></span>
+<span id="cb61-297"><a href="#cb61-297"></a></span>
+<span id="cb61-298"><a href="#cb61-298"></a>From the boxplot, most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg; most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30.</span>
+<span id="cb61-299"><a href="#cb61-299"></a></span>
+<span id="cb61-300"><a href="#cb61-300"></a><span class="fu">### female</span></span>
+<span id="cb61-301"><a href="#cb61-301"></a> </span>
+<span id="cb61-304"><a href="#cb61-304"></a><span class="in">```{r}</span></span>
+<span id="cb61-305"><a href="#cb61-305"></a>shooting_F<span class="ot">&lt;-</span> shooting_F <span class="sc">%&gt;%</span></span>
+<span id="cb61-306"><a href="#cb61-306"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Shooting Women's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-307"><a href="#cb61-307"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-308"><a href="#cb61-308"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-309"><a href="#cb61-309"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
+<span id="cb61-310"><a href="#cb61-310"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-311"><a href="#cb61-311"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-312"><a href="#cb61-312"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-313"><a href="#cb61-313"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-314"><a href="#cb61-314"></a></span>
+<span id="cb61-315"><a href="#cb61-315"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-316"><a href="#cb61-316"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-317"><a href="#cb61-317"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-318"><a href="#cb61-318"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-319"><a href="#cb61-319"></a></span>
+<span id="cb61-320"><a href="#cb61-320"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-321"><a href="#cb61-321"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-322"><a href="#cb61-322"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-323"><a href="#cb61-323"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-324"><a href="#cb61-324"></a><span class="in">```</span></span>
+<span id="cb61-325"><a href="#cb61-325"></a></span>
+<span id="cb61-326"><a href="#cb61-326"></a>The linear regression also doesn't show strong relation between weight, age and year for female. However, the weight for event Trap and Skeet increase by year, and Double Trap decreases.</span>
+<span id="cb61-327"><a href="#cb61-327"></a></span>
 <span id="cb61-328"><a href="#cb61-328"></a></span>
-<span id="cb61-329"><a href="#cb61-329"></a></span>
-<span id="cb61-332"><a href="#cb61-332"></a><span class="in">```{r}</span></span>
-<span id="cb61-333"><a href="#cb61-333"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-334"><a href="#cb61-334"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-335"><a href="#cb61-335"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-336"><a href="#cb61-336"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-337"><a href="#cb61-337"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-338"><a href="#cb61-338"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-339"><a href="#cb61-339"></a><span class="in">```</span></span>
-<span id="cb61-340"><a href="#cb61-340"></a></span>
-<span id="cb61-341"><a href="#cb61-341"></a>From the boxplot, for almost all event, the best height is in a range covered around 160-170cm, while Trap and Skeet have slightly higher range at about 165-173cm. </span>
-<span id="cb61-342"><a href="#cb61-342"></a></span>
-<span id="cb61-343"><a href="#cb61-343"></a>The weight varied by event a lot, Air Pistol 10 meters have a range around 60-70kg; Air Rifle 10 meters have a range around 50-55kg; Double Trap have a range around 65-83kg, and its mean value extremely at about 83kg; Skeet have a range around 60-83kg, also have a extrem mean value at about 80kg; Small-Bore Rifle Three Positions 50 meters have a range around 52kg-62kg; Sporting Pistol 25 meters have a range around 55-65kg; and Trap have a range around 63-85kg.</span>
-<span id="cb61-344"><a href="#cb61-344"></a></span>
-<span id="cb61-345"><a href="#cb61-345"></a>Most events have the best age at a range in 25-35, while Air Pistol 10 meters, Air Rifle 10 meters and Small-Bore Rifle Three Positions 50 meters have younger age almost all under 30. </span>
-<span id="cb61-346"><a href="#cb61-346"></a></span>
-<span id="cb61-347"><a href="#cb61-347"></a>There are too few data points for Shooting Mixed Sheet and Shooting Mixed Small-Bore Rifle Three Positions,50 metres to have solid conclusion.</span>
+<span id="cb61-331"><a href="#cb61-331"></a><span class="in">```{r}</span></span>
+<span id="cb61-332"><a href="#cb61-332"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-333"><a href="#cb61-333"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-334"><a href="#cb61-334"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-335"><a href="#cb61-335"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-336"><a href="#cb61-336"></a><span class="fu">ggplot</span>(shooting_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-337"><a href="#cb61-337"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-338"><a href="#cb61-338"></a><span class="in">```</span></span>
+<span id="cb61-339"><a href="#cb61-339"></a></span>
+<span id="cb61-340"><a href="#cb61-340"></a>From the boxplot, for almost all event, the best height is in a range covered around 160-170cm, while Trap and Skeet have slightly higher range at about 165-173cm. </span>
+<span id="cb61-341"><a href="#cb61-341"></a></span>
+<span id="cb61-342"><a href="#cb61-342"></a>The weight varied by event a lot, Air Pistol 10 meters have a range around 60-70kg; Air Rifle 10 meters have a range around 50-55kg; Double Trap have a range around 65-83kg, and its mean value extremely at about 83kg; Skeet have a range around 60-83kg, also have a extrem mean value at about 80kg; Small-Bore Rifle Three Positions 50 meters have a range around 52kg-62kg; Sporting Pistol 25 meters have a range around 55-65kg; and Trap have a range around 63-85kg.</span>
+<span id="cb61-343"><a href="#cb61-343"></a></span>
+<span id="cb61-344"><a href="#cb61-344"></a>Most events have the best age at a range in 25-35, while Air Pistol 10 meters, Air Rifle 10 meters and Small-Bore Rifle Three Positions 50 meters have younger age almost all under 30. </span>
+<span id="cb61-345"><a href="#cb61-345"></a></span>
+<span id="cb61-346"><a href="#cb61-346"></a>There are too few data points for Shooting Mixed Sheet and Shooting Mixed Small-Bore Rifle Three Positions,50 metres to have solid conclusion.</span>
+<span id="cb61-347"><a href="#cb61-347"></a></span>
 <span id="cb61-348"><a href="#cb61-348"></a></span>
-<span id="cb61-349"><a href="#cb61-349"></a></span>
-<span id="cb61-350"><a href="#cb61-350"></a><span class="fu">## Rowing</span></span>
-<span id="cb61-351"><a href="#cb61-351"></a><span class="fu">### male</span></span>
-<span id="cb61-354"><a href="#cb61-354"></a><span class="in">```{r}</span></span>
-<span id="cb61-355"><a href="#cb61-355"></a>rowing_M<span class="ot">&lt;-</span> rowing_M <span class="sc">%&gt;%</span></span>
-<span id="cb61-356"><a href="#cb61-356"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Rowing Men's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-357"><a href="#cb61-357"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-358"><a href="#cb61-358"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-359"><a href="#cb61-359"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
-<span id="cb61-360"><a href="#cb61-360"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-361"><a href="#cb61-361"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-362"><a href="#cb61-362"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-363"><a href="#cb61-363"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-364"><a href="#cb61-364"></a></span>
-<span id="cb61-365"><a href="#cb61-365"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-366"><a href="#cb61-366"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-367"><a href="#cb61-367"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-368"><a href="#cb61-368"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-369"><a href="#cb61-369"></a></span>
-<span id="cb61-370"><a href="#cb61-370"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-371"><a href="#cb61-371"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-372"><a href="#cb61-372"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-373"><a href="#cb61-373"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-374"><a href="#cb61-374"></a><span class="in">```</span></span>
-<span id="cb61-375"><a href="#cb61-375"></a></span>
-<span id="cb61-376"><a href="#cb61-376"></a>Both height and weight increase by year for almost all events in male rowing while Lightweight Double Sculls and Lightweight Coxless Fours only hold after 2000 that doesn't show clear relation yet.</span>
-<span id="cb61-377"><a href="#cb61-377"></a></span>
-<span id="cb61-380"><a href="#cb61-380"></a><span class="in">```{r}</span></span>
-<span id="cb61-381"><a href="#cb61-381"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-382"><a href="#cb61-382"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-383"><a href="#cb61-383"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-384"><a href="#cb61-384"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-385"><a href="#cb61-385"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-386"><a href="#cb61-386"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-387"><a href="#cb61-387"></a><span class="in">```</span></span>
-<span id="cb61-388"><a href="#cb61-388"></a></span>
-<span id="cb61-389"><a href="#cb61-389"></a>Event have few effects to both weight, height and age for male's rowing events, the best age is around 25-35; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.</span>
+<span id="cb61-349"><a href="#cb61-349"></a><span class="fu">## Rowing</span></span>
+<span id="cb61-350"><a href="#cb61-350"></a><span class="fu">### male</span></span>
+<span id="cb61-353"><a href="#cb61-353"></a><span class="in">```{r}</span></span>
+<span id="cb61-354"><a href="#cb61-354"></a>rowing_M<span class="ot">&lt;-</span> rowing_M <span class="sc">%&gt;%</span></span>
+<span id="cb61-355"><a href="#cb61-355"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"Rowing Men's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-356"><a href="#cb61-356"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-357"><a href="#cb61-357"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-358"><a href="#cb61-358"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
+<span id="cb61-359"><a href="#cb61-359"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-360"><a href="#cb61-360"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-361"><a href="#cb61-361"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-362"><a href="#cb61-362"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-363"><a href="#cb61-363"></a></span>
+<span id="cb61-364"><a href="#cb61-364"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-365"><a href="#cb61-365"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-366"><a href="#cb61-366"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-367"><a href="#cb61-367"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-368"><a href="#cb61-368"></a></span>
+<span id="cb61-369"><a href="#cb61-369"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-370"><a href="#cb61-370"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-371"><a href="#cb61-371"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-372"><a href="#cb61-372"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-373"><a href="#cb61-373"></a><span class="in">```</span></span>
+<span id="cb61-374"><a href="#cb61-374"></a></span>
+<span id="cb61-375"><a href="#cb61-375"></a>Both height and weight increase by year for almost all events in male rowing while Lightweight Double Sculls and Lightweight Coxless Fours only hold after 2000 that doesn't show clear relation yet.</span>
+<span id="cb61-376"><a href="#cb61-376"></a></span>
+<span id="cb61-379"><a href="#cb61-379"></a><span class="in">```{r}</span></span>
+<span id="cb61-380"><a href="#cb61-380"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-381"><a href="#cb61-381"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-382"><a href="#cb61-382"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-383"><a href="#cb61-383"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-384"><a href="#cb61-384"></a><span class="fu">ggplot</span>(rowing_M, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-385"><a href="#cb61-385"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-386"><a href="#cb61-386"></a><span class="in">```</span></span>
+<span id="cb61-387"><a href="#cb61-387"></a></span>
+<span id="cb61-388"><a href="#cb61-388"></a>Event have few effects to both weight, height and age for male's rowing events, the best age is around 23-28; despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg, and Lightweight Double Sculls and Lightweight Coxless Fours have few data points.</span>
+<span id="cb61-389"><a href="#cb61-389"></a></span>
 <span id="cb61-390"><a href="#cb61-390"></a></span>
-<span id="cb61-391"><a href="#cb61-391"></a></span>
-<span id="cb61-392"><a href="#cb61-392"></a><span class="fu">### female</span></span>
-<span id="cb61-395"><a href="#cb61-395"></a><span class="in">```{r}</span></span>
-<span id="cb61-396"><a href="#cb61-396"></a>rowing_F<span class="ot">&lt;-</span> rowing_F <span class="sc">%&gt;%</span></span>
-<span id="cb61-397"><a href="#cb61-397"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"RowingWomen's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-398"><a href="#cb61-398"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-399"><a href="#cb61-399"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb61-400"><a href="#cb61-400"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
-<span id="cb61-401"><a href="#cb61-401"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-402"><a href="#cb61-402"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-403"><a href="#cb61-403"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-404"><a href="#cb61-404"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-405"><a href="#cb61-405"></a></span>
-<span id="cb61-406"><a href="#cb61-406"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-407"><a href="#cb61-407"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-408"><a href="#cb61-408"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-409"><a href="#cb61-409"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-410"><a href="#cb61-410"></a></span>
-<span id="cb61-411"><a href="#cb61-411"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-412"><a href="#cb61-412"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb61-413"><a href="#cb61-413"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb61-414"><a href="#cb61-414"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
-<span id="cb61-415"><a href="#cb61-415"></a><span class="in">```</span></span>
-<span id="cb61-416"><a href="#cb61-416"></a></span>
-<span id="cb61-417"><a href="#cb61-417"></a>The data points distributed evenly in large ranges by year, so the linear regression doesn't show obvious relation between both height, weight and age.</span>
-<span id="cb61-418"><a href="#cb61-418"></a></span>
-<span id="cb61-421"><a href="#cb61-421"></a><span class="in">```{r}</span></span>
-<span id="cb61-422"><a href="#cb61-422"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
-<span id="cb61-423"><a href="#cb61-423"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-424"><a href="#cb61-424"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
-<span id="cb61-425"><a href="#cb61-425"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-426"><a href="#cb61-426"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
-<span id="cb61-427"><a href="#cb61-427"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb61-428"><a href="#cb61-428"></a><span class="in">```</span></span>
-<span id="cb61-429"><a href="#cb61-429"></a></span>
-<span id="cb61-430"><a href="#cb61-430"></a>For all events, height, weight and age are roughly in same range. The height is among 175-185cm; weight is among 70-80kg, where Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg; age is among 25-30.</span>
+<span id="cb61-391"><a href="#cb61-391"></a><span class="fu">### female</span></span>
+<span id="cb61-394"><a href="#cb61-394"></a><span class="in">```{r}</span></span>
+<span id="cb61-395"><a href="#cb61-395"></a>rowing_F<span class="ot">&lt;-</span> rowing_F <span class="sc">%&gt;%</span></span>
+<span id="cb61-396"><a href="#cb61-396"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">"RowingWomen's"</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-397"><a href="#cb61-397"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace_all</span>(event, <span class="st">" "</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-398"><a href="#cb61-398"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_replace</span>(event, <span class="st">","</span>, <span class="st">""</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb61-399"><a href="#cb61-399"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">str_wrap</span>(event, <span class="at">width =</span> <span class="dv">6</span>))</span>
+<span id="cb61-400"><a href="#cb61-400"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-401"><a href="#cb61-401"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-402"><a href="#cb61-402"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-403"><a href="#cb61-403"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-404"><a href="#cb61-404"></a></span>
+<span id="cb61-405"><a href="#cb61-405"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-406"><a href="#cb61-406"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-407"><a href="#cb61-407"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-408"><a href="#cb61-408"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-409"><a href="#cb61-409"></a></span>
+<span id="cb61-410"><a href="#cb61-410"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-411"><a href="#cb61-411"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-412"><a href="#cb61-412"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb61-413"><a href="#cb61-413"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> event)</span>
+<span id="cb61-414"><a href="#cb61-414"></a><span class="in">```</span></span>
+<span id="cb61-415"><a href="#cb61-415"></a></span>
+<span id="cb61-416"><a href="#cb61-416"></a>The data points distributed evenly in large ranges by year, so the linear regression doesn't show obvious relation between both height, weight and age.</span>
+<span id="cb61-417"><a href="#cb61-417"></a></span>
+<span id="cb61-420"><a href="#cb61-420"></a><span class="in">```{r}</span></span>
+<span id="cb61-421"><a href="#cb61-421"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb61-422"><a href="#cb61-422"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-423"><a href="#cb61-423"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> weight))<span class="sc">+</span></span>
+<span id="cb61-424"><a href="#cb61-424"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-425"><a href="#cb61-425"></a><span class="fu">ggplot</span>(rowing_F, <span class="fu">aes</span>(<span class="at">x =</span> event, <span class="at">y =</span> age))<span class="sc">+</span></span>
+<span id="cb61-426"><a href="#cb61-426"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb61-427"><a href="#cb61-427"></a><span class="in">```</span></span>
+<span id="cb61-428"><a href="#cb61-428"></a></span>
+<span id="cb61-429"><a href="#cb61-429"></a>For all events, height, weight and age are roughly in same range. The height is among 175-185cm; weight is among 70-80kg, where Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg; age is among 25-30.</span>
+<span id="cb61-430"><a href="#cb61-430"></a></span>
 <span id="cb61-431"><a href="#cb61-431"></a></span>
-<span id="cb61-432"><a href="#cb61-432"></a></span>
+<span id="cb61-432"><a href="#cb61-432"></a><span class="fu"># Conclusion</span></span>
 <span id="cb61-433"><a href="#cb61-433"></a></span>
-<span id="cb61-434"><a href="#cb61-434"></a></span>
-<span id="cb61-435"><a href="#cb61-435"></a></span>
+<span id="cb61-434"><a href="#cb61-434"></a>Shooting:</span>
+<span id="cb61-435"><a href="#cb61-435"></a>Most male shooting athletes are around 170-180cm despite their event and year; the event trap team will require higher weight than other event, which around 90-115kg, while most other events are around 70-90kg. For female shooting athletes, for almost all event, the best height is in a range covered around 160-170cm, while Trap and Skeet have slightly higher range at about 165-173cm. The weight varied by event a lot, Air Pistol 10 meters have a range around 60-70kg; Air Rifle 10 meters have a range around 50-55kg; Double Trap have a range around 65-83kg, and its mean value extremely at about 83kg; Skeet have a range around 60-83kg, also have an extreme mean value at about 80kg; Small-Bore Rifle Three Positions 50 meters have a range around 52kg-62kg; Sporting Pistol 25 meters have a range around 55-65kg; and Trap have a range around 63-85kg.</span>
+<span id="cb61-436"><a href="#cb61-436"></a></span>
+<span id="cb61-437"><a href="#cb61-437"></a></span>
+<span id="cb61-438"><a href="#cb61-438"></a>For male shooting athletes, most events have wide age range from about 25-35, while events including running like running target 50 meters, will have smaller ranges from 20-30. </span>
+<span id="cb61-439"><a href="#cb61-439"></a>For female shooting athletes, most events have the best age at a range in 25-35, while Air Pistol 10 meters, Air Rifle 10 meters and Small-Bore Rifle Three Positions 50 meters have younger age almost all under 30. It seems that for both gender, experience is important, while the events including running still require younger athletes that have better body condition.</span>
+<span id="cb61-440"><a href="#cb61-440"></a></span>
+<span id="cb61-441"><a href="#cb61-441"></a>(There are too few data points for Shooting Mixed Sheet and Shooting Mixed Small-Bore Rifle Three Positions, 50 meters to have solid conclusion in female shooting events.)</span>
+<span id="cb61-442"><a href="#cb61-442"></a></span>
+<span id="cb61-443"><a href="#cb61-443"></a></span>
+<span id="cb61-444"><a href="#cb61-444"></a></span>
+<span id="cb61-445"><a href="#cb61-445"></a>Rowing:</span>
+<span id="cb61-446"><a href="#cb61-446"></a>For male rowing athletes, despite of Coxed Paired, Lightweight Double Sculls and Lightweight Coxless Fours, all events have a best range of height around 185-195cm, weight around 85-95kg. Coxed Paired allows wider range that height is around 170-195cm, and weight is around 55-95kg. Lightweight Double Sculls and Lightweight Coxless Fours have few data points to have solid conclusion. For female rowing athletes, for all events despite of Lightweight Double Sculls, the height is among 175-185cm; weight is among 70-80kg. Lightweight Double Sculls is much lower since it is lightweight which is among 57-60kg. Moreover, for all events in Rowing, weight and height are increasing very slightly but continually, which might cause by the restrictions to the weight to rowing athletes, there exist a upper bound for them and they are reaching that limitation closer.</span>
+<span id="cb61-447"><a href="#cb61-447"></a></span>
+<span id="cb61-448"><a href="#cb61-448"></a>For male rowing athletes, the best age is around 23-28; and for female, this range is larger which is 23-30. Rowing has strong requirements to the body conditions of the athletes that younger age is important.</span>
+<span id="cb61-449"><a href="#cb61-449"></a></span>
+<span id="cb61-450"><a href="#cb61-450"></a></span>
+<span id="cb61-451"><a href="#cb61-451"></a></span>
+<span id="cb61-452"><a href="#cb61-452"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
