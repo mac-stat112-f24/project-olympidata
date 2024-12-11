@@ -9,8 +9,8 @@ project:
   output-dir: docs
 
 book:
-  title: "write your project title here"
-  author: ["student 1 first and last name", "student 2 first and last name", "student 3 first and last name", "student 4 first and last name"]
+  title: "Olympidata"
+  author: ["Avery Sheindlin", "Jack Fang", "Han Sun", "Khaleesi Chen"]
   date: today
   date-format: full
   reader-mode: true
@@ -22,6 +22,10 @@ book:
   appendices:
   - proposal.qmd
   - sketch.qmd
+  - Shooting-Rowing-HanSun.qmd
+  - skiing.qmd
+  - Figure-Skating_Speed-Skating.qmd
+  - Football-Swimming-Jack Fang.qmd
 
 
 format:
