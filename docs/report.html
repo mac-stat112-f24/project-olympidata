@@ -276,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction"><strong>1. Introduction</strong></h2>
 <p>The Olympics is one of the greatest global sporting events, celebrating athleticism and showcasing incredible human feats. However, at its core, the Olympics is truly a competition, with audiences worldwide closely following medal counts and rooting for gold. What variables, such as country or weight, influence success in the Olympics? In this report, we analyze the factors that correlate with earning medals in eight different sports: Football, Swimming, Shooting, Rowing, Alpine Skiing, Cross-Country Skiing, Speed Skating, and Figure Skating.</p>
-<p>Video Presentation:</p>
+<p><a href="OlympiVideo.mp4">Video Presentation</a></p>
 <p><a href="Data Sci Presentation.pdf">Presentation Slides</a></p>
 <hr>
 </section>
@@ -1228,455 +1228,452 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-12"><a href="#cb12-12"></a></span>
 <span id="cb12-13"><a href="#cb12-13"></a>The Olympics is one of the greatest global sporting events, celebrating athleticism and showcasing incredible human feats. However, at its core, the Olympics is truly a competition, with audiences worldwide closely following medal counts and rooting for gold. What variables, such as country or weight, influence success in the Olympics? In this report, we analyze the factors that correlate with earning medals in eight different sports: Football, Swimming, Shooting, Rowing, Alpine Skiing, Cross-Country Skiing, Speed Skating, and Figure Skating.</span>
 <span id="cb12-14"><a href="#cb12-14"></a></span>
-<span id="cb12-15"><a href="#cb12-15"></a>Video Presentation:</span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="co">[</span><span class="ot">Video Presentation</span><span class="co">](OlympiVideo.mp4)</span></span>
 <span id="cb12-16"><a href="#cb12-16"></a></span>
-<span id="cb12-17"><a href="#cb12-17"></a></span>
-<span id="cb12-18"><a href="#cb12-18"></a><span class="co">[</span><span class="ot">Presentation Slides</span><span class="co">](Data%20Sci%20Presentation.pdf)</span></span>
-<span id="cb12-19"><a href="#cb12-19"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="co">[</span><span class="ot">Presentation Slides</span><span class="co">](Data%20Sci%20Presentation.pdf)</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a></span>
+<span id="cb12-19"><a href="#cb12-19"></a>------------------------------------------------------------------------</span>
 <span id="cb12-20"><a href="#cb12-20"></a></span>
-<span id="cb12-21"><a href="#cb12-21"></a></span>
-<span id="cb12-22"><a href="#cb12-22"></a>------------------------------------------------------------------------</span>
-<span id="cb12-23"><a href="#cb12-23"></a></span>
-<span id="cb12-24"><a href="#cb12-24"></a><span class="fu">## **2. Methodology**</span></span>
-<span id="cb12-25"><a href="#cb12-25"></a></span>
-<span id="cb12-26"><a href="#cb12-26"></a><span class="fu">### **2.1 Data Cleaning and Preparation**</span></span>
-<span id="cb12-27"><a href="#cb12-27"></a></span>
-<span id="cb12-28"><a href="#cb12-28"></a><span class="ss">-   </span>Removed missing values in key attributes such as age, height, weight, and medals.</span>
-<span id="cb12-29"><a href="#cb12-29"></a><span class="ss">-   </span>Filtered data</span>
-<span id="cb12-30"><a href="#cb12-30"></a><span class="ss">-   </span>Created new variables:</span>
-<span id="cb12-31"><a href="#cb12-31"></a><span class="ss">    -   </span><span class="in">`medal_won`</span>: Indicates if an athlete won a medal (Yes/No).</span>
-<span id="cb12-32"><a href="#cb12-32"></a><span class="ss">    -   </span><span class="in">`repeat_participation`</span>: Captures repeated appearances by athletes.</span>
-<span id="cb12-33"><a href="#cb12-33"></a></span>
-<span id="cb12-34"><a href="#cb12-34"></a><span class="fu">### **2.2 Analysis Approach**</span></span>
-<span id="cb12-35"><a href="#cb12-35"></a></span>
-<span id="cb12-36"><a href="#cb12-36"></a><span class="ss">-   </span>**Physical Attributes**: Compared average age, height, and weight of medalists vs non-medalists.</span>
-<span id="cb12-37"><a href="#cb12-37"></a><span class="ss">-   </span>**Experience**: Evaluated the role of age and repeated participation in medal success.</span>
-<span id="cb12-38"><a href="#cb12-38"></a><span class="ss">-   </span>**Country Dominance**: Analyzed which countries are top performers in each sport.</span>
-<span id="cb12-39"><a href="#cb12-39"></a><span class="ss">-   </span>**Sport Comparisons**: Highlighted differences and similarities between sports</span>
-<span id="cb12-40"><a href="#cb12-40"></a></span>
-<span id="cb12-41"><a href="#cb12-41"></a>------------------------------------------------------------------------</span>
-<span id="cb12-42"><a href="#cb12-42"></a></span>
-<span id="cb12-43"><a href="#cb12-43"></a><span class="fu">## **3. Results**</span></span>
-<span id="cb12-44"><a href="#cb12-44"></a></span>
-<span id="cb12-45"><a href="#cb12-45"></a><span class="fu">### **3.1 Dataset overview**</span></span>
-<span id="cb12-46"><a href="#cb12-46"></a></span>
-<span id="cb12-47"><a href="#cb12-47"></a><span class="ss">-   </span>**Findings**:Top 10 sports, more participants in summer than winter.</span>
-<span id="cb12-48"><a href="#cb12-48"></a></span>
-<span id="cb12-49"><a href="#cb12-49"></a><span class="ss">-   </span>**Visualization**:</span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="fu">## **2. Methodology**</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="fu">### **2.1 Data Cleaning and Preparation**</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a></span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="ss">-   </span>Removed missing values in key attributes such as age, height, weight, and medals.</span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="ss">-   </span>Filtered data</span>
+<span id="cb12-27"><a href="#cb12-27"></a><span class="ss">-   </span>Created new variables:</span>
+<span id="cb12-28"><a href="#cb12-28"></a><span class="ss">    -   </span><span class="in">`medal_won`</span>: Indicates if an athlete won a medal (Yes/No).</span>
+<span id="cb12-29"><a href="#cb12-29"></a><span class="ss">    -   </span><span class="in">`repeat_participation`</span>: Captures repeated appearances by athletes.</span>
+<span id="cb12-30"><a href="#cb12-30"></a></span>
+<span id="cb12-31"><a href="#cb12-31"></a><span class="fu">### **2.2 Analysis Approach**</span></span>
+<span id="cb12-32"><a href="#cb12-32"></a></span>
+<span id="cb12-33"><a href="#cb12-33"></a><span class="ss">-   </span>**Physical Attributes**: Compared average age, height, and weight of medalists vs non-medalists.</span>
+<span id="cb12-34"><a href="#cb12-34"></a><span class="ss">-   </span>**Experience**: Evaluated the role of age and repeated participation in medal success.</span>
+<span id="cb12-35"><a href="#cb12-35"></a><span class="ss">-   </span>**Country Dominance**: Analyzed which countries are top performers in each sport.</span>
+<span id="cb12-36"><a href="#cb12-36"></a><span class="ss">-   </span>**Sport Comparisons**: Highlighted differences and similarities between sports</span>
+<span id="cb12-37"><a href="#cb12-37"></a></span>
+<span id="cb12-38"><a href="#cb12-38"></a>------------------------------------------------------------------------</span>
+<span id="cb12-39"><a href="#cb12-39"></a></span>
+<span id="cb12-40"><a href="#cb12-40"></a><span class="fu">## **3. Results**</span></span>
+<span id="cb12-41"><a href="#cb12-41"></a></span>
+<span id="cb12-42"><a href="#cb12-42"></a><span class="fu">### **3.1 Dataset overview**</span></span>
+<span id="cb12-43"><a href="#cb12-43"></a></span>
+<span id="cb12-44"><a href="#cb12-44"></a><span class="ss">-   </span>**Findings**:Top 10 sports, more participants in summer than winter.</span>
+<span id="cb12-45"><a href="#cb12-45"></a></span>
+<span id="cb12-46"><a href="#cb12-46"></a><span class="ss">-   </span>**Visualization**:</span>
+<span id="cb12-47"><a href="#cb12-47"></a></span>
+<span id="cb12-48"><a href="#cb12-48"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-49"><a href="#cb12-49"></a><span class="in">olympics &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')</span></span>
 <span id="cb12-50"><a href="#cb12-50"></a></span>
-<span id="cb12-51"><a href="#cb12-51"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-52"><a href="#cb12-52"></a><span class="in">olympics &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')</span></span>
-<span id="cb12-53"><a href="#cb12-53"></a></span>
-<span id="cb12-54"><a href="#cb12-54"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb12-55"><a href="#cb12-55"></a><span class="in">library(ggplot2)</span></span>
-<span id="cb12-56"><a href="#cb12-56"></a><span class="in">library(dplyr)</span></span>
-<span id="cb12-57"><a href="#cb12-57"></a><span class="in">library(tidyr)</span></span>
-<span id="cb12-58"><a href="#cb12-58"></a></span>
-<span id="cb12-59"><a href="#cb12-59"></a><span class="in"># Count number of participants in each sport</span></span>
-<span id="cb12-60"><a href="#cb12-60"></a><span class="in">sport_distribution &lt;- olympics |&gt;</span></span>
-<span id="cb12-61"><a href="#cb12-61"></a><span class="in">  group_by(sport) |&gt;</span></span>
-<span id="cb12-62"><a href="#cb12-62"></a><span class="in">  summarise(participants = n(), .groups = 'drop') |&gt;</span></span>
-<span id="cb12-63"><a href="#cb12-63"></a><span class="in">  arrange(desc(participants))</span></span>
-<span id="cb12-64"><a href="#cb12-64"></a><span class="in">sport_distribution</span></span>
-<span id="cb12-65"><a href="#cb12-65"></a></span>
-<span id="cb12-66"><a href="#cb12-66"></a><span class="in"># Plot distribution of top 10 sports</span></span>
-<span id="cb12-67"><a href="#cb12-67"></a><span class="in">sport_distribution |&gt;</span></span>
-<span id="cb12-68"><a href="#cb12-68"></a><span class="in">  slice_max(participants, n = 10) |&gt;</span></span>
-<span id="cb12-69"><a href="#cb12-69"></a><span class="in">  ggplot(aes(x = reorder(sport, participants), y = participants)) +</span></span>
-<span id="cb12-70"><a href="#cb12-70"></a><span class="in">  geom_bar(stat = "identity", fill = "steelblue") +</span></span>
-<span id="cb12-71"><a href="#cb12-71"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb12-72"><a href="#cb12-72"></a><span class="in">  labs(</span></span>
-<span id="cb12-73"><a href="#cb12-73"></a><span class="in">    title = "Top 10 Sports by Number of Participants",</span></span>
-<span id="cb12-74"><a href="#cb12-74"></a><span class="in">    x = "Sport",</span></span>
-<span id="cb12-75"><a href="#cb12-75"></a><span class="in">    y = "Number of Participants"</span></span>
-<span id="cb12-76"><a href="#cb12-76"></a><span class="in">  ) +</span></span>
-<span id="cb12-77"><a href="#cb12-77"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-78"><a href="#cb12-78"></a><span class="in">```</span></span>
-<span id="cb12-79"><a href="#cb12-79"></a></span>
-<span id="cb12-80"><a href="#cb12-80"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-81"><a href="#cb12-81"></a><span class="in"># Count number of participants per year</span></span>
-<span id="cb12-82"><a href="#cb12-82"></a><span class="in">participation_trends &lt;- olympics |&gt;</span></span>
-<span id="cb12-83"><a href="#cb12-83"></a><span class="in">  group_by(year) |&gt;</span></span>
-<span id="cb12-84"><a href="#cb12-84"></a><span class="in">  summarise(participants = n(), .groups = 'drop')</span></span>
-<span id="cb12-85"><a href="#cb12-85"></a><span class="in">participation_trends</span></span>
-<span id="cb12-86"><a href="#cb12-86"></a></span>
-<span id="cb12-87"><a href="#cb12-87"></a><span class="in"># Plot participation over time</span></span>
-<span id="cb12-88"><a href="#cb12-88"></a><span class="in">participation_trends |&gt;</span></span>
-<span id="cb12-89"><a href="#cb12-89"></a><span class="in">  ggplot(aes(x = year, y = participants)) +</span></span>
-<span id="cb12-90"><a href="#cb12-90"></a><span class="in">  geom_line(color = "darkorange", size = 1) +</span></span>
-<span id="cb12-91"><a href="#cb12-91"></a><span class="in">  geom_point(color = "darkred") +</span></span>
-<span id="cb12-92"><a href="#cb12-92"></a><span class="in">  labs(</span></span>
-<span id="cb12-93"><a href="#cb12-93"></a><span class="in">    title = "Participation Trends Over Time",</span></span>
-<span id="cb12-94"><a href="#cb12-94"></a><span class="in">    x = "Year",</span></span>
-<span id="cb12-95"><a href="#cb12-95"></a><span class="in">    y = "Number of Participants"</span></span>
-<span id="cb12-96"><a href="#cb12-96"></a><span class="in">  ) +</span></span>
-<span id="cb12-97"><a href="#cb12-97"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-98"><a href="#cb12-98"></a></span>
-<span id="cb12-99"><a href="#cb12-99"></a><span class="in">```</span></span>
-<span id="cb12-100"><a href="#cb12-100"></a></span>
-<span id="cb12-101"><a href="#cb12-101"></a><span class="fu">### **3.2 Impact of Sex**</span></span>
-<span id="cb12-102"><a href="#cb12-102"></a></span>
-<span id="cb12-103"><a href="#cb12-103"></a><span class="ss">-   </span>**Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in football and rowing.</span>
-<span id="cb12-104"><a href="#cb12-104"></a></span>
-<span id="cb12-105"><a href="#cb12-105"></a><span class="ss">-   </span>**Visualization**</span>
-<span id="cb12-106"><a href="#cb12-106"></a></span>
-<span id="cb12-107"><a href="#cb12-107"></a><span class="fu">## Winter</span></span>
-<span id="cb12-108"><a href="#cb12-108"></a></span>
-<span id="cb12-109"><a href="#cb12-109"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-110"><a href="#cb12-110"></a><span class="in">athlete_trends &lt;- olympics |&gt;</span></span>
-<span id="cb12-111"><a href="#cb12-111"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |&gt;</span></span>
-<span id="cb12-112"><a href="#cb12-112"></a><span class="in">  group_by(sport, sex) |&gt;</span></span>
-<span id="cb12-113"><a href="#cb12-113"></a><span class="in">  summarize(</span></span>
-<span id="cb12-114"><a href="#cb12-114"></a><span class="in">    avg_age = mean(age, na.rm = TRUE),</span></span>
-<span id="cb12-115"><a href="#cb12-115"></a><span class="in">    avg_height = mean(height, na.rm = TRUE),</span></span>
-<span id="cb12-116"><a href="#cb12-116"></a><span class="in">    avg_weight = mean(weight, na.rm = TRUE),</span></span>
-<span id="cb12-117"><a href="#cb12-117"></a><span class="in">    .groups = 'drop'</span></span>
-<span id="cb12-118"><a href="#cb12-118"></a><span class="in">  )</span></span>
-<span id="cb12-119"><a href="#cb12-119"></a></span>
-<span id="cb12-120"><a href="#cb12-120"></a><span class="in">athlete_trends |&gt;</span></span>
-<span id="cb12-121"><a href="#cb12-121"></a><span class="in">  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |&gt;</span></span>
-<span id="cb12-122"><a href="#cb12-122"></a><span class="in">  ggplot(aes(x = sport, y = value, fill = sex)) +</span></span>
-<span id="cb12-123"><a href="#cb12-123"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
-<span id="cb12-124"><a href="#cb12-124"></a><span class="in">  facet_wrap(~attribute, scales = "free_y") +</span></span>
-<span id="cb12-125"><a href="#cb12-125"></a><span class="in">  labs(</span></span>
-<span id="cb12-126"><a href="#cb12-126"></a><span class="in">    title = "Trends in Athlete Characteristics by Winter Sport and Sex",</span></span>
-<span id="cb12-127"><a href="#cb12-127"></a><span class="in">    x = "Sport",</span></span>
-<span id="cb12-128"><a href="#cb12-128"></a><span class="in">    y = "Average Value",</span></span>
-<span id="cb12-129"><a href="#cb12-129"></a><span class="in">    fill = "Sex"</span></span>
-<span id="cb12-130"><a href="#cb12-130"></a><span class="in">  ) +</span></span>
-<span id="cb12-131"><a href="#cb12-131"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-132"><a href="#cb12-132"></a><span class="in">```</span></span>
-<span id="cb12-133"><a href="#cb12-133"></a></span>
-<span id="cb12-134"><a href="#cb12-134"></a><span class="fu">## Summer</span></span>
-<span id="cb12-135"><a href="#cb12-135"></a></span>
-<span id="cb12-136"><a href="#cb12-136"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-137"><a href="#cb12-137"></a><span class="in">athlete_trends &lt;- olympics |&gt;</span></span>
-<span id="cb12-138"><a href="#cb12-138"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
-<span id="cb12-139"><a href="#cb12-139"></a><span class="in">  group_by(sport, sex) |&gt;</span></span>
-<span id="cb12-140"><a href="#cb12-140"></a><span class="in">  summarize(</span></span>
-<span id="cb12-141"><a href="#cb12-141"></a><span class="in">    avg_age = mean(age, na.rm = TRUE),</span></span>
-<span id="cb12-142"><a href="#cb12-142"></a><span class="in">    avg_height = mean(height, na.rm = TRUE),</span></span>
-<span id="cb12-143"><a href="#cb12-143"></a><span class="in">    avg_weight = mean(weight, na.rm = TRUE),</span></span>
-<span id="cb12-144"><a href="#cb12-144"></a><span class="in">    .groups = 'drop'</span></span>
-<span id="cb12-145"><a href="#cb12-145"></a><span class="in">  )</span></span>
-<span id="cb12-146"><a href="#cb12-146"></a></span>
-<span id="cb12-147"><a href="#cb12-147"></a></span>
-<span id="cb12-148"><a href="#cb12-148"></a><span class="in">athlete_trends |&gt;</span></span>
-<span id="cb12-149"><a href="#cb12-149"></a><span class="in">  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |&gt;</span></span>
-<span id="cb12-150"><a href="#cb12-150"></a><span class="in">  ggplot(aes(x = sport, y = value, fill = sex)) +</span></span>
-<span id="cb12-151"><a href="#cb12-151"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
-<span id="cb12-152"><a href="#cb12-152"></a><span class="in">  facet_wrap(~attribute, scales = "free_y") +</span></span>
-<span id="cb12-153"><a href="#cb12-153"></a><span class="in">  labs(</span></span>
-<span id="cb12-154"><a href="#cb12-154"></a><span class="in">    title = "Trends in Athlete Characteristics by Winter Sport and Sex",</span></span>
-<span id="cb12-155"><a href="#cb12-155"></a><span class="in">    x = "Sport",</span></span>
-<span id="cb12-156"><a href="#cb12-156"></a><span class="in">    y = "Average Value",</span></span>
-<span id="cb12-157"><a href="#cb12-157"></a><span class="in">    fill = "Sex"</span></span>
-<span id="cb12-158"><a href="#cb12-158"></a><span class="in">  ) +</span></span>
-<span id="cb12-159"><a href="#cb12-159"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-160"><a href="#cb12-160"></a><span class="in">```</span></span>
-<span id="cb12-161"><a href="#cb12-161"></a></span>
-<span id="cb12-162"><a href="#cb12-162"></a><span class="fu">### **3.3 Participation Over Years**</span></span>
-<span id="cb12-163"><a href="#cb12-163"></a></span>
-<span id="cb12-164"><a href="#cb12-164"></a><span class="ss">-   </span>**Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in footb</span>
-<span id="cb12-165"><a href="#cb12-165"></a></span>
-<span id="cb12-166"><a href="#cb12-166"></a><span class="ss">-   </span>**Visualization**:</span>
-<span id="cb12-167"><a href="#cb12-167"></a></span>
-<span id="cb12-168"><a href="#cb12-168"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-169"><a href="#cb12-169"></a><span class="in">yearly_trends &lt;- olympics |&gt;</span></span>
-<span id="cb12-170"><a href="#cb12-170"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |&gt;</span></span>
-<span id="cb12-171"><a href="#cb12-171"></a><span class="in">  group_by(sport, year) |&gt;</span></span>
-<span id="cb12-172"><a href="#cb12-172"></a><span class="in">  summarize(participation = n(), .groups = 'drop') |&gt;</span></span>
-<span id="cb12-173"><a href="#cb12-173"></a><span class="in">  arrange(year)</span></span>
-<span id="cb12-174"><a href="#cb12-174"></a></span>
-<span id="cb12-175"><a href="#cb12-175"></a><span class="in">yearly_trends |&gt;</span></span>
-<span id="cb12-176"><a href="#cb12-176"></a><span class="in">  ggplot(aes(x = year, y = participation, color = sport, group = sport)) +</span></span>
-<span id="cb12-177"><a href="#cb12-177"></a><span class="in">  geom_line(size = 1) +</span></span>
-<span id="cb12-178"><a href="#cb12-178"></a><span class="in">  geom_point() +</span></span>
-<span id="cb12-179"><a href="#cb12-179"></a><span class="in">  labs(</span></span>
-<span id="cb12-180"><a href="#cb12-180"></a><span class="in">    title = "Participation Over the Years in Winter Sports",</span></span>
-<span id="cb12-181"><a href="#cb12-181"></a><span class="in">    x = "Year",</span></span>
-<span id="cb12-182"><a href="#cb12-182"></a><span class="in">    y = "Number of Athletes",</span></span>
-<span id="cb12-183"><a href="#cb12-183"></a><span class="in">    color = "Sport"</span></span>
-<span id="cb12-184"><a href="#cb12-184"></a><span class="in">  ) +</span></span>
-<span id="cb12-185"><a href="#cb12-185"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-186"><a href="#cb12-186"></a><span class="in">```</span></span>
-<span id="cb12-187"><a href="#cb12-187"></a></span>
-<span id="cb12-188"><a href="#cb12-188"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-189"><a href="#cb12-189"></a><span class="in">yearly_trends &lt;- olympics |&gt;</span></span>
-<span id="cb12-190"><a href="#cb12-190"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
-<span id="cb12-191"><a href="#cb12-191"></a><span class="in">  group_by(sport, year) |&gt;</span></span>
-<span id="cb12-192"><a href="#cb12-192"></a><span class="in">  summarize(participation = n(), .groups = 'drop') |&gt;</span></span>
-<span id="cb12-193"><a href="#cb12-193"></a><span class="in">  arrange(year)</span></span>
-<span id="cb12-194"><a href="#cb12-194"></a><span class="in">yearly_trends</span></span>
-<span id="cb12-195"><a href="#cb12-195"></a></span>
-<span id="cb12-196"><a href="#cb12-196"></a><span class="in">yearly_trends |&gt;</span></span>
-<span id="cb12-197"><a href="#cb12-197"></a><span class="in">  ggplot(aes(x = year, y = participation, color = sport, group = sport)) +</span></span>
-<span id="cb12-198"><a href="#cb12-198"></a><span class="in">  geom_line(size = 1) +</span></span>
-<span id="cb12-199"><a href="#cb12-199"></a><span class="in">  geom_point() +</span></span>
-<span id="cb12-200"><a href="#cb12-200"></a><span class="in">  labs(</span></span>
-<span id="cb12-201"><a href="#cb12-201"></a><span class="in">    title = "Participation Over the Years in Summer Sports",</span></span>
-<span id="cb12-202"><a href="#cb12-202"></a><span class="in">    x = "Year",</span></span>
-<span id="cb12-203"><a href="#cb12-203"></a><span class="in">    y = "Number of Athletes",</span></span>
-<span id="cb12-204"><a href="#cb12-204"></a><span class="in">    color = "Sport"</span></span>
-<span id="cb12-205"><a href="#cb12-205"></a><span class="in">  ) +</span></span>
-<span id="cb12-206"><a href="#cb12-206"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-207"><a href="#cb12-207"></a><span class="in">```</span></span>
-<span id="cb12-208"><a href="#cb12-208"></a></span>
-<span id="cb12-209"><a href="#cb12-209"></a><span class="fu">### **3.4 Correlation Between Medal Wins and Physical Attributes**</span></span>
-<span id="cb12-210"><a href="#cb12-210"></a></span>
-<span id="cb12-211"><a href="#cb12-211"></a><span class="ss">-   </span>**Findings**:</span>
-<span id="cb12-212"><a href="#cb12-212"></a></span>
-<span id="cb12-213"><a href="#cb12-213"></a><span class="ss">-   </span>**Visualization**:</span>
-<span id="cb12-214"><a href="#cb12-214"></a></span>
-<span id="cb12-215"><a href="#cb12-215"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-216"><a href="#cb12-216"></a><span class="in"># Pivot the data for visualization</span></span>
-<span id="cb12-217"><a href="#cb12-217"></a><span class="in">medal_data_long &lt;- olympics |&gt;</span></span>
-<span id="cb12-218"><a href="#cb12-218"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |&gt;</span></span>
-<span id="cb12-219"><a href="#cb12-219"></a><span class="in">  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |&gt;</span></span>
-<span id="cb12-220"><a href="#cb12-220"></a><span class="in">  select(sport, medal_won, age, height, weight) |&gt;</span></span>
-<span id="cb12-221"><a href="#cb12-221"></a><span class="in">  pivot_longer(cols = c(age, height, weight), names_to = "attribute", values_to = "value")</span></span>
-<span id="cb12-222"><a href="#cb12-222"></a></span>
-<span id="cb12-223"><a href="#cb12-223"></a><span class="in"># Combined violin and box plot</span></span>
-<span id="cb12-224"><a href="#cb12-224"></a><span class="in">medal_data_long |&gt;</span></span>
-<span id="cb12-225"><a href="#cb12-225"></a><span class="in">  ggplot(aes(x = medal_won, y = value, fill = medal_won)) +</span></span>
-<span id="cb12-226"><a href="#cb12-226"></a><span class="in">  geom_violin(alpha = 0.7, trim = FALSE) +  # Violin plot for distribution</span></span>
-<span id="cb12-227"><a href="#cb12-227"></a><span class="in">  geom_boxplot(width = 0.2, alpha = 0.9, outlier.shape = NA) +  </span></span>
-<span id="cb12-228"><a href="#cb12-228"></a><span class="in">  facet_wrap(~sport + attribute, scales = "free_y") +  </span></span>
-<span id="cb12-229"><a href="#cb12-229"></a><span class="in">  labs(</span></span>
-<span id="cb12-230"><a href="#cb12-230"></a><span class="in">    title = "Comparison of Physical Attributes by Medal Status on Winter Sport",</span></span>
-<span id="cb12-231"><a href="#cb12-231"></a><span class="in">    x = "Medal Won",</span></span>
-<span id="cb12-232"><a href="#cb12-232"></a><span class="in">    y = "Value",</span></span>
-<span id="cb12-233"><a href="#cb12-233"></a><span class="in">    fill = "Medal Won"</span></span>
-<span id="cb12-234"><a href="#cb12-234"></a><span class="in">  ) +</span></span>
-<span id="cb12-235"><a href="#cb12-235"></a><span class="in">  theme_minimal() +</span></span>
-<span id="cb12-236"><a href="#cb12-236"></a><span class="in">  theme(legend.position = "top")  </span></span>
+<span id="cb12-51"><a href="#cb12-51"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb12-52"><a href="#cb12-52"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb12-53"><a href="#cb12-53"></a><span class="in">library(dplyr)</span></span>
+<span id="cb12-54"><a href="#cb12-54"></a><span class="in">library(tidyr)</span></span>
+<span id="cb12-55"><a href="#cb12-55"></a></span>
+<span id="cb12-56"><a href="#cb12-56"></a><span class="in"># Count number of participants in each sport</span></span>
+<span id="cb12-57"><a href="#cb12-57"></a><span class="in">sport_distribution &lt;- olympics |&gt;</span></span>
+<span id="cb12-58"><a href="#cb12-58"></a><span class="in">  group_by(sport) |&gt;</span></span>
+<span id="cb12-59"><a href="#cb12-59"></a><span class="in">  summarise(participants = n(), .groups = 'drop') |&gt;</span></span>
+<span id="cb12-60"><a href="#cb12-60"></a><span class="in">  arrange(desc(participants))</span></span>
+<span id="cb12-61"><a href="#cb12-61"></a><span class="in">sport_distribution</span></span>
+<span id="cb12-62"><a href="#cb12-62"></a></span>
+<span id="cb12-63"><a href="#cb12-63"></a><span class="in"># Plot distribution of top 10 sports</span></span>
+<span id="cb12-64"><a href="#cb12-64"></a><span class="in">sport_distribution |&gt;</span></span>
+<span id="cb12-65"><a href="#cb12-65"></a><span class="in">  slice_max(participants, n = 10) |&gt;</span></span>
+<span id="cb12-66"><a href="#cb12-66"></a><span class="in">  ggplot(aes(x = reorder(sport, participants), y = participants)) +</span></span>
+<span id="cb12-67"><a href="#cb12-67"></a><span class="in">  geom_bar(stat = "identity", fill = "steelblue") +</span></span>
+<span id="cb12-68"><a href="#cb12-68"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb12-69"><a href="#cb12-69"></a><span class="in">  labs(</span></span>
+<span id="cb12-70"><a href="#cb12-70"></a><span class="in">    title = "Top 10 Sports by Number of Participants",</span></span>
+<span id="cb12-71"><a href="#cb12-71"></a><span class="in">    x = "Sport",</span></span>
+<span id="cb12-72"><a href="#cb12-72"></a><span class="in">    y = "Number of Participants"</span></span>
+<span id="cb12-73"><a href="#cb12-73"></a><span class="in">  ) +</span></span>
+<span id="cb12-74"><a href="#cb12-74"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-75"><a href="#cb12-75"></a><span class="in">```</span></span>
+<span id="cb12-76"><a href="#cb12-76"></a></span>
+<span id="cb12-77"><a href="#cb12-77"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-78"><a href="#cb12-78"></a><span class="in"># Count number of participants per year</span></span>
+<span id="cb12-79"><a href="#cb12-79"></a><span class="in">participation_trends &lt;- olympics |&gt;</span></span>
+<span id="cb12-80"><a href="#cb12-80"></a><span class="in">  group_by(year) |&gt;</span></span>
+<span id="cb12-81"><a href="#cb12-81"></a><span class="in">  summarise(participants = n(), .groups = 'drop')</span></span>
+<span id="cb12-82"><a href="#cb12-82"></a><span class="in">participation_trends</span></span>
+<span id="cb12-83"><a href="#cb12-83"></a></span>
+<span id="cb12-84"><a href="#cb12-84"></a><span class="in"># Plot participation over time</span></span>
+<span id="cb12-85"><a href="#cb12-85"></a><span class="in">participation_trends |&gt;</span></span>
+<span id="cb12-86"><a href="#cb12-86"></a><span class="in">  ggplot(aes(x = year, y = participants)) +</span></span>
+<span id="cb12-87"><a href="#cb12-87"></a><span class="in">  geom_line(color = "darkorange", size = 1) +</span></span>
+<span id="cb12-88"><a href="#cb12-88"></a><span class="in">  geom_point(color = "darkred") +</span></span>
+<span id="cb12-89"><a href="#cb12-89"></a><span class="in">  labs(</span></span>
+<span id="cb12-90"><a href="#cb12-90"></a><span class="in">    title = "Participation Trends Over Time",</span></span>
+<span id="cb12-91"><a href="#cb12-91"></a><span class="in">    x = "Year",</span></span>
+<span id="cb12-92"><a href="#cb12-92"></a><span class="in">    y = "Number of Participants"</span></span>
+<span id="cb12-93"><a href="#cb12-93"></a><span class="in">  ) +</span></span>
+<span id="cb12-94"><a href="#cb12-94"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-95"><a href="#cb12-95"></a></span>
+<span id="cb12-96"><a href="#cb12-96"></a><span class="in">```</span></span>
+<span id="cb12-97"><a href="#cb12-97"></a></span>
+<span id="cb12-98"><a href="#cb12-98"></a><span class="fu">### **3.2 Impact of Sex**</span></span>
+<span id="cb12-99"><a href="#cb12-99"></a></span>
+<span id="cb12-100"><a href="#cb12-100"></a><span class="ss">-   </span>**Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in football and rowing.</span>
+<span id="cb12-101"><a href="#cb12-101"></a></span>
+<span id="cb12-102"><a href="#cb12-102"></a><span class="ss">-   </span>**Visualization**</span>
+<span id="cb12-103"><a href="#cb12-103"></a></span>
+<span id="cb12-104"><a href="#cb12-104"></a><span class="fu">## Winter</span></span>
+<span id="cb12-105"><a href="#cb12-105"></a></span>
+<span id="cb12-106"><a href="#cb12-106"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-107"><a href="#cb12-107"></a><span class="in">athlete_trends &lt;- olympics |&gt;</span></span>
+<span id="cb12-108"><a href="#cb12-108"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |&gt;</span></span>
+<span id="cb12-109"><a href="#cb12-109"></a><span class="in">  group_by(sport, sex) |&gt;</span></span>
+<span id="cb12-110"><a href="#cb12-110"></a><span class="in">  summarize(</span></span>
+<span id="cb12-111"><a href="#cb12-111"></a><span class="in">    avg_age = mean(age, na.rm = TRUE),</span></span>
+<span id="cb12-112"><a href="#cb12-112"></a><span class="in">    avg_height = mean(height, na.rm = TRUE),</span></span>
+<span id="cb12-113"><a href="#cb12-113"></a><span class="in">    avg_weight = mean(weight, na.rm = TRUE),</span></span>
+<span id="cb12-114"><a href="#cb12-114"></a><span class="in">    .groups = 'drop'</span></span>
+<span id="cb12-115"><a href="#cb12-115"></a><span class="in">  )</span></span>
+<span id="cb12-116"><a href="#cb12-116"></a></span>
+<span id="cb12-117"><a href="#cb12-117"></a><span class="in">athlete_trends |&gt;</span></span>
+<span id="cb12-118"><a href="#cb12-118"></a><span class="in">  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |&gt;</span></span>
+<span id="cb12-119"><a href="#cb12-119"></a><span class="in">  ggplot(aes(x = sport, y = value, fill = sex)) +</span></span>
+<span id="cb12-120"><a href="#cb12-120"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
+<span id="cb12-121"><a href="#cb12-121"></a><span class="in">  facet_wrap(~attribute, scales = "free_y") +</span></span>
+<span id="cb12-122"><a href="#cb12-122"></a><span class="in">  labs(</span></span>
+<span id="cb12-123"><a href="#cb12-123"></a><span class="in">    title = "Trends in Athlete Characteristics by Winter Sport and Sex",</span></span>
+<span id="cb12-124"><a href="#cb12-124"></a><span class="in">    x = "Sport",</span></span>
+<span id="cb12-125"><a href="#cb12-125"></a><span class="in">    y = "Average Value",</span></span>
+<span id="cb12-126"><a href="#cb12-126"></a><span class="in">    fill = "Sex"</span></span>
+<span id="cb12-127"><a href="#cb12-127"></a><span class="in">  ) +</span></span>
+<span id="cb12-128"><a href="#cb12-128"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-129"><a href="#cb12-129"></a><span class="in">```</span></span>
+<span id="cb12-130"><a href="#cb12-130"></a></span>
+<span id="cb12-131"><a href="#cb12-131"></a><span class="fu">## Summer</span></span>
+<span id="cb12-132"><a href="#cb12-132"></a></span>
+<span id="cb12-133"><a href="#cb12-133"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-134"><a href="#cb12-134"></a><span class="in">athlete_trends &lt;- olympics |&gt;</span></span>
+<span id="cb12-135"><a href="#cb12-135"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
+<span id="cb12-136"><a href="#cb12-136"></a><span class="in">  group_by(sport, sex) |&gt;</span></span>
+<span id="cb12-137"><a href="#cb12-137"></a><span class="in">  summarize(</span></span>
+<span id="cb12-138"><a href="#cb12-138"></a><span class="in">    avg_age = mean(age, na.rm = TRUE),</span></span>
+<span id="cb12-139"><a href="#cb12-139"></a><span class="in">    avg_height = mean(height, na.rm = TRUE),</span></span>
+<span id="cb12-140"><a href="#cb12-140"></a><span class="in">    avg_weight = mean(weight, na.rm = TRUE),</span></span>
+<span id="cb12-141"><a href="#cb12-141"></a><span class="in">    .groups = 'drop'</span></span>
+<span id="cb12-142"><a href="#cb12-142"></a><span class="in">  )</span></span>
+<span id="cb12-143"><a href="#cb12-143"></a></span>
+<span id="cb12-144"><a href="#cb12-144"></a></span>
+<span id="cb12-145"><a href="#cb12-145"></a><span class="in">athlete_trends |&gt;</span></span>
+<span id="cb12-146"><a href="#cb12-146"></a><span class="in">  pivot_longer(cols = c(avg_age, avg_height, avg_weight), names_to = "attribute", values_to = "value") |&gt;</span></span>
+<span id="cb12-147"><a href="#cb12-147"></a><span class="in">  ggplot(aes(x = sport, y = value, fill = sex)) +</span></span>
+<span id="cb12-148"><a href="#cb12-148"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
+<span id="cb12-149"><a href="#cb12-149"></a><span class="in">  facet_wrap(~attribute, scales = "free_y") +</span></span>
+<span id="cb12-150"><a href="#cb12-150"></a><span class="in">  labs(</span></span>
+<span id="cb12-151"><a href="#cb12-151"></a><span class="in">    title = "Trends in Athlete Characteristics by Winter Sport and Sex",</span></span>
+<span id="cb12-152"><a href="#cb12-152"></a><span class="in">    x = "Sport",</span></span>
+<span id="cb12-153"><a href="#cb12-153"></a><span class="in">    y = "Average Value",</span></span>
+<span id="cb12-154"><a href="#cb12-154"></a><span class="in">    fill = "Sex"</span></span>
+<span id="cb12-155"><a href="#cb12-155"></a><span class="in">  ) +</span></span>
+<span id="cb12-156"><a href="#cb12-156"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-157"><a href="#cb12-157"></a><span class="in">```</span></span>
+<span id="cb12-158"><a href="#cb12-158"></a></span>
+<span id="cb12-159"><a href="#cb12-159"></a><span class="fu">### **3.3 Participation Over Years**</span></span>
+<span id="cb12-160"><a href="#cb12-160"></a></span>
+<span id="cb12-161"><a href="#cb12-161"></a><span class="ss">-   </span>**Findings**:Males participant are older, heigher,and heavier than female. A slight different trend detected in footb</span>
+<span id="cb12-162"><a href="#cb12-162"></a></span>
+<span id="cb12-163"><a href="#cb12-163"></a><span class="ss">-   </span>**Visualization**:</span>
+<span id="cb12-164"><a href="#cb12-164"></a></span>
+<span id="cb12-165"><a href="#cb12-165"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-166"><a href="#cb12-166"></a><span class="in">yearly_trends &lt;- olympics |&gt;</span></span>
+<span id="cb12-167"><a href="#cb12-167"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |&gt;</span></span>
+<span id="cb12-168"><a href="#cb12-168"></a><span class="in">  group_by(sport, year) |&gt;</span></span>
+<span id="cb12-169"><a href="#cb12-169"></a><span class="in">  summarize(participation = n(), .groups = 'drop') |&gt;</span></span>
+<span id="cb12-170"><a href="#cb12-170"></a><span class="in">  arrange(year)</span></span>
+<span id="cb12-171"><a href="#cb12-171"></a></span>
+<span id="cb12-172"><a href="#cb12-172"></a><span class="in">yearly_trends |&gt;</span></span>
+<span id="cb12-173"><a href="#cb12-173"></a><span class="in">  ggplot(aes(x = year, y = participation, color = sport, group = sport)) +</span></span>
+<span id="cb12-174"><a href="#cb12-174"></a><span class="in">  geom_line(size = 1) +</span></span>
+<span id="cb12-175"><a href="#cb12-175"></a><span class="in">  geom_point() +</span></span>
+<span id="cb12-176"><a href="#cb12-176"></a><span class="in">  labs(</span></span>
+<span id="cb12-177"><a href="#cb12-177"></a><span class="in">    title = "Participation Over the Years in Winter Sports",</span></span>
+<span id="cb12-178"><a href="#cb12-178"></a><span class="in">    x = "Year",</span></span>
+<span id="cb12-179"><a href="#cb12-179"></a><span class="in">    y = "Number of Athletes",</span></span>
+<span id="cb12-180"><a href="#cb12-180"></a><span class="in">    color = "Sport"</span></span>
+<span id="cb12-181"><a href="#cb12-181"></a><span class="in">  ) +</span></span>
+<span id="cb12-182"><a href="#cb12-182"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-183"><a href="#cb12-183"></a><span class="in">```</span></span>
+<span id="cb12-184"><a href="#cb12-184"></a></span>
+<span id="cb12-185"><a href="#cb12-185"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-186"><a href="#cb12-186"></a><span class="in">yearly_trends &lt;- olympics |&gt;</span></span>
+<span id="cb12-187"><a href="#cb12-187"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
+<span id="cb12-188"><a href="#cb12-188"></a><span class="in">  group_by(sport, year) |&gt;</span></span>
+<span id="cb12-189"><a href="#cb12-189"></a><span class="in">  summarize(participation = n(), .groups = 'drop') |&gt;</span></span>
+<span id="cb12-190"><a href="#cb12-190"></a><span class="in">  arrange(year)</span></span>
+<span id="cb12-191"><a href="#cb12-191"></a><span class="in">yearly_trends</span></span>
+<span id="cb12-192"><a href="#cb12-192"></a></span>
+<span id="cb12-193"><a href="#cb12-193"></a><span class="in">yearly_trends |&gt;</span></span>
+<span id="cb12-194"><a href="#cb12-194"></a><span class="in">  ggplot(aes(x = year, y = participation, color = sport, group = sport)) +</span></span>
+<span id="cb12-195"><a href="#cb12-195"></a><span class="in">  geom_line(size = 1) +</span></span>
+<span id="cb12-196"><a href="#cb12-196"></a><span class="in">  geom_point() +</span></span>
+<span id="cb12-197"><a href="#cb12-197"></a><span class="in">  labs(</span></span>
+<span id="cb12-198"><a href="#cb12-198"></a><span class="in">    title = "Participation Over the Years in Summer Sports",</span></span>
+<span id="cb12-199"><a href="#cb12-199"></a><span class="in">    x = "Year",</span></span>
+<span id="cb12-200"><a href="#cb12-200"></a><span class="in">    y = "Number of Athletes",</span></span>
+<span id="cb12-201"><a href="#cb12-201"></a><span class="in">    color = "Sport"</span></span>
+<span id="cb12-202"><a href="#cb12-202"></a><span class="in">  ) +</span></span>
+<span id="cb12-203"><a href="#cb12-203"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-204"><a href="#cb12-204"></a><span class="in">```</span></span>
+<span id="cb12-205"><a href="#cb12-205"></a></span>
+<span id="cb12-206"><a href="#cb12-206"></a><span class="fu">### **3.4 Correlation Between Medal Wins and Physical Attributes**</span></span>
+<span id="cb12-207"><a href="#cb12-207"></a></span>
+<span id="cb12-208"><a href="#cb12-208"></a><span class="ss">-   </span>**Findings**:</span>
+<span id="cb12-209"><a href="#cb12-209"></a></span>
+<span id="cb12-210"><a href="#cb12-210"></a><span class="ss">-   </span>**Visualization**:</span>
+<span id="cb12-211"><a href="#cb12-211"></a></span>
+<span id="cb12-212"><a href="#cb12-212"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-213"><a href="#cb12-213"></a><span class="in"># Pivot the data for visualization</span></span>
+<span id="cb12-214"><a href="#cb12-214"></a><span class="in">medal_data_long &lt;- olympics |&gt;</span></span>
+<span id="cb12-215"><a href="#cb12-215"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing","Figure Skating","Speed Skating")) |&gt;</span></span>
+<span id="cb12-216"><a href="#cb12-216"></a><span class="in">  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |&gt;</span></span>
+<span id="cb12-217"><a href="#cb12-217"></a><span class="in">  select(sport, medal_won, age, height, weight) |&gt;</span></span>
+<span id="cb12-218"><a href="#cb12-218"></a><span class="in">  pivot_longer(cols = c(age, height, weight), names_to = "attribute", values_to = "value")</span></span>
+<span id="cb12-219"><a href="#cb12-219"></a></span>
+<span id="cb12-220"><a href="#cb12-220"></a><span class="in"># Combined violin and box plot</span></span>
+<span id="cb12-221"><a href="#cb12-221"></a><span class="in">medal_data_long |&gt;</span></span>
+<span id="cb12-222"><a href="#cb12-222"></a><span class="in">  ggplot(aes(x = medal_won, y = value, fill = medal_won)) +</span></span>
+<span id="cb12-223"><a href="#cb12-223"></a><span class="in">  geom_violin(alpha = 0.7, trim = FALSE) +  # Violin plot for distribution</span></span>
+<span id="cb12-224"><a href="#cb12-224"></a><span class="in">  geom_boxplot(width = 0.2, alpha = 0.9, outlier.shape = NA) +  </span></span>
+<span id="cb12-225"><a href="#cb12-225"></a><span class="in">  facet_wrap(~sport + attribute, scales = "free_y") +  </span></span>
+<span id="cb12-226"><a href="#cb12-226"></a><span class="in">  labs(</span></span>
+<span id="cb12-227"><a href="#cb12-227"></a><span class="in">    title = "Comparison of Physical Attributes by Medal Status on Winter Sport",</span></span>
+<span id="cb12-228"><a href="#cb12-228"></a><span class="in">    x = "Medal Won",</span></span>
+<span id="cb12-229"><a href="#cb12-229"></a><span class="in">    y = "Value",</span></span>
+<span id="cb12-230"><a href="#cb12-230"></a><span class="in">    fill = "Medal Won"</span></span>
+<span id="cb12-231"><a href="#cb12-231"></a><span class="in">  ) +</span></span>
+<span id="cb12-232"><a href="#cb12-232"></a><span class="in">  theme_minimal() +</span></span>
+<span id="cb12-233"><a href="#cb12-233"></a><span class="in">  theme(legend.position = "top")  </span></span>
+<span id="cb12-234"><a href="#cb12-234"></a></span>
+<span id="cb12-235"><a href="#cb12-235"></a></span>
+<span id="cb12-236"><a href="#cb12-236"></a><span class="in">```</span></span>
 <span id="cb12-237"><a href="#cb12-237"></a></span>
-<span id="cb12-238"><a href="#cb12-238"></a></span>
-<span id="cb12-239"><a href="#cb12-239"></a><span class="in">```</span></span>
-<span id="cb12-240"><a href="#cb12-240"></a></span>
-<span id="cb12-241"><a href="#cb12-241"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-242"><a href="#cb12-242"></a><span class="in"># Pivot the data for visualization</span></span>
-<span id="cb12-243"><a href="#cb12-243"></a><span class="in">medal_data_long &lt;- olympics |&gt;</span></span>
-<span id="cb12-244"><a href="#cb12-244"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
-<span id="cb12-245"><a href="#cb12-245"></a><span class="in">  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |&gt;</span></span>
-<span id="cb12-246"><a href="#cb12-246"></a><span class="in">  select(sport, medal_won, age, height, weight) |&gt;</span></span>
-<span id="cb12-247"><a href="#cb12-247"></a><span class="in">  pivot_longer(cols = c(age, height, weight), names_to = "attribute", values_to = "value")</span></span>
-<span id="cb12-248"><a href="#cb12-248"></a></span>
-<span id="cb12-249"><a href="#cb12-249"></a><span class="in"># Combined violin and box plot</span></span>
-<span id="cb12-250"><a href="#cb12-250"></a><span class="in">medal_data_long |&gt;</span></span>
-<span id="cb12-251"><a href="#cb12-251"></a><span class="in">  ggplot(aes(x = medal_won, y = value, fill = medal_won)) +</span></span>
-<span id="cb12-252"><a href="#cb12-252"></a><span class="in">  geom_violin(alpha = 0.7, trim = FALSE) +  # Violin plot for distribution</span></span>
-<span id="cb12-253"><a href="#cb12-253"></a><span class="in">  geom_boxplot(width = 0.2, alpha = 0.9, outlier.shape = NA) +  </span></span>
-<span id="cb12-254"><a href="#cb12-254"></a><span class="in">  facet_wrap(~sport + attribute, scales = "free_y") + </span></span>
-<span id="cb12-255"><a href="#cb12-255"></a><span class="in">  labs(</span></span>
-<span id="cb12-256"><a href="#cb12-256"></a><span class="in">    title = "Comparison of Physical Attributes by Medal Status on Summer Sport",</span></span>
-<span id="cb12-257"><a href="#cb12-257"></a><span class="in">    x = "Medal Won",</span></span>
-<span id="cb12-258"><a href="#cb12-258"></a><span class="in">    y = "Value",</span></span>
-<span id="cb12-259"><a href="#cb12-259"></a><span class="in">    fill = "Medal Won"</span></span>
-<span id="cb12-260"><a href="#cb12-260"></a><span class="in">  ) +</span></span>
-<span id="cb12-261"><a href="#cb12-261"></a><span class="in">  theme_minimal() +</span></span>
-<span id="cb12-262"><a href="#cb12-262"></a><span class="in">  theme(legend.position = "top")</span></span>
+<span id="cb12-238"><a href="#cb12-238"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-239"><a href="#cb12-239"></a><span class="in"># Pivot the data for visualization</span></span>
+<span id="cb12-240"><a href="#cb12-240"></a><span class="in">medal_data_long &lt;- olympics |&gt;</span></span>
+<span id="cb12-241"><a href="#cb12-241"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
+<span id="cb12-242"><a href="#cb12-242"></a><span class="in">  mutate(medal_won = ifelse(is.na(medal), "No", "Yes")) |&gt;</span></span>
+<span id="cb12-243"><a href="#cb12-243"></a><span class="in">  select(sport, medal_won, age, height, weight) |&gt;</span></span>
+<span id="cb12-244"><a href="#cb12-244"></a><span class="in">  pivot_longer(cols = c(age, height, weight), names_to = "attribute", values_to = "value")</span></span>
+<span id="cb12-245"><a href="#cb12-245"></a></span>
+<span id="cb12-246"><a href="#cb12-246"></a><span class="in"># Combined violin and box plot</span></span>
+<span id="cb12-247"><a href="#cb12-247"></a><span class="in">medal_data_long |&gt;</span></span>
+<span id="cb12-248"><a href="#cb12-248"></a><span class="in">  ggplot(aes(x = medal_won, y = value, fill = medal_won)) +</span></span>
+<span id="cb12-249"><a href="#cb12-249"></a><span class="in">  geom_violin(alpha = 0.7, trim = FALSE) +  # Violin plot for distribution</span></span>
+<span id="cb12-250"><a href="#cb12-250"></a><span class="in">  geom_boxplot(width = 0.2, alpha = 0.9, outlier.shape = NA) +  </span></span>
+<span id="cb12-251"><a href="#cb12-251"></a><span class="in">  facet_wrap(~sport + attribute, scales = "free_y") + </span></span>
+<span id="cb12-252"><a href="#cb12-252"></a><span class="in">  labs(</span></span>
+<span id="cb12-253"><a href="#cb12-253"></a><span class="in">    title = "Comparison of Physical Attributes by Medal Status on Summer Sport",</span></span>
+<span id="cb12-254"><a href="#cb12-254"></a><span class="in">    x = "Medal Won",</span></span>
+<span id="cb12-255"><a href="#cb12-255"></a><span class="in">    y = "Value",</span></span>
+<span id="cb12-256"><a href="#cb12-256"></a><span class="in">    fill = "Medal Won"</span></span>
+<span id="cb12-257"><a href="#cb12-257"></a><span class="in">  ) +</span></span>
+<span id="cb12-258"><a href="#cb12-258"></a><span class="in">  theme_minimal() +</span></span>
+<span id="cb12-259"><a href="#cb12-259"></a><span class="in">  theme(legend.position = "top")</span></span>
+<span id="cb12-260"><a href="#cb12-260"></a></span>
+<span id="cb12-261"><a href="#cb12-261"></a></span>
+<span id="cb12-262"><a href="#cb12-262"></a><span class="in">```</span></span>
 <span id="cb12-263"><a href="#cb12-263"></a></span>
-<span id="cb12-264"><a href="#cb12-264"></a></span>
-<span id="cb12-265"><a href="#cb12-265"></a><span class="in">```</span></span>
-<span id="cb12-266"><a href="#cb12-266"></a></span>
-<span id="cb12-267"><a href="#cb12-267"></a><span class="fu">### **3.5 Top countries**</span></span>
-<span id="cb12-268"><a href="#cb12-268"></a></span>
-<span id="cb12-269"><a href="#cb12-269"></a><span class="ss">-   </span>**Findings**:</span>
-<span id="cb12-270"><a href="#cb12-270"></a></span>
-<span id="cb12-271"><a href="#cb12-271"></a><span class="ss">-   </span>**Visualization**:</span>
-<span id="cb12-272"><a href="#cb12-272"></a></span>
-<span id="cb12-273"><a href="#cb12-273"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-274"><a href="#cb12-274"></a><span class="in"># Calculate total participation for top 10 countries</span></span>
-<span id="cb12-275"><a href="#cb12-275"></a><span class="in">top_10_countries &lt;- olympics |&gt;</span></span>
-<span id="cb12-276"><a href="#cb12-276"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |&gt;</span></span>
-<span id="cb12-277"><a href="#cb12-277"></a><span class="in">  group_by(noc) |&gt;</span></span>
-<span id="cb12-278"><a href="#cb12-278"></a><span class="in">  summarize(total_participation = n(), .groups = 'drop') |&gt;</span></span>
-<span id="cb12-279"><a href="#cb12-279"></a><span class="in">  arrange(desc(total_participation)) |&gt;</span></span>
-<span id="cb12-280"><a href="#cb12-280"></a><span class="in">  slice_max(total_participation, n = 10)</span></span>
-<span id="cb12-281"><a href="#cb12-281"></a></span>
-<span id="cb12-282"><a href="#cb12-282"></a><span class="in"># Filter data for the top 10 countries</span></span>
-<span id="cb12-283"><a href="#cb12-283"></a><span class="in">top_countries_all_sports &lt;- olympics |&gt;</span></span>
-<span id="cb12-284"><a href="#cb12-284"></a><span class="in">  filter(</span></span>
-<span id="cb12-285"><a href="#cb12-285"></a><span class="in">    sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating"),</span></span>
-<span id="cb12-286"><a href="#cb12-286"></a><span class="in">    noc %in% top_10_countries$noc</span></span>
-<span id="cb12-287"><a href="#cb12-287"></a><span class="in">  ) |&gt;</span></span>
-<span id="cb12-288"><a href="#cb12-288"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
-<span id="cb12-289"><a href="#cb12-289"></a><span class="in">  summarize(participation = n(), .groups = 'drop')</span></span>
-<span id="cb12-290"><a href="#cb12-290"></a></span>
-<span id="cb12-291"><a href="#cb12-291"></a><span class="in"># Plot participation across all four sports for the top 10 countries</span></span>
-<span id="cb12-292"><a href="#cb12-292"></a><span class="in">top_countries_all_sports |&gt;</span></span>
-<span id="cb12-293"><a href="#cb12-293"></a><span class="in">  ggplot(aes(x = reorder(noc, -participation), y = participation, fill = sport)) +</span></span>
-<span id="cb12-294"><a href="#cb12-294"></a><span class="in">  geom_bar(stat = "identity", position = "stack") +</span></span>
-<span id="cb12-295"><a href="#cb12-295"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb12-296"><a href="#cb12-296"></a><span class="in">  labs(</span></span>
-<span id="cb12-297"><a href="#cb12-297"></a><span class="in">    title = "Top 10 Countries by Participation in Winter Sports",</span></span>
-<span id="cb12-298"><a href="#cb12-298"></a><span class="in">    x = "Country (NOC)",</span></span>
-<span id="cb12-299"><a href="#cb12-299"></a><span class="in">    y = "Number of Athletes",</span></span>
-<span id="cb12-300"><a href="#cb12-300"></a><span class="in">    fill = "Sport"</span></span>
-<span id="cb12-301"><a href="#cb12-301"></a><span class="in">  ) +</span></span>
-<span id="cb12-302"><a href="#cb12-302"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-303"><a href="#cb12-303"></a></span>
-<span id="cb12-304"><a href="#cb12-304"></a><span class="in">```</span></span>
-<span id="cb12-305"><a href="#cb12-305"></a></span>
-<span id="cb12-306"><a href="#cb12-306"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-307"><a href="#cb12-307"></a><span class="in"># Calculate total participation for top 10 countries</span></span>
-<span id="cb12-308"><a href="#cb12-308"></a><span class="in">top_10_countries &lt;- olympics |&gt;</span></span>
-<span id="cb12-309"><a href="#cb12-309"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
-<span id="cb12-310"><a href="#cb12-310"></a><span class="in">  group_by(noc) |&gt;</span></span>
-<span id="cb12-311"><a href="#cb12-311"></a><span class="in">  summarize(total_participation = n(), .groups = 'drop') |&gt;</span></span>
-<span id="cb12-312"><a href="#cb12-312"></a><span class="in">  arrange(desc(total_participation)) |&gt;</span></span>
-<span id="cb12-313"><a href="#cb12-313"></a><span class="in">  slice_max(total_participation, n = 10)</span></span>
-<span id="cb12-314"><a href="#cb12-314"></a></span>
-<span id="cb12-315"><a href="#cb12-315"></a><span class="in"># Filter data for the top 10 countries</span></span>
-<span id="cb12-316"><a href="#cb12-316"></a><span class="in">top_countries_all_sports &lt;- olympics |&gt;</span></span>
-<span id="cb12-317"><a href="#cb12-317"></a><span class="in">  filter(</span></span>
-<span id="cb12-318"><a href="#cb12-318"></a><span class="in">    sport %in% c("Shooting", "Rowing","Swimming","Football"),</span></span>
-<span id="cb12-319"><a href="#cb12-319"></a><span class="in">    noc %in% top_10_countries$noc</span></span>
-<span id="cb12-320"><a href="#cb12-320"></a><span class="in">  ) |&gt;</span></span>
-<span id="cb12-321"><a href="#cb12-321"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
-<span id="cb12-322"><a href="#cb12-322"></a><span class="in">  summarize(participation = n(), .groups = 'drop')</span></span>
-<span id="cb12-323"><a href="#cb12-323"></a></span>
-<span id="cb12-324"><a href="#cb12-324"></a><span class="in"># Plot participation across all four sports for the top 10 countries</span></span>
-<span id="cb12-325"><a href="#cb12-325"></a><span class="in">top_countries_all_sports |&gt;</span></span>
-<span id="cb12-326"><a href="#cb12-326"></a><span class="in">  ggplot(aes(x = reorder(noc, -participation), y = participation, fill = sport)) +</span></span>
-<span id="cb12-327"><a href="#cb12-327"></a><span class="in">  geom_bar(stat = "identity", position = "stack") +</span></span>
-<span id="cb12-328"><a href="#cb12-328"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb12-329"><a href="#cb12-329"></a><span class="in">  labs(</span></span>
-<span id="cb12-330"><a href="#cb12-330"></a><span class="in">    title = "Top 10 Countries by Participation in Summer Sports",</span></span>
-<span id="cb12-331"><a href="#cb12-331"></a><span class="in">    x = "Country (NOC)",</span></span>
-<span id="cb12-332"><a href="#cb12-332"></a><span class="in">    y = "Number of Athletes",</span></span>
-<span id="cb12-333"><a href="#cb12-333"></a><span class="in">    fill = "Sport"</span></span>
-<span id="cb12-334"><a href="#cb12-334"></a><span class="in">  ) +</span></span>
-<span id="cb12-335"><a href="#cb12-335"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-336"><a href="#cb12-336"></a></span>
-<span id="cb12-337"><a href="#cb12-337"></a><span class="in">```</span></span>
-<span id="cb12-338"><a href="#cb12-338"></a></span>
-<span id="cb12-339"><a href="#cb12-339"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-340"><a href="#cb12-340"></a><span class="in"># Filter data for medal-winning athletes</span></span>
-<span id="cb12-341"><a href="#cb12-341"></a><span class="in">medal_data &lt;- olympics |&gt;</span></span>
-<span id="cb12-342"><a href="#cb12-342"></a><span class="in">  filter(!is.na(medal)) |&gt;</span></span>
-<span id="cb12-343"><a href="#cb12-343"></a><span class="in">  group_by(noc, medal) |&gt;</span></span>
-<span id="cb12-344"><a href="#cb12-344"></a><span class="in">  summarize(medals = n(), .groups = 'drop')</span></span>
-<span id="cb12-345"><a href="#cb12-345"></a></span>
-<span id="cb12-346"><a href="#cb12-346"></a><span class="in"># Identify the top 10 countries by total medals</span></span>
-<span id="cb12-347"><a href="#cb12-347"></a><span class="in">top_10_medal_countries &lt;- medal_data |&gt;</span></span>
-<span id="cb12-348"><a href="#cb12-348"></a><span class="in">  group_by(noc) |&gt;</span></span>
-<span id="cb12-349"><a href="#cb12-349"></a><span class="in">  summarize(total_medals = sum(medals), .groups = 'drop') |&gt;</span></span>
-<span id="cb12-350"><a href="#cb12-350"></a><span class="in">  arrange(desc(total_medals)) |&gt;</span></span>
-<span id="cb12-351"><a href="#cb12-351"></a><span class="in">  slice_max(total_medals, n = 10)</span></span>
-<span id="cb12-352"><a href="#cb12-352"></a></span>
-<span id="cb12-353"><a href="#cb12-353"></a><span class="in"># Filter medal data for the top 10 countries</span></span>
-<span id="cb12-354"><a href="#cb12-354"></a><span class="in">medal_data_top10 &lt;- medal_data |&gt;</span></span>
-<span id="cb12-355"><a href="#cb12-355"></a><span class="in">  filter(noc %in% top_10_medal_countries$noc)</span></span>
-<span id="cb12-356"><a href="#cb12-356"></a></span>
-<span id="cb12-357"><a href="#cb12-357"></a><span class="in"># Add total medals for sorting</span></span>
-<span id="cb12-358"><a href="#cb12-358"></a><span class="in">medal_data_top10 &lt;- medal_data_top10 |&gt;</span></span>
-<span id="cb12-359"><a href="#cb12-359"></a><span class="in">  group_by(noc) |&gt;</span></span>
-<span id="cb12-360"><a href="#cb12-360"></a><span class="in">  mutate(total_medals = sum(medals)) |&gt;</span></span>
-<span id="cb12-361"><a href="#cb12-361"></a><span class="in">  ungroup()</span></span>
-<span id="cb12-362"><a href="#cb12-362"></a></span>
-<span id="cb12-363"><a href="#cb12-363"></a><span class="in"># Create a stacked bar chart for medal distribution</span></span>
-<span id="cb12-364"><a href="#cb12-364"></a><span class="in">medal_data_top10 |&gt;</span></span>
-<span id="cb12-365"><a href="#cb12-365"></a><span class="in">  ggplot(aes(x = reorder(noc, -total_medals), y = medals, fill = medal)) +</span></span>
-<span id="cb12-366"><a href="#cb12-366"></a><span class="in">  geom_bar(stat = "identity", position = "stack") +</span></span>
-<span id="cb12-367"><a href="#cb12-367"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb12-368"><a href="#cb12-368"></a><span class="in">  labs(</span></span>
-<span id="cb12-369"><a href="#cb12-369"></a><span class="in">    title = "Top 10 Countries by Medals Won",</span></span>
-<span id="cb12-370"><a href="#cb12-370"></a><span class="in">    x = "Country (NOC)",</span></span>
-<span id="cb12-371"><a href="#cb12-371"></a><span class="in">    y = "Number of Medals",</span></span>
-<span id="cb12-372"><a href="#cb12-372"></a><span class="in">    fill = "Medal Type"</span></span>
-<span id="cb12-373"><a href="#cb12-373"></a><span class="in">  ) +</span></span>
-<span id="cb12-374"><a href="#cb12-374"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-375"><a href="#cb12-375"></a></span>
-<span id="cb12-376"><a href="#cb12-376"></a><span class="in">```</span></span>
-<span id="cb12-377"><a href="#cb12-377"></a></span>
-<span id="cb12-378"><a href="#cb12-378"></a><span class="fu">### **3.6 Medals vs Participant**</span></span>
-<span id="cb12-379"><a href="#cb12-379"></a></span>
-<span id="cb12-380"><a href="#cb12-380"></a><span class="ss">-   </span>**Findings**:</span>
-<span id="cb12-381"><a href="#cb12-381"></a></span>
-<span id="cb12-382"><a href="#cb12-382"></a><span class="ss">-   </span>**Visualization**:</span>
-<span id="cb12-383"><a href="#cb12-383"></a></span>
-<span id="cb12-384"><a href="#cb12-384"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-385"><a href="#cb12-385"></a><span class="in"># Summarize data for participants and medals per country</span></span>
-<span id="cb12-386"><a href="#cb12-386"></a><span class="in">participants_vs_medals &lt;- olympics |&gt;</span></span>
-<span id="cb12-387"><a href="#cb12-387"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
-<span id="cb12-388"><a href="#cb12-388"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
-<span id="cb12-389"><a href="#cb12-389"></a><span class="in">  summarize(</span></span>
-<span id="cb12-390"><a href="#cb12-390"></a><span class="in">    total_participants = n(),</span></span>
-<span id="cb12-391"><a href="#cb12-391"></a><span class="in">    total_medals = sum(!is.na(medal)),  # Count non-NA medals</span></span>
-<span id="cb12-392"><a href="#cb12-392"></a><span class="in">    .groups = 'drop'</span></span>
-<span id="cb12-393"><a href="#cb12-393"></a><span class="in">  )</span></span>
-<span id="cb12-394"><a href="#cb12-394"></a></span>
-<span id="cb12-395"><a href="#cb12-395"></a></span>
-<span id="cb12-396"><a href="#cb12-396"></a><span class="in">participants_vs_medals |&gt;</span></span>
-<span id="cb12-397"><a href="#cb12-397"></a><span class="in">  ggplot(aes(x = total_participants, y = total_medals, color = sport)) +</span></span>
-<span id="cb12-398"><a href="#cb12-398"></a><span class="in">  geom_point(size = 3, alpha = 0.7) +</span></span>
-<span id="cb12-399"><a href="#cb12-399"></a><span class="in">  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +  # Add trend lines</span></span>
-<span id="cb12-400"><a href="#cb12-400"></a><span class="in">  labs(</span></span>
-<span id="cb12-401"><a href="#cb12-401"></a><span class="in">    title = "Do More Participants Per Country Equal More Medals?",</span></span>
-<span id="cb12-402"><a href="#cb12-402"></a><span class="in">    subtitle = "Analysis Summer Sport",</span></span>
-<span id="cb12-403"><a href="#cb12-403"></a><span class="in">    x = "Total Participants",</span></span>
-<span id="cb12-404"><a href="#cb12-404"></a><span class="in">    y = "Total Medals",</span></span>
-<span id="cb12-405"><a href="#cb12-405"></a><span class="in">    color = "Sport"</span></span>
-<span id="cb12-406"><a href="#cb12-406"></a><span class="in">  ) +</span></span>
-<span id="cb12-407"><a href="#cb12-407"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-408"><a href="#cb12-408"></a></span>
-<span id="cb12-409"><a href="#cb12-409"></a><span class="in">```</span></span>
-<span id="cb12-410"><a href="#cb12-410"></a></span>
-<span id="cb12-411"><a href="#cb12-411"></a><span class="in">```{r echo=FALSE}</span></span>
-<span id="cb12-412"><a href="#cb12-412"></a><span class="in">participants_vs_medals &lt;- olympics |&gt;</span></span>
-<span id="cb12-413"><a href="#cb12-413"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |&gt;</span></span>
-<span id="cb12-414"><a href="#cb12-414"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
-<span id="cb12-415"><a href="#cb12-415"></a><span class="in">  summarize(</span></span>
-<span id="cb12-416"><a href="#cb12-416"></a><span class="in">    total_participants = n(),</span></span>
-<span id="cb12-417"><a href="#cb12-417"></a><span class="in">    total_medals = sum(!is.na(medal)),  # Count non-NA medals</span></span>
-<span id="cb12-418"><a href="#cb12-418"></a><span class="in">    .groups = 'drop'</span></span>
-<span id="cb12-419"><a href="#cb12-419"></a><span class="in">  )</span></span>
-<span id="cb12-420"><a href="#cb12-420"></a></span>
-<span id="cb12-421"><a href="#cb12-421"></a></span>
-<span id="cb12-422"><a href="#cb12-422"></a><span class="in">participants_vs_medals |&gt;</span></span>
-<span id="cb12-423"><a href="#cb12-423"></a><span class="in">  ggplot(aes(x = total_participants, y = total_medals, color = sport)) +</span></span>
-<span id="cb12-424"><a href="#cb12-424"></a><span class="in">  geom_point(size = 3, alpha = 0.7) +</span></span>
-<span id="cb12-425"><a href="#cb12-425"></a><span class="in">  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +  # Add trend lines</span></span>
-<span id="cb12-426"><a href="#cb12-426"></a><span class="in">  labs(</span></span>
-<span id="cb12-427"><a href="#cb12-427"></a><span class="in">    title = "Do More Participants Per Country Equal More Medals?",</span></span>
-<span id="cb12-428"><a href="#cb12-428"></a><span class="in">    subtitle = "Winter Sport",</span></span>
-<span id="cb12-429"><a href="#cb12-429"></a><span class="in">    x = "Total Participants",</span></span>
-<span id="cb12-430"><a href="#cb12-430"></a><span class="in">    y = "Total Medals",</span></span>
-<span id="cb12-431"><a href="#cb12-431"></a><span class="in">    color = "Sport"</span></span>
-<span id="cb12-432"><a href="#cb12-432"></a><span class="in">  ) +</span></span>
-<span id="cb12-433"><a href="#cb12-433"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb12-434"><a href="#cb12-434"></a></span>
-<span id="cb12-435"><a href="#cb12-435"></a><span class="in">```</span></span>
-<span id="cb12-436"><a href="#cb12-436"></a></span>
-<span id="cb12-437"><a href="#cb12-437"></a>------------------------------------------------------------------------</span>
-<span id="cb12-438"><a href="#cb12-438"></a></span>
-<span id="cb12-439"><a href="#cb12-439"></a><span class="fu">## **4. Analysis**</span></span>
-<span id="cb12-440"><a href="#cb12-440"></a></span>
-<span id="cb12-441"><a href="#cb12-441"></a><span class="ss">-   </span>**Findings**: The more participants a country has the more medals they will likely win. Different sports require different characteristics for success. The average height of football players who won medals was around 173 cm, the average weight was around 76 kg, and they were on average 23 years old. The average height of rowers who won medals was around 180 cm, the average weight was around 78 kg, and they were on average around 25 years old. The average height of shooting athletes who won medals was around 175 cm, the average weight was around 76 kg, and on average around 36 years old. The average height of swimmers who won medals was around 179 cm, the average weight was around 72 kg, and on average around 22 years old. The average height of alpine skiers who won medals was around 170 cm, the average weight was around 68 kg, and on average around 24 years old. The average height of cross country skiers who won medals was around 175 cm, the average weight was around 63 kg, and on average around 28 years old. The average height of figure skaters who won medals was around 167 cm, the average weight was around 59 kg, and on average around 23 years old. The average height of speed skaters who won medals was around 178 cm, the average weight was around 72 kg, and on average around 25 years old.</span>
-<span id="cb12-442"><a href="#cb12-442"></a></span>
-<span id="cb12-443"><a href="#cb12-443"></a><span class="ss">-   </span>**Limitations**:Due to time, the summer sport and winter sport is not a strong representation since we only have four each.</span>
-<span id="cb12-444"><a href="#cb12-444"></a></span>
-<span id="cb12-445"><a href="#cb12-445"></a>------------------------------------------------------------------------</span>
-<span id="cb12-446"><a href="#cb12-446"></a></span>
-<span id="cb12-447"><a href="#cb12-447"></a><span class="fu">## **5. Conclusion**</span></span>
-<span id="cb12-448"><a href="#cb12-448"></a></span>
-<span id="cb12-449"><a href="#cb12-449"></a>Summer: The analysis of summer sports highlights swimming as the sport with the highest number of participants and a consistent upward trend in participation over time. Countries like the USA dominate summer sports both in terms of athlete participation and medals won. While sports like rowing and shooting show steady but moderate growth, football participation is more regionally concentrated, reflecting its varied popularity worldwide.</span>
-<span id="cb12-450"><a href="#cb12-450"></a></span>
-<span id="cb12-451"><a href="#cb12-451"></a>Winter: Winter sports participation demonstrates a more diverse pattern, with Alpine Skiing and Cross-Country Skiing being prominent. Nations like Norway, Canada, and the USA excel, can be caused by their geographic advantages. Medal success in winter sports shows a loose correlation with participation. While the participation trends indicate a steady increase in global representation, although the growth remains slower compared to summer sports.</span>
-<span id="cb12-452"><a href="#cb12-452"></a></span>
-<span id="cb12-453"><a href="#cb12-453"></a>Overall: Both summer and winter sports reflect a growing trend in global participation. While summer sports demonstrate higher participation overall, winter sports exhibit technical specialization and geographic concentration. Medal success is partially tied to participation rates, as factors like investment, infrastructure, and athlete development programs significantly influence outcomes.</span>
-<span id="cb12-454"><a href="#cb12-454"></a></span>
-<span id="cb12-455"><a href="#cb12-455"></a>------------------------------------------------------------------------</span>
-<span id="cb12-456"><a href="#cb12-456"></a></span>
-<span id="cb12-457"><a href="#cb12-457"></a><span class="fu">## **6. Recommendations**</span></span>
-<span id="cb12-458"><a href="#cb12-458"></a></span>
-<span id="cb12-459"><a href="#cb12-459"></a><span class="ss">1.  </span>**For Athletes**: Tailor training regimens based on the physical and experiential needs of each sport.</span>
-<span id="cb12-460"><a href="#cb12-460"></a><span class="ss">2.  </span>**For Countries**: Invest in infrastructure and coaching programs to support elite-level performance.</span>
-<span id="cb12-461"><a href="#cb12-461"></a><span class="ss">3.  </span>**For Further Analysis**: Integrate data on training, funding, and external conditions to refine predictive models for success.</span>
-<span id="cb12-462"><a href="#cb12-462"></a></span>
-<span id="cb12-463"><a href="#cb12-463"></a>------------------------------------------------------------------------</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-264"><a href="#cb12-264"></a><span class="fu">### **3.5 Top countries**</span></span>
+<span id="cb12-265"><a href="#cb12-265"></a></span>
+<span id="cb12-266"><a href="#cb12-266"></a><span class="ss">-   </span>**Findings**:</span>
+<span id="cb12-267"><a href="#cb12-267"></a></span>
+<span id="cb12-268"><a href="#cb12-268"></a><span class="ss">-   </span>**Visualization**:</span>
+<span id="cb12-269"><a href="#cb12-269"></a></span>
+<span id="cb12-270"><a href="#cb12-270"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-271"><a href="#cb12-271"></a><span class="in"># Calculate total participation for top 10 countries</span></span>
+<span id="cb12-272"><a href="#cb12-272"></a><span class="in">top_10_countries &lt;- olympics |&gt;</span></span>
+<span id="cb12-273"><a href="#cb12-273"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |&gt;</span></span>
+<span id="cb12-274"><a href="#cb12-274"></a><span class="in">  group_by(noc) |&gt;</span></span>
+<span id="cb12-275"><a href="#cb12-275"></a><span class="in">  summarize(total_participation = n(), .groups = 'drop') |&gt;</span></span>
+<span id="cb12-276"><a href="#cb12-276"></a><span class="in">  arrange(desc(total_participation)) |&gt;</span></span>
+<span id="cb12-277"><a href="#cb12-277"></a><span class="in">  slice_max(total_participation, n = 10)</span></span>
+<span id="cb12-278"><a href="#cb12-278"></a></span>
+<span id="cb12-279"><a href="#cb12-279"></a><span class="in"># Filter data for the top 10 countries</span></span>
+<span id="cb12-280"><a href="#cb12-280"></a><span class="in">top_countries_all_sports &lt;- olympics |&gt;</span></span>
+<span id="cb12-281"><a href="#cb12-281"></a><span class="in">  filter(</span></span>
+<span id="cb12-282"><a href="#cb12-282"></a><span class="in">    sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating"),</span></span>
+<span id="cb12-283"><a href="#cb12-283"></a><span class="in">    noc %in% top_10_countries$noc</span></span>
+<span id="cb12-284"><a href="#cb12-284"></a><span class="in">  ) |&gt;</span></span>
+<span id="cb12-285"><a href="#cb12-285"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
+<span id="cb12-286"><a href="#cb12-286"></a><span class="in">  summarize(participation = n(), .groups = 'drop')</span></span>
+<span id="cb12-287"><a href="#cb12-287"></a></span>
+<span id="cb12-288"><a href="#cb12-288"></a><span class="in"># Plot participation across all four sports for the top 10 countries</span></span>
+<span id="cb12-289"><a href="#cb12-289"></a><span class="in">top_countries_all_sports |&gt;</span></span>
+<span id="cb12-290"><a href="#cb12-290"></a><span class="in">  ggplot(aes(x = reorder(noc, -participation), y = participation, fill = sport)) +</span></span>
+<span id="cb12-291"><a href="#cb12-291"></a><span class="in">  geom_bar(stat = "identity", position = "stack") +</span></span>
+<span id="cb12-292"><a href="#cb12-292"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb12-293"><a href="#cb12-293"></a><span class="in">  labs(</span></span>
+<span id="cb12-294"><a href="#cb12-294"></a><span class="in">    title = "Top 10 Countries by Participation in Winter Sports",</span></span>
+<span id="cb12-295"><a href="#cb12-295"></a><span class="in">    x = "Country (NOC)",</span></span>
+<span id="cb12-296"><a href="#cb12-296"></a><span class="in">    y = "Number of Athletes",</span></span>
+<span id="cb12-297"><a href="#cb12-297"></a><span class="in">    fill = "Sport"</span></span>
+<span id="cb12-298"><a href="#cb12-298"></a><span class="in">  ) +</span></span>
+<span id="cb12-299"><a href="#cb12-299"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-300"><a href="#cb12-300"></a></span>
+<span id="cb12-301"><a href="#cb12-301"></a><span class="in">```</span></span>
+<span id="cb12-302"><a href="#cb12-302"></a></span>
+<span id="cb12-303"><a href="#cb12-303"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-304"><a href="#cb12-304"></a><span class="in"># Calculate total participation for top 10 countries</span></span>
+<span id="cb12-305"><a href="#cb12-305"></a><span class="in">top_10_countries &lt;- olympics |&gt;</span></span>
+<span id="cb12-306"><a href="#cb12-306"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
+<span id="cb12-307"><a href="#cb12-307"></a><span class="in">  group_by(noc) |&gt;</span></span>
+<span id="cb12-308"><a href="#cb12-308"></a><span class="in">  summarize(total_participation = n(), .groups = 'drop') |&gt;</span></span>
+<span id="cb12-309"><a href="#cb12-309"></a><span class="in">  arrange(desc(total_participation)) |&gt;</span></span>
+<span id="cb12-310"><a href="#cb12-310"></a><span class="in">  slice_max(total_participation, n = 10)</span></span>
+<span id="cb12-311"><a href="#cb12-311"></a></span>
+<span id="cb12-312"><a href="#cb12-312"></a><span class="in"># Filter data for the top 10 countries</span></span>
+<span id="cb12-313"><a href="#cb12-313"></a><span class="in">top_countries_all_sports &lt;- olympics |&gt;</span></span>
+<span id="cb12-314"><a href="#cb12-314"></a><span class="in">  filter(</span></span>
+<span id="cb12-315"><a href="#cb12-315"></a><span class="in">    sport %in% c("Shooting", "Rowing","Swimming","Football"),</span></span>
+<span id="cb12-316"><a href="#cb12-316"></a><span class="in">    noc %in% top_10_countries$noc</span></span>
+<span id="cb12-317"><a href="#cb12-317"></a><span class="in">  ) |&gt;</span></span>
+<span id="cb12-318"><a href="#cb12-318"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
+<span id="cb12-319"><a href="#cb12-319"></a><span class="in">  summarize(participation = n(), .groups = 'drop')</span></span>
+<span id="cb12-320"><a href="#cb12-320"></a></span>
+<span id="cb12-321"><a href="#cb12-321"></a><span class="in"># Plot participation across all four sports for the top 10 countries</span></span>
+<span id="cb12-322"><a href="#cb12-322"></a><span class="in">top_countries_all_sports |&gt;</span></span>
+<span id="cb12-323"><a href="#cb12-323"></a><span class="in">  ggplot(aes(x = reorder(noc, -participation), y = participation, fill = sport)) +</span></span>
+<span id="cb12-324"><a href="#cb12-324"></a><span class="in">  geom_bar(stat = "identity", position = "stack") +</span></span>
+<span id="cb12-325"><a href="#cb12-325"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb12-326"><a href="#cb12-326"></a><span class="in">  labs(</span></span>
+<span id="cb12-327"><a href="#cb12-327"></a><span class="in">    title = "Top 10 Countries by Participation in Summer Sports",</span></span>
+<span id="cb12-328"><a href="#cb12-328"></a><span class="in">    x = "Country (NOC)",</span></span>
+<span id="cb12-329"><a href="#cb12-329"></a><span class="in">    y = "Number of Athletes",</span></span>
+<span id="cb12-330"><a href="#cb12-330"></a><span class="in">    fill = "Sport"</span></span>
+<span id="cb12-331"><a href="#cb12-331"></a><span class="in">  ) +</span></span>
+<span id="cb12-332"><a href="#cb12-332"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-333"><a href="#cb12-333"></a></span>
+<span id="cb12-334"><a href="#cb12-334"></a><span class="in">```</span></span>
+<span id="cb12-335"><a href="#cb12-335"></a></span>
+<span id="cb12-336"><a href="#cb12-336"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-337"><a href="#cb12-337"></a><span class="in"># Filter data for medal-winning athletes</span></span>
+<span id="cb12-338"><a href="#cb12-338"></a><span class="in">medal_data &lt;- olympics |&gt;</span></span>
+<span id="cb12-339"><a href="#cb12-339"></a><span class="in">  filter(!is.na(medal)) |&gt;</span></span>
+<span id="cb12-340"><a href="#cb12-340"></a><span class="in">  group_by(noc, medal) |&gt;</span></span>
+<span id="cb12-341"><a href="#cb12-341"></a><span class="in">  summarize(medals = n(), .groups = 'drop')</span></span>
+<span id="cb12-342"><a href="#cb12-342"></a></span>
+<span id="cb12-343"><a href="#cb12-343"></a><span class="in"># Identify the top 10 countries by total medals</span></span>
+<span id="cb12-344"><a href="#cb12-344"></a><span class="in">top_10_medal_countries &lt;- medal_data |&gt;</span></span>
+<span id="cb12-345"><a href="#cb12-345"></a><span class="in">  group_by(noc) |&gt;</span></span>
+<span id="cb12-346"><a href="#cb12-346"></a><span class="in">  summarize(total_medals = sum(medals), .groups = 'drop') |&gt;</span></span>
+<span id="cb12-347"><a href="#cb12-347"></a><span class="in">  arrange(desc(total_medals)) |&gt;</span></span>
+<span id="cb12-348"><a href="#cb12-348"></a><span class="in">  slice_max(total_medals, n = 10)</span></span>
+<span id="cb12-349"><a href="#cb12-349"></a></span>
+<span id="cb12-350"><a href="#cb12-350"></a><span class="in"># Filter medal data for the top 10 countries</span></span>
+<span id="cb12-351"><a href="#cb12-351"></a><span class="in">medal_data_top10 &lt;- medal_data |&gt;</span></span>
+<span id="cb12-352"><a href="#cb12-352"></a><span class="in">  filter(noc %in% top_10_medal_countries$noc)</span></span>
+<span id="cb12-353"><a href="#cb12-353"></a></span>
+<span id="cb12-354"><a href="#cb12-354"></a><span class="in"># Add total medals for sorting</span></span>
+<span id="cb12-355"><a href="#cb12-355"></a><span class="in">medal_data_top10 &lt;- medal_data_top10 |&gt;</span></span>
+<span id="cb12-356"><a href="#cb12-356"></a><span class="in">  group_by(noc) |&gt;</span></span>
+<span id="cb12-357"><a href="#cb12-357"></a><span class="in">  mutate(total_medals = sum(medals)) |&gt;</span></span>
+<span id="cb12-358"><a href="#cb12-358"></a><span class="in">  ungroup()</span></span>
+<span id="cb12-359"><a href="#cb12-359"></a></span>
+<span id="cb12-360"><a href="#cb12-360"></a><span class="in"># Create a stacked bar chart for medal distribution</span></span>
+<span id="cb12-361"><a href="#cb12-361"></a><span class="in">medal_data_top10 |&gt;</span></span>
+<span id="cb12-362"><a href="#cb12-362"></a><span class="in">  ggplot(aes(x = reorder(noc, -total_medals), y = medals, fill = medal)) +</span></span>
+<span id="cb12-363"><a href="#cb12-363"></a><span class="in">  geom_bar(stat = "identity", position = "stack") +</span></span>
+<span id="cb12-364"><a href="#cb12-364"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb12-365"><a href="#cb12-365"></a><span class="in">  labs(</span></span>
+<span id="cb12-366"><a href="#cb12-366"></a><span class="in">    title = "Top 10 Countries by Medals Won",</span></span>
+<span id="cb12-367"><a href="#cb12-367"></a><span class="in">    x = "Country (NOC)",</span></span>
+<span id="cb12-368"><a href="#cb12-368"></a><span class="in">    y = "Number of Medals",</span></span>
+<span id="cb12-369"><a href="#cb12-369"></a><span class="in">    fill = "Medal Type"</span></span>
+<span id="cb12-370"><a href="#cb12-370"></a><span class="in">  ) +</span></span>
+<span id="cb12-371"><a href="#cb12-371"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-372"><a href="#cb12-372"></a></span>
+<span id="cb12-373"><a href="#cb12-373"></a><span class="in">```</span></span>
+<span id="cb12-374"><a href="#cb12-374"></a></span>
+<span id="cb12-375"><a href="#cb12-375"></a><span class="fu">### **3.6 Medals vs Participant**</span></span>
+<span id="cb12-376"><a href="#cb12-376"></a></span>
+<span id="cb12-377"><a href="#cb12-377"></a><span class="ss">-   </span>**Findings**:</span>
+<span id="cb12-378"><a href="#cb12-378"></a></span>
+<span id="cb12-379"><a href="#cb12-379"></a><span class="ss">-   </span>**Visualization**:</span>
+<span id="cb12-380"><a href="#cb12-380"></a></span>
+<span id="cb12-381"><a href="#cb12-381"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-382"><a href="#cb12-382"></a><span class="in"># Summarize data for participants and medals per country</span></span>
+<span id="cb12-383"><a href="#cb12-383"></a><span class="in">participants_vs_medals &lt;- olympics |&gt;</span></span>
+<span id="cb12-384"><a href="#cb12-384"></a><span class="in">  filter(sport %in% c("Shooting", "Rowing","Swimming","Football")) |&gt;</span></span>
+<span id="cb12-385"><a href="#cb12-385"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
+<span id="cb12-386"><a href="#cb12-386"></a><span class="in">  summarize(</span></span>
+<span id="cb12-387"><a href="#cb12-387"></a><span class="in">    total_participants = n(),</span></span>
+<span id="cb12-388"><a href="#cb12-388"></a><span class="in">    total_medals = sum(!is.na(medal)),  # Count non-NA medals</span></span>
+<span id="cb12-389"><a href="#cb12-389"></a><span class="in">    .groups = 'drop'</span></span>
+<span id="cb12-390"><a href="#cb12-390"></a><span class="in">  )</span></span>
+<span id="cb12-391"><a href="#cb12-391"></a></span>
+<span id="cb12-392"><a href="#cb12-392"></a></span>
+<span id="cb12-393"><a href="#cb12-393"></a><span class="in">participants_vs_medals |&gt;</span></span>
+<span id="cb12-394"><a href="#cb12-394"></a><span class="in">  ggplot(aes(x = total_participants, y = total_medals, color = sport)) +</span></span>
+<span id="cb12-395"><a href="#cb12-395"></a><span class="in">  geom_point(size = 3, alpha = 0.7) +</span></span>
+<span id="cb12-396"><a href="#cb12-396"></a><span class="in">  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +  # Add trend lines</span></span>
+<span id="cb12-397"><a href="#cb12-397"></a><span class="in">  labs(</span></span>
+<span id="cb12-398"><a href="#cb12-398"></a><span class="in">    title = "Do More Participants Per Country Equal More Medals?",</span></span>
+<span id="cb12-399"><a href="#cb12-399"></a><span class="in">    subtitle = "Analysis Summer Sport",</span></span>
+<span id="cb12-400"><a href="#cb12-400"></a><span class="in">    x = "Total Participants",</span></span>
+<span id="cb12-401"><a href="#cb12-401"></a><span class="in">    y = "Total Medals",</span></span>
+<span id="cb12-402"><a href="#cb12-402"></a><span class="in">    color = "Sport"</span></span>
+<span id="cb12-403"><a href="#cb12-403"></a><span class="in">  ) +</span></span>
+<span id="cb12-404"><a href="#cb12-404"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-405"><a href="#cb12-405"></a></span>
+<span id="cb12-406"><a href="#cb12-406"></a><span class="in">```</span></span>
+<span id="cb12-407"><a href="#cb12-407"></a></span>
+<span id="cb12-408"><a href="#cb12-408"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb12-409"><a href="#cb12-409"></a><span class="in">participants_vs_medals &lt;- olympics |&gt;</span></span>
+<span id="cb12-410"><a href="#cb12-410"></a><span class="in">  filter(sport %in% c("Cross Country Skiing", "Alpine Skiing", "Figure Skating", "Speed Skating")) |&gt;</span></span>
+<span id="cb12-411"><a href="#cb12-411"></a><span class="in">  group_by(noc, sport) |&gt;</span></span>
+<span id="cb12-412"><a href="#cb12-412"></a><span class="in">  summarize(</span></span>
+<span id="cb12-413"><a href="#cb12-413"></a><span class="in">    total_participants = n(),</span></span>
+<span id="cb12-414"><a href="#cb12-414"></a><span class="in">    total_medals = sum(!is.na(medal)),  # Count non-NA medals</span></span>
+<span id="cb12-415"><a href="#cb12-415"></a><span class="in">    .groups = 'drop'</span></span>
+<span id="cb12-416"><a href="#cb12-416"></a><span class="in">  )</span></span>
+<span id="cb12-417"><a href="#cb12-417"></a></span>
+<span id="cb12-418"><a href="#cb12-418"></a></span>
+<span id="cb12-419"><a href="#cb12-419"></a><span class="in">participants_vs_medals |&gt;</span></span>
+<span id="cb12-420"><a href="#cb12-420"></a><span class="in">  ggplot(aes(x = total_participants, y = total_medals, color = sport)) +</span></span>
+<span id="cb12-421"><a href="#cb12-421"></a><span class="in">  geom_point(size = 3, alpha = 0.7) +</span></span>
+<span id="cb12-422"><a href="#cb12-422"></a><span class="in">  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +  # Add trend lines</span></span>
+<span id="cb12-423"><a href="#cb12-423"></a><span class="in">  labs(</span></span>
+<span id="cb12-424"><a href="#cb12-424"></a><span class="in">    title = "Do More Participants Per Country Equal More Medals?",</span></span>
+<span id="cb12-425"><a href="#cb12-425"></a><span class="in">    subtitle = "Winter Sport",</span></span>
+<span id="cb12-426"><a href="#cb12-426"></a><span class="in">    x = "Total Participants",</span></span>
+<span id="cb12-427"><a href="#cb12-427"></a><span class="in">    y = "Total Medals",</span></span>
+<span id="cb12-428"><a href="#cb12-428"></a><span class="in">    color = "Sport"</span></span>
+<span id="cb12-429"><a href="#cb12-429"></a><span class="in">  ) +</span></span>
+<span id="cb12-430"><a href="#cb12-430"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb12-431"><a href="#cb12-431"></a></span>
+<span id="cb12-432"><a href="#cb12-432"></a><span class="in">```</span></span>
+<span id="cb12-433"><a href="#cb12-433"></a></span>
+<span id="cb12-434"><a href="#cb12-434"></a>------------------------------------------------------------------------</span>
+<span id="cb12-435"><a href="#cb12-435"></a></span>
+<span id="cb12-436"><a href="#cb12-436"></a><span class="fu">## **4. Analysis**</span></span>
+<span id="cb12-437"><a href="#cb12-437"></a></span>
+<span id="cb12-438"><a href="#cb12-438"></a><span class="ss">-   </span>**Findings**: The more participants a country has the more medals they will likely win. Different sports require different characteristics for success. The average height of football players who won medals was around 173 cm, the average weight was around 76 kg, and they were on average 23 years old. The average height of rowers who won medals was around 180 cm, the average weight was around 78 kg, and they were on average around 25 years old. The average height of shooting athletes who won medals was around 175 cm, the average weight was around 76 kg, and on average around 36 years old. The average height of swimmers who won medals was around 179 cm, the average weight was around 72 kg, and on average around 22 years old. The average height of alpine skiers who won medals was around 170 cm, the average weight was around 68 kg, and on average around 24 years old. The average height of cross country skiers who won medals was around 175 cm, the average weight was around 63 kg, and on average around 28 years old. The average height of figure skaters who won medals was around 167 cm, the average weight was around 59 kg, and on average around 23 years old. The average height of speed skaters who won medals was around 178 cm, the average weight was around 72 kg, and on average around 25 years old.</span>
+<span id="cb12-439"><a href="#cb12-439"></a></span>
+<span id="cb12-440"><a href="#cb12-440"></a><span class="ss">-   </span>**Limitations**:Due to time, the summer sport and winter sport is not a strong representation since we only have four each.</span>
+<span id="cb12-441"><a href="#cb12-441"></a></span>
+<span id="cb12-442"><a href="#cb12-442"></a>------------------------------------------------------------------------</span>
+<span id="cb12-443"><a href="#cb12-443"></a></span>
+<span id="cb12-444"><a href="#cb12-444"></a><span class="fu">## **5. Conclusion**</span></span>
+<span id="cb12-445"><a href="#cb12-445"></a></span>
+<span id="cb12-446"><a href="#cb12-446"></a>Summer: The analysis of summer sports highlights swimming as the sport with the highest number of participants and a consistent upward trend in participation over time. Countries like the USA dominate summer sports both in terms of athlete participation and medals won. While sports like rowing and shooting show steady but moderate growth, football participation is more regionally concentrated, reflecting its varied popularity worldwide.</span>
+<span id="cb12-447"><a href="#cb12-447"></a></span>
+<span id="cb12-448"><a href="#cb12-448"></a>Winter: Winter sports participation demonstrates a more diverse pattern, with Alpine Skiing and Cross-Country Skiing being prominent. Nations like Norway, Canada, and the USA excel, can be caused by their geographic advantages. Medal success in winter sports shows a loose correlation with participation. While the participation trends indicate a steady increase in global representation, although the growth remains slower compared to summer sports.</span>
+<span id="cb12-449"><a href="#cb12-449"></a></span>
+<span id="cb12-450"><a href="#cb12-450"></a>Overall: Both summer and winter sports reflect a growing trend in global participation. While summer sports demonstrate higher participation overall, winter sports exhibit technical specialization and geographic concentration. Medal success is partially tied to participation rates, as factors like investment, infrastructure, and athlete development programs significantly influence outcomes.</span>
+<span id="cb12-451"><a href="#cb12-451"></a></span>
+<span id="cb12-452"><a href="#cb12-452"></a>------------------------------------------------------------------------</span>
+<span id="cb12-453"><a href="#cb12-453"></a></span>
+<span id="cb12-454"><a href="#cb12-454"></a><span class="fu">## **6. Recommendations**</span></span>
+<span id="cb12-455"><a href="#cb12-455"></a></span>
+<span id="cb12-456"><a href="#cb12-456"></a><span class="ss">1.  </span>**For Athletes**: Tailor training regimens based on the physical and experiential needs of each sport.</span>
+<span id="cb12-457"><a href="#cb12-457"></a><span class="ss">2.  </span>**For Countries**: Invest in infrastructure and coaching programs to support elite-level performance.</span>
+<span id="cb12-458"><a href="#cb12-458"></a><span class="ss">3.  </span>**For Further Analysis**: Integrate data on training, funding, and external conditions to refine predictive models for success.</span>
+<span id="cb12-459"><a href="#cb12-459"></a></span>
+<span id="cb12-460"><a href="#cb12-460"></a>------------------------------------------------------------------------</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
